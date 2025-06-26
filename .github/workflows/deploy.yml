@@ -31,9 +31,10 @@ jobs:
           tar -cf - -C release/wwwroot . | tar -xf - -C output
           touch output/.nojekyll
 
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload for archive
+        uses: actions/upload-artifact@v4
         with:
+          name: my-build
           path: output
 
   deploy:
