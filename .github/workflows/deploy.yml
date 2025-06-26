@@ -30,13 +30,18 @@ jobs:
       - name: Publish Blazor project
         run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
 
+      - name: Copy output to clean folder (remove symlinks)
+        run: |
+          mkdir output
+          cp -rL release/wwwroot/* output
+
       - name: Add .nojekyll
-        run: touch release/wwwroot/.nojekyll
+        run: touch output/.nojekyll
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: release/wwwroot
+          path: output
 
   deploy:
     needs: build
@@ -49,4 +54,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
