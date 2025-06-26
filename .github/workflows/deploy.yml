@@ -32,8 +32,8 @@ jobs:
 
       - name: Copy output to clean folder (remove symlinks)
         run: |
-          mkdir output
-          cp -rL release/wwwroot/* output
+          mkdir -p output
+          rsync -av --copy-links release/wwwroot/ output/
 
       - name: Add .nojekyll
         run: touch output/.nojekyll
