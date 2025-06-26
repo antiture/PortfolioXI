@@ -18,8 +18,7 @@ jobs:
           dotnet-version: '8.0.x' # 根据你使用的 .NET 版本调整
 
       - name: Publish Blazor WebAssembly
-        run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release \
-             /p:PublishTrimmed=false /p:PublishSingleFile=false
+        run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o dist
 
       - name: Add .nojekyll
         run: touch release/wwwroot/.nojekyll
