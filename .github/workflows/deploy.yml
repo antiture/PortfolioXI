@@ -24,7 +24,3 @@ jobs:
         with:
           branch: gh-pages
           folder: release/wwwroot
-
-
-
-          
