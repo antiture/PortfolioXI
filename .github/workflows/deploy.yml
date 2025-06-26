@@ -32,7 +32,7 @@ jobs:
           touch output/.nojekyll
 
       - name: Upload for archive
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           name: my-build
           path: output
