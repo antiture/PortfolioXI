@@ -5,18 +5,13 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: PortfolioXI
+    name: Publish Blazor WebAssembly app
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Setup .NET
@@ -24,14 +19,19 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Publish Blazor WebAssembly
-        run: dotnet publish PortfolioXI.csproj -c Release -o dist
+      - name: Publish .NET project
+        run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
+
+      - name: Move output
+        run: |
+          mkdir output
+          cp -r release/wwwroot/* output
 
       - name: Add .nojekyll
-        run: touch dist/.nojekyll
+        run: touch output/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: PortfolioXI/dist
+          publish_dir: ./output
