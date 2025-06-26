@@ -31,12 +31,11 @@ jobs:
         run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
 
       - name: Add .nojekyll
-        run: touch release/.nojekyll
+        run: touch release/wwwroot/.nojekyll
 
-      - name: Upload artifact manually
-        uses: actions/upload-artifact@v4
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: release/wwwroot
 
   deploy:
@@ -50,3 +49,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
