@@ -21,8 +21,7 @@ jobs:
         run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o dist
 
       - name: Add .nojekyll
-        run: touch release/wwwroot/.nojekyll
-
+        run: touch PortfolioXI/dist/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
