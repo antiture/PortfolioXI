@@ -34,7 +34,7 @@ jobs:
         run: touch release/.nojekyll
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           path: release
 
