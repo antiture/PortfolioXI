@@ -1,20 +1,9 @@
-# .github/workflows/deploy.yml
-
-name: Deploy Blazor App to GitHub Pages
+name: Deploy Blazor App using GitHub Pages Deploy Action
 
 on:
   push:
     branches:
       - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -27,25 +16,13 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
+      - name: Publish
+        run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
 
-      - run: |
-          mkdir -p output
-          tar -cf - -C release/wwwroot . | tar -xf - -C output
-          touch output/.nojekyll
-
-      - uses: actions/upload-pages-artifact@v2
+      - name: Deploy using JamesIves Action
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: output
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - uses: actions/deploy-pages@v4
-        id: deployment
+          folder: release/wwwroot
+          branch: gh-pages
+          clean: true
 
