@@ -5,6 +5,15 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,16 +31,22 @@ jobs:
       - name: Publish .NET project
         run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
 
-      - name: Move output
-        run: |
-          mkdir output
-          cp -r release/wwwroot/* output
-
       - name: Add .nojekyll
-        run: touch output/.nojekyll
+        run: touch release/.nojekyll
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          # 这必须是你 Blazor 项目发布后的 index.html 所在目录
-          publish_dir: ./PortfolioXI/bin/Release/net8.0/publish/wwwroot
+          path: release
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
