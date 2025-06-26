@@ -10,40 +10,34 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build:
+  deploy-to-pages:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
       - name: Publish Blazor project
         run: dotnet publish PortfolioXI/PortfolioXI.csproj -c Release -o release
-      
-      - name: Prepare output directory
-        run: |
-         mkdir -p output
-         tar -cf - -C release/wwwroot . | tar -xf - -C output
-         touch output/.nojekyll
-      
 
-      - name: Upload artifact manually
-        uses: actions/upload-pages-artifact@v1
+      - name: Prepare site for GitHub Pages
+        run: |
+          mkdir -p output
+          tar -cf - -C release/wwwroot . | tar -xf - -C output
+          touch output/.nojekyll
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: output
+
   deploy:
-    needs: build
+    needs: deploy-to-pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
