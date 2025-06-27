@@ -1,9 +1,17 @@
 ﻿@page "/page04"
-
-<PageTitle>Counter</PageTitle>
-
-<img src="images/4_ProjectManagement_GeneralMachineLearningTrainingWorkflow.png" alt="ProjectManagement_GeneralMachineLearningTrainingWorkflow" style="max-height: 100%; width: auto;" /> 
+ 
+  
+<PageTitle>ProjectManagement</PageTitle>
+  
+<div class="visioner  my-grab-area">
+    <GrapImage @ref="imgRef">
+        <img src="images/4_ProjectManagement_GeneralMachineLearningTrainingWorkflow.png"
+             alt="Cover"
+             class="image-visioner image-ori @imgRef.ImageClass"
+             @onclick="imgRef.ToggleImage" />
+    </GrapImage>
+</div>
 
 @code {
- 
+    private GrapImage? imgRef;
 }

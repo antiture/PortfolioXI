@@ -1,14 +1,17 @@
 ﻿@page "/page03"
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>AI Model</PageTitle>
+ 
 
-<img src="images/3_AI_InterpretableGptDecoderArchitecture.png" alt="Cover" style="max-width: 100%; height: auto;" /> 
+<div class="visioner  my-grab-area">
+    <GrapImage @ref="imgRef">
+        <img src="images/3_AI_InterpretableGptDecoderArchitecture.png"
+             alt="Cover"
+             class="image-visioner image-verti @imgRef.ImageClass"
+             @onclick="imgRef.ToggleImage" />
+    </GrapImage>
+</div>
 
 @code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
+    private GrapImage? imgRef;
 }

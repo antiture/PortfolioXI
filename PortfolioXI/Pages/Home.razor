@@ -1,6 +1,17 @@
-﻿@page "/"
+﻿@page "/" 
 
 <PageTitle>Cover</PageTitle>
-
-<img src="images/0_Cover.png" alt="Cover" style="max-width: 100%; height: auto;" /> 
  
+<div class="visioner my-grab-area">
+    <GrapImage @ref="imgRef">
+        <img src="images/0_Cover.png" 
+        alt="Cover"  
+        class="image-visioner image-verti 
+        @imgRef.ImageClass"
+        @onclick="imgRef.ToggleImage"/> 
+    </GrapImage>
+</div>
+
+@code {
+    private GrapImage? imgRef;
+}

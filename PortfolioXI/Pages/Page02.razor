@@ -1,9 +1,16 @@
 ﻿@page "/page02"
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>Architecture</PageTitle>
+  
+<div class="visioner  my-grab-area">
+    <GrapImage @ref="imgRef">
+        <img src="images/2_Architecture_AssistantIA.png"
+             alt="Cover"
+             class="image-visioner image-ori @imgRef.ImageClass"
+             @onclick="imgRef.ToggleImage" />
+    </GrapImage>
+</div>
 
-
-<img src="images/2_Architecture_AssistantIA.png" alt="Cover" style="max-height: 100%; width: auto;" /> 
-
-@code { 
+@code {
+    private GrapImage? imgRef;
 }
