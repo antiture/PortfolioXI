@@ -1,19 +1,38 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">PortfolioXI</a>
+﻿<div class="top-row ps-3 navbar navbar-dark"> 
+        Portfolio Zijian XI 2025
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+        </button> 
 </div>
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
+        <div class="nav-item ">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Cover
+                Cover
             </NavLink>
         </div>
+        
+        <div class="nav-item ">
+            <NavLink class="nav-link" href="page01">
+                UX
+            </NavLink>
+        </div>
+        <div class="nav-item "> 
+            <NavLink class="nav-link" href="page02">
+                Architecture
+            </NavLink>
+        </div>
+        <div class="nav-item "> 
+            <NavLink class="nav-link" href="page03">
+                AI Model 
+            </NavLink>
+        </div>
+        <div class="nav-item "> 
+            <NavLink class="nav-link" href="page04">
+                Gestion de projet
+            </NavLink>
+        </div> 
         @* <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
@@ -24,26 +43,6 @@
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
             </NavLink>
         </div> *@
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="page01">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> UX
-            </NavLink>
-        </div>
-        <div class="nav-item px-3"> 
-            <NavLink class="nav-link" href="page02">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Architecture
-            </NavLink>
-        </div>
-        <div class="nav-item px-3"> 
-            <NavLink class="nav-link" href="page03">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> AI Model 
-            </NavLink>
-        </div>
-        <div class="nav-item px-3"> 
-            <NavLink class="nav-link" href="page04">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Gestion de projet
-            </NavLink>
-        </div> 
     </nav>
 </div>
 
