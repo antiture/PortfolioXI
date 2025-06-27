@@ -48,7 +48,7 @@
 
 .btn-resize-image{
   position: fixed;
-  bottom: calc(100vh - 10px);
+  bottom: calc(50vh - 10px);
   right: 10px;
 }
 .btn-resize-image.img-normal{
