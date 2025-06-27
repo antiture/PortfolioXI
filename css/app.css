@@ -121,8 +121,7 @@ code {
 #topRow {
   background-color: transparent !important;
   color: #fff;
-  font-weight: 800;
-  margin-bottom: 10px;
+  font-weight: 800; 
 }
 .bottom-row {
   margin-top: auto;
