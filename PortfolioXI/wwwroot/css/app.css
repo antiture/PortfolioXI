@@ -105,6 +105,7 @@ a,
 code {
   color: #c02d76;
 }
+/* 》》》》》》》》:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 .nav-item {
   padding-top: 0px !important;
@@ -114,10 +115,25 @@ code {
   border-radius: 0px !important;
 }
 #sidebar {
-  background-color: #1E3758;
-  background-image:none !important;
+  background-color: #1e3758;
+  background-image: none !important;
 }
-#topRow{
-    background-color: transparent !important;
+#topRow {
+  background-color: transparent !important;
+  color: #fff;
+}
+.bottom-row {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+.bottom-row a{
     color: #fff;
+}
+.nav-scrollable {
+  display: flex;
+  flex-direction: column;
 }

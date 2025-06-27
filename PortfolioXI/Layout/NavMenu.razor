@@ -1,4 +1,6 @@
-﻿<div class="top-row ps-3 navbar navbar-dark" id="topRow"> 
+﻿@inject IJSRuntime JS;
+
+<div class="top-row ps-3 navbar navbar-dark" id="topRow"> 
         Portfolio Zijian XI 2025
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
@@ -6,48 +8,62 @@
 </div>
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item ">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                Cover
-            </NavLink>
+    <div class="flex-column" style="height: 100%; display: flex;"> 
+        <nav class="flex-column">
+            <div class="nav-item ">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    Cover
+                </NavLink>
+            </div>
+            
+            <div class="nav-item ">
+                <NavLink class="nav-link" href="page01">
+                    UX
+                </NavLink>
+            </div>
+            <div class="nav-item "> 
+                <NavLink class="nav-link" href="page02">
+                    Architecture
+                </NavLink>
+            </div>
+            <div class="nav-item "> 
+                <NavLink class="nav-link" href="page03">
+                    AI Model 
+                </NavLink>
+            </div>
+            <div class="nav-item "> 
+                <NavLink class="nav-link" href="page04">
+                    Gestion de projet
+                </NavLink>
+            </div> 
+            @* <div class="nav-item px-3">
+                <NavLink class="nav-link" href="counter">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="weather">
+                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+                </NavLink>
+            </div> *@
+           
+        </nav>
+        <div class="bottom-row">
+            <a class="btn" href="mailto:antiture@gmail.com?subject=Contact&body=Hello">
+                email
+            </a>
+            <a class="btn"
+               href="https://www.linkedin.com/in/zijian-xi/"
+               target="_blank"
+               rel="noopener">
+                linkedin
+            </a>
         </div>
-        
-        <div class="nav-item ">
-            <NavLink class="nav-link" href="page01">
-                UX
-            </NavLink>
-        </div>
-        <div class="nav-item "> 
-            <NavLink class="nav-link" href="page02">
-                Architecture
-            </NavLink>
-        </div>
-        <div class="nav-item "> 
-            <NavLink class="nav-link" href="page03">
-                AI Model 
-            </NavLink>
-        </div>
-        <div class="nav-item "> 
-            <NavLink class="nav-link" href="page04">
-                Gestion de projet
-            </NavLink>
-        </div> 
-        @* <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div> *@
-    </nav>
+    </div>
 </div>
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool collapseNavMenu = true; 
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
@@ -55,4 +71,7 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+ 
+
+  
 }
