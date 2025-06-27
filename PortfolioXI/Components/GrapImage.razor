@@ -1,15 +1,16 @@
 @inject IJSRuntime JS
 
-<div id="scrollableDiv" class="visioner my-grab-area">
+<div id="scrollableDiv_@Id" class="visioner my-grab-area">
     @ChildContent
 
     <button class="btn btn-primary btn-resize-image @ImageClass" @onclick="ToggleEnable">
-        @((isImageToggleEnabled ? "🔒 锁定状态" : "🔓 解锁点击"))
+        <i class="bi bi-zoom-out zoom-out"></i>
     </button>
 </div>
 
 @code {
     [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public string Id { get; set; }  = Guid.NewGuid().ToString();
 
     public string ImageClass => isImageActive ? "img-active" : "img-normal";
 
@@ -33,7 +34,8 @@
     {
         if (firstRender)
         {
-            await JS.InvokeVoidAsync("enableGrabScroll", "scrollableDiv");
+            string id = "scrollableDiv_" + Id;
+            await JS.InvokeVoidAsync("enableGrabScroll", id);
         }
     }
 }

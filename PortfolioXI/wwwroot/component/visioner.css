@@ -47,9 +47,9 @@
 
 
 .btn-resize-image{
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
 .btn-resize-image.img-normal{
   display: none;
