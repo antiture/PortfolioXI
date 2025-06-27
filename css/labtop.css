@@ -1,0 +1,12 @@
+@media (min-width: 641px) {
+  #sidebar {
+    flex-shrink: 0;
+    width: 200px; 
+  }
+  #contentArticle {
+    padding: 0% !important;
+  }
+  #mainContainer{
+    width: calc(100vw - 200px); 
+  }
+}
