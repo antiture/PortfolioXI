@@ -121,6 +121,8 @@ code {
 #topRow {
   background-color: transparent !important;
   color: #fff;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 .bottom-row {
   margin-top: auto;
@@ -128,10 +130,10 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
-.bottom-row a{
-    color: #fff;
+.bottom-row a {
+  color: #fff;
 }
 .nav-scrollable {
   display: flex;
