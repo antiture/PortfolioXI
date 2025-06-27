@@ -117,3 +117,7 @@ code {
   background-color: #1E3758;
   background-image:none !important;
 }
+#topRow{
+    background-color: transparent !important;
+    color: #fff;
+}
