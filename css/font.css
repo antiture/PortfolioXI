@@ -1,0 +1,43 @@
+.title-1{
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--bs-main);
+    margin-bottom: 8px;
+    line-height: 1.8rem ;
+}
+.title-1-sub{
+    font-size: 1.2rem;
+    font-weight: 600;
+     color: var(--bs-main);
+     margin-bottom: 30px;
+     line-height: 1.4rem ;
+}
+.title-2{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--bs-gris);
+    margin-bottom: 25px;
+     line-height: 1.6rem ;
+}
+.title-3{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--bs-main);
+    margin-bottom: 20px;
+     line-height: 1.2rem ;
+}
+.title-4{
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--bs-text);
+    margin-bottom: 10px;
+     line-height: 1.2rem ;
+}
+.text{
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--bs-text);
+    margin-bottom: 40px;
+     line-height: 1.2rem ;
+}
