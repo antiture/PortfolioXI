@@ -1,0 +1,42 @@
+<!-- SectionDisplay.razor -->
+<div class="section-display">
+    @if (!string.IsNullOrWhiteSpace(Title1))
+    {
+        <div class="title-1">@Title1</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title1Sub))
+    {
+        <div class="title-1-sub">@Title1Sub</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title2))
+    {
+        <div class="title-2">@Title2</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title3))
+    {
+        <div class="title-3">@Title3</div>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title4))
+    {
+        <div class="title-4">@Title4</div>
+    }
+
+    @if (Paragraphs?.Any() == true)
+    {
+        <div class="text">
+            @foreach (var para in Paragraphs)
+            {
+                <p class="paraph">@((MarkupString)para)</p>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public string? Title1 { get; set; }
+    [Parameter] public string? Title1Sub { get; set; }
+    [Parameter] public string? Title2 { get; set; }
+    [Parameter] public string? Title3 { get; set; }
+    [Parameter] public string? Title4 { get; set; }
+    [Parameter] public List<string>? Paragraphs { get; set; }
+}

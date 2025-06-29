@@ -15,7 +15,7 @@ window.enableGrabScroll = function (elementId) {
         scrollTop = el.scrollTop;
 
         el.classList.add('grabbing');
-        el.style.cursor = 'grabbing';
+         
 
         document.addEventListener('mousemove', mouseMoveHandler);
         document.addEventListener('mouseup', mouseUpHandler);
@@ -32,12 +32,12 @@ window.enableGrabScroll = function (elementId) {
     const mouseUpHandler = function () {
         isDragging = false;
         el.classList.remove('grabbing');
-        el.style.cursor = 'grab';
+        
 
         document.removeEventListener('mousemove', mouseMoveHandler);
         document.removeEventListener('mouseup', mouseUpHandler);
     };
 
-    el.style.cursor = 'grab';
+     
     el.addEventListener('mousedown', mouseDownHandler);
 };

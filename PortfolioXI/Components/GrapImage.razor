@@ -1,16 +1,17 @@
 @inject IJSRuntime JS
+<div class="visioner-wrapper">
+    <div id="scrollableDiv_@Id" class="visioner my-grab-area @ImageClass">
+        @ChildContent
 
-<div id="scrollableDiv_@Id" class="visioner my-grab-area">
-    @ChildContent
-
-    <button class="btn btn-primary btn-resize-image @ImageClass" @onclick="ToggleEnable">
-        <i class="bi bi-zoom-out zoom-out"></i>
-    </button>
+        <button class="btn btn-primary btn-resize-image @ImageClass" @onclick="ToggleEnable">
+            <i class="bi bi-zoom-out zoom-out"></i>
+        </button>
+    </div>
 </div>
 
 @code {
     [Parameter] public RenderFragment? ChildContent { get; set; }
-    [Parameter] public string Id { get; set; }  = Guid.NewGuid().ToString();
+    [Parameter] public string Id { get; set; } = Guid.NewGuid().ToString();
 
     public string ImageClass => isImageActive ? "img-active" : "img-normal";
 

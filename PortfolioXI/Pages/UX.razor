@@ -1,0 +1,41 @@
+﻿@page "/UX"
+@using PortfolioXI.Components
+<PageTitle>UX</PageTitle>
+
+<div class="text-flow">
+    <SectionText Title1="Erlay – Plateforme collaborative pour les services juridiques"
+                 Title1Sub="Projet intelligent, intuitif et multi-support (Web & Mobile) - 2019"
+                 Title2="Introduction"
+                 Title3="Introduction"
+                 Title4="Introduction"
+                 Paragraphs="@Paragraphs" />
+
+    <GrapImage @ref="@Images[1].Ref" Id="@Images[1].Id">
+        <img src="@Images[1].Src" alt="Cover" class="image-visioner image-ori @Images[1].Ref?.ImageClass"
+             @onclick="@(() => Images[1].Ref?.ToggleImage())" />
+    </GrapImage>
+    <GrapImage @ref="@Images[2].Ref" Id="@Images[2].Id">
+        <img src="@Images[2].Src" alt="Cover" class="image-visioner image-ori @Images[2].Ref?.ImageClass"
+             @onclick="@(() => Images[2].Ref?.ToggleImage())" />
+    </GrapImage>
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/1_UX_Erlay-0.png", Id = "UX_Erlay-0" },
+        new ImageItem { Src = "images/1_UX_Erlay-1.png", Id = "UX_Erlay-1" },
+        new ImageItem { Src = "images/1_UX_Erlay-2.png", Id = "UX_Erlay-2" },
+        new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
+        // ... 可继续添加更多
+    };
+    private List<string> Paragraphs = new()
+    {
+    "Erlay est une plateforme que j’ai conçue en <strong>2019</strong>...",
+    "Le projet vise à créer un espace numérique <em>fluide</em>...",
+    "La plateforme comprend notamment :",
+    "- Un système de suivi...<br>- Un module d’organisation...<br>- Interfaces interactives...",
+    "La plateforme est conçue sur Web et mobile..."
+    };
+}

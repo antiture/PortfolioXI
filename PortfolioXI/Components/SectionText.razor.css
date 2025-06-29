@@ -1,4 +1,4 @@
-/* .title-1{
+.title-1{
     font-size: 1.6rem;
     font-weight: 800;
     color: var(--bs-main);
@@ -40,4 +40,4 @@
     color: var(--bs-text);
     margin-bottom: 40px;
      line-height: 1.2rem ;
-} */
+}

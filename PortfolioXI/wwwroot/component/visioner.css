@@ -16,7 +16,7 @@
   cursor: grabbing;
   user-select: none;
 }
-.grabbing {
+.grabbing .image-visioner{
     cursor: grabbing !important;
     user-select: none;
 }
@@ -53,4 +53,8 @@
 }
 .btn-resize-image.img-normal{
   display: none;
+}
+.visioner .img-active{
+  cursor: grab;
+  user-select: none;
 }
