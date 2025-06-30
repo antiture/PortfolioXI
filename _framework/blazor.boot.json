@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PortfolioXI",
   "resources": {
-    "hash": "sha256-/TjEtYa1VM6ZxC2UsuSLqcSypBKaHOc4ncfwVxMlTXk=",
+    "hash": "sha256-Yp9p5ccpUcmIFTo+g8id2DurngY9+nwcOudRphT6GEk=",
     "jsModuleNative": {
       "dotnet.native.8.0.17.qnqnu9is6n.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -19,7 +19,7 @@
     "assembly": {
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-yLVXC2290ExXek78AbECPeg4asvhZ5zYQkcU4iflbb8=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-a3k2c94K454C+t7TEjoPtzLzVeD1lLkW4hkeol6CsLY=",
-      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-PEV35jjBNgSHiZgco7dyeh6o7zK7AUWAOpNFZdzD+Vs=",
+      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-1V3PHajxTkQGfczO9jUIRl7wkvncsLhV63yPYT1Txzw=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-nZjPRiJMaAt7cIgZXw37hDXht4BOey/KzppMEK/xNSA=",
       "Microsoft.Extensions.Configuration.Abstractions.wasm": "sha256-87sn2TYqgdZ95sXmavjKEzoEfMgHnYQ9LOvnMX+aZcI=",
       "Microsoft.Extensions.Configuration.Json.wasm": "sha256-/VUEfhgVp9FCU1rXnSNAI1mtW6EO5DpkV/5UNWDR/es=",
@@ -35,14 +35,15 @@
       "Microsoft.JSInterop.wasm": "sha256-hFPgEVsOaQdA/BFhPi3DSLLRbJs66+LCJzH87t96F+I=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-Gr/L26Jyez1dM+fEGHQGxP8JHk43Q4A5VAiq6U2r4Kk=",
       "MudBlazor.wasm": "sha256-3/weHNFRRVgZaW+XChuc1ZSaCmPOrjfCffMBUFkXFkY=",
-      "PortfolioXI.wasm": "sha256-ayZNZw+qu+zvvbE3YzE2Pjw8ltq0EeRiEDy5yD1pRLU=",
+      "PortfolioXI.wasm": "sha256-frE0UtYvVG9dwEFEsAXFniTyDC1eXZF7Ywn/PiOX00E=",
       "System.Collections.Concurrent.wasm": "sha256-WaPc+0PZQMWX1vZCTvs3VLEKJU/cJQlTKyTL1j/5ZBA=",
       "System.Collections.Immutable.wasm": "sha256-6h1p4zRiXH1FhauU/xVcYwlR89Es4CzQYsth8ZhV1BE=",
+      "System.Collections.Specialized.wasm": "sha256-o2IP+zJflBWTrMEnVYwanTXe2PpTfk6bHajiKHydcs0=",
       "System.Collections.wasm": "sha256-Wb91XEVpVH+WHpb4fq5eQlyKb7vLmg9yuPMoTGL3fL4=",
       "System.ComponentModel.Annotations.wasm": "sha256-iw4NxxKAfXh/MfZRwVGNhKL+1P7wElpmoUYgLzp/SNw=",
       "System.ComponentModel.Primitives.wasm": "sha256-jFK0SGToEDQ1wkcnMbiRGhwWvOsVIXsR4K2ljPRFeO4=",
       "System.ComponentModel.wasm": "sha256-zbgv4Lm7g6D7rigjCEgzlAdhhZJ90frcoj8295S3b6M=",
-      "System.Console.wasm": "sha256-Sks7aVLXqR4BwCAy88gObXn5e7rxvcYJh6P/t8LqXwY=",
+      "System.Console.wasm": "sha256-wbZba07rXr562AP7Tk2TTwcQ08THgK0ekelQ4ns3l7Q=",
       "System.Diagnostics.DiagnosticSource.wasm": "sha256-exqX98OddgJp10gFLRevVs7XnUvJ4ntwmcgc+aaNY8Y=",
       "System.Linq.Expressions.wasm": "sha256-FCq4Xsm0iPNRe8V63Ct6IG3lgiHsklXOUeP4sQ86oPE=",
       "System.Linq.wasm": "sha256-iQq9kjFRcSImnNTL+6Jx2erQraEkUv9CiIUeTq00kLA=",
@@ -50,13 +51,14 @@
       "System.Net.Http.Json.wasm": "sha256-pufK/jP43k24wksv2ryDnWeRuz5TO+6FdoRb4H+WMVE=",
       "System.Net.Http.wasm": "sha256-AiUg8Iv9AFPJLB2H15Coxj22Ti5WWWa7pHZbXp8emig=",
       "System.Net.Primitives.wasm": "sha256-Rjexva+5zDpTf4XM1Pce4tmvNHfQ3zCY8L/qBfXQbXQ=",
-      "System.Private.CoreLib.wasm": "sha256-3igUUCBIscYK/DeFEIFqBtbvJPu+WuMhbMZf6zDcV7I=",
-      "System.Private.Uri.wasm": "sha256-/RzWt2GvUel4uJbuBFCMh3HK95N4AaHacSdpInCW90U=",
+      "System.Private.CoreLib.wasm": "sha256-K7hQnIqqFjG7ufgxMfiCDH7xoBIxnKhaIQ+AMsrEKog=",
+      "System.Private.Uri.wasm": "sha256-Dcz2FLAKlQNvpdHMcjGNeGuAL3ja0ttsEdgtocrrOvk=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-jLoyR7h/op0JwF4LgH9WDDRfomfIdJz/Vb0uKYFtm8o=",
       "System.Runtime.wasm": "sha256-HNX6OFY1r8rtWGJYvcaUJe3drgza8onGHabiG9zFBkA=",
       "System.Text.Encodings.Web.wasm": "sha256-x3gDlkveayV0HvdC4SkdYjQ9/7+DfNG6aiwtcnB0+w4=",
       "System.Text.Json.wasm": "sha256-wq9mgx2JA3eAlXe0jOGzcSPUE53VvVQIacB7ECb01XI=",
-      "System.Text.RegularExpressions.wasm": "sha256-gZfv+sGey1PexNrV0DrSOK8/2eu8G8GBkbp2DMsqHic="
+      "System.Text.RegularExpressions.wasm": "sha256-gZfv+sGey1PexNrV0DrSOK8/2eu8G8GBkbp2DMsqHic=",
+      "System.Web.HttpUtility.wasm": "sha256-Flgo94L489RwZW5lL+u/LJgo6MzfWaxghTXo7dthZ60="
     }
   },
   "cacheBootResources": true,
