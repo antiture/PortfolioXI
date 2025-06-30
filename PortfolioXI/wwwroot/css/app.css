@@ -138,3 +138,11 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+
+#topSiteTitle{
+    margin-left: 24px;
+}
+#bottomSiteTitle{
+    margin-left: 60px;
+}

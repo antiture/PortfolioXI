@@ -1,4 +1,5 @@
 @inject IJSRuntime JS
+
 <div class="wrapper-image-flow">
     <img src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" @onclick="ToggleImage" />
     @if (ChildContent is not null)
@@ -11,29 +12,48 @@
 
 @if (isImageActive)
 {
-
-
     <div class="visioner-wrapper">
         <div id="scrollableDiv_@Image.Id" class="visioner visioner-@Image.Dir visioner-grab-area @ImageClass">
-            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" id="zoomimg_@Image.Id" data-scale="@Scale" style="transform: scale(@Scale); transform-origin: center center;" />
-
+            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt"
+                 class="image-@Image.Dir"
+                 id="zoomimg_@Image.Id"
+                 data-scale="@Scale" />
         </div>
-
     </div>
-    <MudSlider Min="0.5" Max="3" Step="0.05" Size="Size.Large" @bind-Value="Scale" Class="slider-zoom-visioner" />
-    <button class="btn btn-primary btn-resize-image @ImageClass" @onclick="ToggleEnable">
-        <i class="bi bi-zoom-out zoom-out"></i>
-    </button>
+    <div class="visioner-wrapper-tool row">
+
+        <MudSlider Min="0.5" Max="3" Step="0.005"
+                   Value="@Scale"
+                   ValueChanged="@((double val) => OnScaleChanged(val))"
+                   ValueChanged:Event="oninput"
+                   Size="Size.Large"
+                   ThumbIcon="Icons.Material.Filled.Plus"
+                   ThumbIconColor="Color.Light"
+                   Class="slider-zoom-visioner" /> 
+        <button class="btn btn-primary btn-resize-image @ImageClass mud-theme-primary" @onclick="ToggleEnable">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
 }
 
 @code {
     [Parameter] public ImageItem Image { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
+
     public string ImageClass => isImageActive ? "visioner-active" : "img-normal";
 
     private bool isImageActive = false;
     private bool isImageToggleEnabled = true;
     private bool isGrabEnabled = false;
+
+    private ElementReference ImgRef;
+    private double Scale = 1.0;
+
+    private async Task OnScaleChanged(double value)
+    {
+        Scale = value;
+        await JS.InvokeVoidAsync("updateImageSize", $"zoomimg_{Image.Id}", Scale);
+    }
 
     public async void ToggleImage()
     {
@@ -42,33 +62,24 @@
         isImageToggleEnabled = false;
         isGrabEnabled = true;
 
-        await InvokeAsync(StateHasChanged); // 强制重渲染，再执行 JS
+        await InvokeAsync(StateHasChanged); // 等待视图刷新后启用 JS
     }
 
     private void ToggleEnable()
     {
-        isImageToggleEnabled = true;
         isImageActive = false;
+        isImageToggleEnabled = true;
     }
-    private ElementReference ImgRef;
-    private double Scale { get; set; } = 1.0;
-
-    private async Task OnScaleChanged(double newValue)
-    {
-        Scale = newValue;
-        await JS.InvokeVoidAsync("updateImageScale", $"zoomimg_{Image.Id}", Scale);
-    }
-
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (isGrabEnabled)
         {
             isGrabEnabled = false;
-            string id = "scrollableDiv_" + Image.Id;
+            string id = $"scrollableDiv_{Image.Id}";
             await JS.InvokeVoidAsync("enableGrabScroll", id);
-            await JS.InvokeVoidAsync("enableDragOnly", id);
+            await JS.InvokeVoidAsync("updateImageSize", $"zoomimg_{Image.Id}", Scale);
         }
-
     }
 }
+

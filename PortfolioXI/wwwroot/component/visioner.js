@@ -1,5 +1,4 @@
-﻿
-
+﻿// 启用鼠标拖动滚动容器（Grab模式）
 window.enableGrabScroll = function (elementId) {
     const el = document.getElementById(elementId);
     if (!el) return;
@@ -35,6 +34,8 @@ window.enableGrabScroll = function (elementId) {
         document.addEventListener('mouseup', onUp);
     });
 };
+
+// 启用图像拖拽（Translate 模式，不滚动容器）
 window.enableDragOnly = function (id) {
     const container = document.getElementById(id);
     if (!container) return;
@@ -72,14 +73,48 @@ window.enableDragOnly = function (id) {
         isDragging = false;
     });
 
-    updateTransform();
+    // 加载完成后设置初始大小
+    img.onload = () => {
+        if (!img.dataset.initialWidth || !img.dataset.initialHeight) {
+            img.dataset.initialWidth = img.offsetWidth;
+            img.dataset.initialHeight = img.offsetHeight;
+        }
+        updateTransform();
+    };
+
+    // 若已加载
+    if (img.complete) {
+        if (!img.dataset.initialWidth || !img.dataset.initialHeight) {
+            img.dataset.initialWidth = img.offsetWidth;
+            img.dataset.initialHeight = img.offsetHeight;
+        }
+        updateTransform();
+    }
 };
 
+window.updateImageSize = function (id, scale) {
+    const img = document.getElementById(id);
+    if (!img) return;
 
-window.updateImageScale = function (id, scale) {
-    const imgElement = document.getElementById(id);
-    if (!imgElement) return;
-    imgElement.dataset.scale = scale;
-    imgElement.style.transform = `scale(${scale})`;
-    imgElement.style.transformOrigin = "center center";
+    // 如果未记录初始尺寸，则保存一次
+    if (!img.dataset.initialWidth || !img.dataset.initialHeight) {
+        img.dataset.initialWidth = img.offsetWidth;
+        img.dataset.initialHeight = img.offsetHeight;
+    }
+
+    const baseWidth = parseFloat(img.dataset.initialWidth);
+    const baseHeight = parseFloat(img.dataset.initialHeight);
+
+    const newWidth = baseWidth * scale;
+    const newHeight = baseHeight * scale;
+
+    img.style.width = `${newWidth}px`;
+    img.style.height = `${newHeight}px`;
+
+    // 禁用 max 限制，避免自动缩回
+    img.style.setProperty("max-width", "none", "important");
+    img.style.setProperty("max-height", "none", "important");
+
+    // 更新当前缩放值
+    img.dataset.scale = scale;
 };

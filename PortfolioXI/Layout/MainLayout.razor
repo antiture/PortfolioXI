@@ -1,54 +1,64 @@
 ﻿@inherits LayoutComponentBase
-
+@inject IResizeObserver ResizeObserver
 
 <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
-
 <MudPopoverProvider />
-
 <MudDialogProvider />
-
 <MudSnackbarProvider />
 
-
 <MudLayout>
+    <div @ref="_mainRef">
+        @if (!_isMobile)
+        {
+            <MudDrawer @bind-Open="@_open"
+                       Variant="@DrawerVariant.Responsive">
+                <MudDrawerHeader>
+                    <MudText id="topSiteTitle" Typo="Typo.h6">- Zijian XI</MudText>
+                </MudDrawerHeader>
+                <NavMenu></NavMenu>
 
-    @if (_openBottom)
-    {
+                <MudNavMenu Style="margin-top: auto; ">
+                    <MudSwitch  @bind-Value="_isDarkMode" ThumbIcon="@(_isDarkMode==true ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)" ThumbIconColor="@(_isDarkMode==true ? Color.Dark : Color.Dark)">
+                    </MudSwitch>
+                </MudNavMenu>
+            </MudDrawer>
+
+            <button id="logoStart" @onclick="OpenDrawer"><span class="iconmax iconmax-logo px24"></span></button>
+
+        }
+        else
+        {
+            @if (_openBottom)
+            {
+                <MudDrawer @bind-Open="_openBottom"
+                           Width="100vw"
+                           Height="auto"
+                           Anchor="Anchor.Bottom"
+                           Variant="DrawerVariant.Temporary"
+                           Elevation="2">
+                    <div class="nav-header-bottom row">
+                        <span class="iconmax iconmax-logo px24"></span>
+                    </div>
+
+                    <NavMenu></NavMenu>
+                    <MudNavMenu Style=" margin-left: auto;">
+                        <MudSwitch @bind-Value="_isDarkMode" ThumbIcon="@(_isDarkMode==true ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)" ThumbIconColor="@(_isDarkMode==true ? Color.Dark : Color.Dark)">
+                        </MudSwitch>
+                    </MudNavMenu>
 
 
-
-        <MudDrawer @bind-Open="_openBottom"
-                   Width="100vw"
-                   Height="auto"
-                   Anchor="Anchor.Bottom"
-                   Variant="DrawerVariant.Temporary"
-                   Elevation="2">
-            <NavMenu></NavMenu>
-            <MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Light/Dark" />
-            <MudDrawerHeader>
-                <MudText Typo="Typo.h6">Portfolio - Zijian XI</MudText>
-            </MudDrawerHeader>
-        </MudDrawer>
-    }
-
-    <MudDrawer @bind-Open="@_open" 
-               Variant="@DrawerVariant.Responsive">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">Portfolio - Zijian XI</MudText>
-        </MudDrawerHeader>
-        <NavMenu></NavMenu>
-        <MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Light/Dark" />
-
-    </MudDrawer>
-
-
-    <MudMainContent>
-        <MudButton Variant="Variant.Text" OnClick="@(() => OpenDrawer())">Start</MudButton>
-        <MudButton Variant="Variant.Text" OnClick="@(() => OpenDrawerBottom())">Bottom</MudButton>
-        @Body
-    </MudMainContent>
+                </MudDrawer>
+            }
+            @if (!_openBottom)
+            {
+                <button id="logoBottom" @onclick="OpenDrawerBottom"><span class="iconmax iconmax-logo px45"></span></button>
+            }
+        }
+        <MudMainContent>
+            @Body
+        </MudMainContent>
+    </div>
 </MudLayout>
-
 
 
 @code {
@@ -57,6 +67,19 @@
     private bool _openBottom = false;
     private bool _open = true;
     private bool _overlayAutoClose = true;
+    private bool _isMobile;
+
+    private ElementReference _mainRef;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var rect = await ResizeObserver.Observe(_mainRef);
+            _isMobile = rect.Width < 768;
+            StateHasChanged();
+        }
+    }
 
     private void OpenDrawerBottom()
     {
