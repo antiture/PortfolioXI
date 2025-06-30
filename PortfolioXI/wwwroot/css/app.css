@@ -78,15 +78,14 @@ a,
 }
 
 .loading-progress circle {
-  fill: none;
-  stroke: #e0e0e0;
+  fill: none; 
   stroke-width: 0.6rem;
   transform-origin: 50% 50%;
   transform: rotate(-90deg);
 }
 
 .loading-progress circle:last-child {
-  stroke: #1b6ec2;
+  stroke: rgb(151, 141, 236);
   stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
   transition: stroke-dasharray 0.05s ease-in-out;
 }
@@ -95,7 +94,16 @@ a,
   position: absolute;
   text-align: center;
   font-weight: bold;
+  color: rgb(151, 141, 236);
   inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+.loading-logo{
+  background-color: rgb(162, 158, 200) !important;
+  margin-left: calc(50% - 60px); 
+  margin-top: 14px;
+  width: 120px !important;
+  height: 120px !important;
+  
 }
 
 .loading-progress-text:after {
