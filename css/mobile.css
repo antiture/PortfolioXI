@@ -1,2 +1,8 @@
-
+@media (max-width: 767px) {
+  /* mobile-specific styles */
+  .visioner-wrapper-tool { 
+    top: auto !important;
+    bottom: 20px !important;
  
+  }
+}

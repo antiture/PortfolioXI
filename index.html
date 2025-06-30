@@ -25,7 +25,7 @@
 
 </head>
 
-<body style="background: rgba(39, 39, 47, 1);">
+<body style="background: var(--mud-palette-text-primary);">
     <div id="app">
 
         <svg class="loading-progress">
@@ -35,7 +35,12 @@
         <div class="loading-progress-text"></div>
         <div class="loading-logo iconmax iconmax-logo"></div>
     </div>
-
+    <style>
+        body{
+            --mud-palette-text-primary : rgba(39, 39, 47, 1);
+        }
+        
+    </style>
     <div id="blazor-error-ui">
         An unhandled error has occurred.《
         <a href="" class="reload">Reload</a>
