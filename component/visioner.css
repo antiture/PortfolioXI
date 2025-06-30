@@ -82,14 +82,14 @@
     left: 50%;
     transform: translateX(-50%);
     top: 4px;
-    width: calc(80vh - 0px) !important;
+    width: calc(80vw - 0px) !important;
 }
 
 .slider-zoom-visioner {
     border-radius: 100%;
     min-width: 200px;
     max-width: 600px;
-    width: calc(80vh - 140px) !important;
+    width: calc(80vw - 140px) !important;
 }
 
 .btn-resize-image {
