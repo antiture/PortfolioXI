@@ -1,0 +1,79 @@
+
+.iconmax {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor; 
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.iconmax-logo {
+    -webkit-mask-image: url('logo.svg');
+    mask-image: url('logo.svg');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.px40{
+    width: 40px;
+    height: 40px;
+}
+.px45{ 
+    width: 45px;
+    height: 45px;
+}
+.px24{
+    width: 24px;
+    height: 24px;
+}
+.column{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.center-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    height:100vh;
+}

@@ -1,56 +1,102 @@
-.visioner{
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
+﻿/* /////////// grab */
+
+.visioner-grab-area.visioner-active .image-Verti,
+.visioner-grab-area.visioner-active .image-Ori {
+    cursor: grab;
 }
-.image-visioner{
-    margin: auto;
-}
-.grab-area {
-  cursor: grab;
-  overflow: auto;
-}
+
 .grab-area.grabbing {
-  cursor: grabbing;
-  user-select: none;
+    cursor: grabbing;
+    user-select: none;
 }
-.grabbing {
+
+.grabbing .image-Verti,
+.grabbing .image-Ori {
     cursor: grabbing !important;
     user-select: none;
 }
 /* /////////// verti */
-.img-active.image-verti{ 
-  max-width: 1200px !important; 
-  height: auto !important;
-  max-height: none !important;
+.visioner-wrapper .visioner-active .image-Verti {
+    max-width: 1200px !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
-.img-normal.image-verti{ 
-  max-width: 100%; 
-  max-height: 100vh;
-  cursor: zoom-in;
+.image-Verti {
+    max-width: 100%;
+    max-height: 100vh;
+    cursor: zoom-in;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* /////////// ori */
-.img-active.image-ori{ 
-  max-height: 1200px !important; 
-  width: auto !important;
-  max-width: none !important;
+.visioner-wrapper .visioner-active .image-Ori {
+    max-height: 1200px !important;
+    width: auto !important;
+    max-width: none !important;
 }
-.img-normal.image-ori{ 
-  max-width: 100%; 
-  max-height: 1500px;
-  cursor: zoom-in;
+
+.image-Ori {
+    max-width: 100%;
+    max-height: 1500px;
+    cursor: zoom-in;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
 
-.btn-resize-image{
-  position: fixed;
-  bottom: calc(50vh - 10px);
-  right: 10px;
+.btn-resize-image.img-normal {
+    display: none;
 }
-.btn-resize-image.img-normal{
-  display: none;
+
+.visioner .visioner-active {
+    cursor: grab;
+    user-select: none;
+}
+/*/////////////////////////////*/
+.visioner.visioner-active {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--mud-palette-drawer-background);
+}
+
+.visioner-grab-area img {
+    cursor: grab;
+    transition: width 0.2s ease, height 0.2s ease;
+    user-select: none;
+}
+
+.grabbing {
+    cursor: grabbing;
+}
+
+
+.visioner-wrapper-tool {
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4px;
+    width: calc(80vh - 0px) !important;
+}
+
+.slider-zoom-visioner {
+    border-radius: 100%;
+    min-width: 200px;
+    max-width: 600px;
+    width: calc(80vh - 140px) !important;
+}
+
+.btn-resize-image {
+    z-index: 10000;
+    width: 24px;
+    height: 24px;
+    cursor: pointer !important;
+    border-radius: 100px;
+    padding: 0px !important;
 }
