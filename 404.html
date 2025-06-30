@@ -2,14 +2,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Redirecting...</title>
 </head>
 <body>
     <script>
-        // redirect all unknown routes to the main index.html
-        var path = window.location.pathname.replace(/\/PortfolioXI/, "");
-        window.location.href = "/PortfolioXI/index.html?path=" + path;
-    </script>
+        (function () {
+            const base = "/PortfolioXI";
+            const current = window.location.pathname;
 
+            // 如果已经是 index.html 就不跳转（避免循环）
+            if (!current.startsWith(base + "/index.html")) {
+                // 去除 /PortfolioXI 前缀
+                const path = current.replace(new RegExp("^" + base), "");
+
+                // 跳转到 index.html，携带路径参数（供你自己用）
+                window.location.replace(`${base}/index.html?path=${encodeURIComponent(path)}`);
+            }
+        })();
+    </script>
 </body>
 </html>
