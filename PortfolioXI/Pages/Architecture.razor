@@ -1,0 +1,21 @@
+﻿@page "/Architecture"
+
+<PageTitle>Architecture</PageTitle>
+  
+<div class="visioner  visioner-grab-area">
+    
+    <VisionerImage Image=Images[0]>
+    </VisionerImage>
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "architectureAssitantIA" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-1" , Dir = ImageDirection.Verti},
+        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "UX_Erlay-2" , Dir = ImageDirection.Ori},
+        new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
+        // ... 可继续添加更多
+    };
+    
+}

@@ -1,0 +1,74 @@
+@inject IJSRuntime JS
+<div class="wrapper-image-flow">
+    <img src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" @onclick="ToggleImage" />
+    @if (ChildContent is not null)
+    {
+        <div class="explication-image">
+            @ChildContent
+        </div>
+    }
+</div>
+
+@if (isImageActive)
+{
+
+
+    <div class="visioner-wrapper">
+        <div id="scrollableDiv_@Image.Id" class="visioner visioner-@Image.Dir visioner-grab-area @ImageClass">
+            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" id="zoomimg_@Image.Id" data-scale="@Scale" style="transform: scale(@Scale); transform-origin: center center;" />
+
+        </div>
+
+    </div>
+    <MudSlider Min="0.5" Max="3" Step="0.05" Size="Size.Large" @bind-Value="Scale" Class="slider-zoom-visioner" />
+    <button class="btn btn-primary btn-resize-image @ImageClass" @onclick="ToggleEnable">
+        <i class="bi bi-zoom-out zoom-out"></i>
+    </button>
+}
+
+@code {
+    [Parameter] public ImageItem Image { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    public string ImageClass => isImageActive ? "visioner-active" : "img-normal";
+
+    private bool isImageActive = false;
+    private bool isImageToggleEnabled = true;
+    private bool isGrabEnabled = false;
+
+    public async void ToggleImage()
+    {
+        if (!isImageToggleEnabled) return;
+        isImageActive = true;
+        isImageToggleEnabled = false;
+        isGrabEnabled = true;
+
+        await InvokeAsync(StateHasChanged); // 强制重渲染，再执行 JS
+    }
+
+    private void ToggleEnable()
+    {
+        isImageToggleEnabled = true;
+        isImageActive = false;
+    }
+    private ElementReference ImgRef;
+    private double Scale { get; set; } = 1.0;
+
+    private async Task OnScaleChanged(double newValue)
+    {
+        Scale = newValue;
+        await JS.InvokeVoidAsync("updateImageScale", $"zoomimg_{Image.Id}", Scale);
+    }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (isGrabEnabled)
+        {
+            isGrabEnabled = false;
+            string id = "scrollableDiv_" + Image.Id;
+            await JS.InvokeVoidAsync("enableGrabScroll", id);
+            await JS.InvokeVoidAsync("enableDragOnly", id);
+        }
+
+    }
+}

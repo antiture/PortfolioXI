@@ -1,60 +1,89 @@
-.visioner{
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-}
-.image-visioner{
-    margin: auto;
-}
-.grab-area {
+/* /////////// grab */
+
+.visioner-grab-area.visioner-active .image-Verti,
+.visioner-grab-area.visioner-active .image-Ori {
   cursor: grab;
-  overflow: auto;
 }
 .grab-area.grabbing {
   cursor: grabbing;
   user-select: none;
 }
-.grabbing .image-visioner{
-    cursor: grabbing !important;
-    user-select: none;
+.grabbing .image-Verti,
+.grabbing .image-Ori {
+  cursor: grabbing !important;
+  user-select: none;
 }
 /* /////////// verti */
-.img-active.image-verti{ 
-  max-width: 1200px !important; 
+.visioner-wrapper .visioner-active .image-Verti {
+  max-width: 1200px !important;
   height: auto !important;
   max-height: none !important;
 }
 
-.img-normal.image-verti{ 
-  max-width: 100%; 
+.image-Verti {
+  max-width: 100%;
   max-height: 100vh;
   cursor: zoom-in;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* /////////// ori */
-.img-active.image-ori{ 
-  max-height: 1200px !important; 
+.visioner-wrapper .visioner-active .image-Ori {
+  max-height: 1200px !important;
   width: auto !important;
   max-width: none !important;
 }
-.img-normal.image-ori{ 
-  max-width: 100%; 
+.image-Ori {
+  max-width: 100%;
   max-height: 1500px;
   cursor: zoom-in;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-
-
-.btn-resize-image{
+.btn-resize-image {
   position: fixed;
   bottom: calc(50vh - 10px);
   right: 10px;
+  width: 24px;
+  height: 24px;
 }
-.btn-resize-image.img-normal{
+.btn-resize-image.img-normal {
   display: none;
+
 }
-.visioner .img-active{
+.visioner .visioner-active {
   cursor: grab;
   user-select: none;
+}
+/*/////////////////////////////*/
+.visioner-active {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.visioner-grab-area img {
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+
+.slider-zoom-visioner{
+    position:fixed;
+    z-index:100000;
+    top:0px;
+
+}
+.visioner img {
+    will-change: transform;
+    cursor: grab;
+    user-select: none;
+    pointer-events: all;
+    max-width: none; /* 防止被容器限制 */
+    max-height: none;
 }

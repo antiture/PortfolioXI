@@ -10,23 +10,23 @@
                  Title4="Introduction"
                  Paragraphs="@Paragraphs" />
 
-    <GrapImage @ref="@Images[1].Ref" Id="@Images[1].Id">
-        <img src="@Images[1].Src" alt="Cover" class="image-visioner image-ori @Images[1].Ref?.ImageClass"
-             @onclick="@(() => Images[1].Ref?.ToggleImage())" />
-    </GrapImage>
-    <GrapImage @ref="@Images[2].Ref" Id="@Images[2].Id">
-        <img src="@Images[2].Src" alt="Cover" class="image-visioner image-ori @Images[2].Ref?.ImageClass"
-             @onclick="@(() => Images[2].Ref?.ToggleImage())" />
-    </GrapImage>
+    <VisionerImage Image=Images[1]>
+        tesrtedfjsqmdfoiuqomsdfjqsmlidfjqsdl sdmlkjfqsmdlkjflksdqj f
+    </VisionerImage>
+    <VisionerImage Image=Images[2]>
+        tesrtedfjsqmdfoiuqomsdfjqsmlidfjqsdl sdmlkjfqsmdlkjflksdqj f
+    </VisionerImage>
+
+
 
 </div>
 
 @code {
     private List<ImageItem> Images = new()
     {
-        new ImageItem { Src = "images/1_UX_Erlay-0.png", Id = "UX_Erlay-0" },
-        new ImageItem { Src = "images/1_UX_Erlay-1.png", Id = "UX_Erlay-1" },
-        new ImageItem { Src = "images/1_UX_Erlay-2.png", Id = "UX_Erlay-2" },
+        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-0" },
+        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-1" , Dir = ImageDirection.Verti},
+        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "UX_Erlay-2" , Dir = ImageDirection.Ori},
         new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
         // ... 可继续添加更多
     };

@@ -1,77 +1,25 @@
-﻿@inject IJSRuntime JS;
+﻿
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Cover</MudNavLink>
+</MudNavMenu>
 
-<div class="top-row ps-3 navbar navbar-dark" id="topRow"> 
-        Portfolio - Zijian XI
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button> 
-</div>
+<MudNavMenu>
+    <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">UX</MudNavLink>
+</MudNavMenu>
+<MudNavMenu>
+    <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">Architecture</MudNavLink>
+</MudNavMenu>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <div class="flex-column" style="height: 100%; display: flex;"> 
-        <nav class="flex-column">
-            <div class="nav-item ">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    Cover
-                </NavLink>
-            </div>
-            
-            <div class="nav-item ">
-                <NavLink class="nav-link" href="UX">
-                    UX
-                </NavLink>
-            </div>
-            <div class="nav-item "> 
-                <NavLink class="nav-link" href="page02">
-                    Architecture
-                </NavLink>
-            </div>
-            <div class="nav-item "> 
-                <NavLink class="nav-link" href="page03">
-                    AI Model 
-                </NavLink>
-            </div>
-            <div class="nav-item "> 
-                <NavLink class="nav-link" href="page04">
-                    Gestion de projet
-                </NavLink>
-            </div> 
-            @* <div class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-                </NavLink>
-            </div> *@
-           
-        </nav>
-        <div class="bottom-row">
-            <a class="btn" href="mailto:antiture@gmail.com?subject=Contact&body=Hello">
-                email
-            </a>
-            <a class="btn"
-               href="https://www.linkedin.com/in/zijian-xi/"
-               target="_blank"
-               rel="noopener">
-                linkedin
-            </a>
-        </div>
-    </div>
-</div>
+<MudNavMenu>
+    <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">AI Model</MudNavLink>
+</MudNavMenu>
+<MudNavMenu>
+    <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">Gestion de projet</MudNavLink>
+</MudNavMenu>
 
-@code {
-    private bool collapseNavMenu = true; 
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
- 
-
-  
-}
+<MudNavMenu>
+    <MudNavLink Href="mailto:antiture@gmail.com?subject=Contact&body=Hello">Email</MudNavLink>
+</MudNavMenu>
+<MudNavMenu>
+    <MudNavLink Href="https://www.linkedin.com/in/zijian-xi/">Linkedin</MudNavLink>
+</MudNavMenu>

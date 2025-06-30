@@ -30,6 +30,11 @@
             }
         </div>
     }
+    @if (!string.IsNullOrWhiteSpace(Explication))
+    {
+        <div class="text-explication">@Explication</div>
+    }
+
 </div>
 
 @code {
@@ -39,4 +44,5 @@
     [Parameter] public string? Title3 { get; set; }
     [Parameter] public string? Title4 { get; set; }
     [Parameter] public List<string>? Paragraphs { get; set; }
+    [Parameter] public string? Explication { get; set; }
 }

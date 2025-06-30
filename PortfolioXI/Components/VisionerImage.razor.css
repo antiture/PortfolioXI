@@ -1,0 +1,39 @@
+.visioner-wrapper {
+  position: fixed;
+  z-index: 10000;
+}
+.visioner.visioner-active {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  z-index: 9999;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-resize-image {
+  z-index: 10000;
+}
+.visioner {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+}
+.visioner-Ori {
+  flex-direction: row;
+}
+.visioner-Verti {
+  flex-direction: column;
+}
+.wrapper-image-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper-image-flow .explication-image {
+  margin: 8px 0px 24px 0px;
+}
+
+
