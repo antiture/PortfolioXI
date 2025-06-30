@@ -17,6 +17,10 @@
     mask-image: url('logo.svg');
 }
 
+.iconmax-logo-menu {
+    -webkit-mask-image: url('logo-menu.svg');
+    mask-image: url('logo-menu.svg');
+}
 
 
 
