@@ -1,16 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <base href="/PortfolioXI/" />
-    <title></title>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
 </head>
 <body>
     <script>
-        // redirect all unknown routes to the main index.html
-        var path = window.location.pathname.replace(/\/PortfolioXI/, "");
-        window.location.href = "/PortfolioXI/index.html?path=" + path;
+        // GitHub Pages fallback: redirect to SPA
+        var path = location.pathname.replace(/^\/PortfolioXI/, "");
+        var search = location.search;
+        var hash = location.hash;
+        var newUrl = "/PortfolioXI/index.html?path=" + path + search + hash;
+        window.location.replace(newUrl);
     </script>
-
 </body>
 </html>

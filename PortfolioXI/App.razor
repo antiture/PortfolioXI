@@ -18,9 +18,9 @@
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         var path = query.Get("path");
 
-        if (!string.IsNullOrWhiteSpace(path))
+        if (!string.IsNullOrWhiteSpace(path) && !Nav.Uri.EndsWith(path))
         {
-            Nav.NavigateTo(path, true); 
+            Nav.NavigateTo(Nav.BaseUri.TrimEnd('/') + path, true);
         }
     }
 }
