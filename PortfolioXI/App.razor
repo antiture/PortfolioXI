@@ -10,17 +10,4 @@
         </LayoutView>
     </NotFound>
 </Router>
-
-@code {
-    protected override void OnInitialized()
-    {
-        var uri = Nav.ToAbsoluteUri(Nav.Uri);
-        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-        var path = query.Get("path");
-
-        if (!string.IsNullOrWhiteSpace(path) && !Nav.Uri.EndsWith(path))
-        {
-            Nav.NavigateTo(Nav.BaseUri.TrimEnd('/') + path, true);
-        }
-    }
-}
+ 
