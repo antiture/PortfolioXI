@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script>
+        // 获取完整路径（包括子路径）
+        var path = window.location.pathname;
+
+        // 修正路径为 Blazor 项目的入口 index.html，并附上原路径作为查询参数
+        var newUrl = "/PortfolioXI/";
+
+        // 执行跳转
+        window.location.replace(newUrl);
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
