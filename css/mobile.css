@@ -4,11 +4,18 @@
     top: auto !important;
     bottom: 20px !important;
   }
+
   .btn-resize-image {
     position: fixed;
     z-index: 10001 !important;
     width: 50px !important;
     height: 50px !important;
     right: 0px;
+  }
+
+ 
+  .mud-nav-link .mud-nav-link-text {
+    font-size: 1.5rem !important;
+    font-weight: 200 !important;
   }
 }
