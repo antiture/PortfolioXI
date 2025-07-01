@@ -41,5 +41,41 @@
 }
 
 .title-1 {
-  margin-top: 80px;
+  font-size: 5rem;
+} 
+.title-1-sub {
+  font-size: 2rem;
+} 
+.title-2 {
+  font-size: 4rem;
+} 
+.title-2-sub {
+  font-size: 1.8rem;
+} 
+.title-3 {
+  font-size: 2rem;
+} 
+.title-3-sub {
+  font-size: 1.8rem;
+} 
+.title-4 {
+  font-size: 1.6rem;
+} 
+.title-5 {
+  font-size: 1.4rem;
+} 
+.title-6 {
+  font-size: 1.2rem;
+}  
+.mud-typography-body1{ 
+    font-size: 1rem;
+} 
+.mud-typography-body2{ 
+  font-size: 0.8rem; 
+}
+.mud-typography-body1 strong{ 
+    font-size: 1rem;
+} 
+.mud-typography-body2 strong { 
+  font-size: 0.8rem; 
 }
