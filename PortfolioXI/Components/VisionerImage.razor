@@ -1,7 +1,11 @@
 @inject IJSRuntime JS
 
 <div class="wrapper-image-flow">
-    <img src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" @onclick="ToggleImage" />
+    <img src="@Image.Src"
+         alt="@Image.Alt"
+         class="image-@Image.Dir"
+         style="@GetInitialImageStyle()"
+         @onclick="ToggleImage" />
     @if (ChildContent is not null)
     {
         <div class="explication-image  mud-typography-body2"  >@ChildContent</div>
@@ -49,6 +53,41 @@
     {
         Scale = value;
         await JS.InvokeVoidAsync("updateImageSize", $"zoomimg_{Image.Id}", Scale);
+    }
+    private string GetInitialImageStyle()
+    {
+        if (string.IsNullOrWhiteSpace(Image.Size))
+            return string.Empty;
+
+        var parts = Image.Size.Split('*');
+        if (parts.Length == 1)
+        {
+            if (Image.Size.StartsWith("*") && int.TryParse(parts[0][1..], out var onlyH))
+            {
+                return $"max-height: {onlyH}px;";
+            }
+            if (int.TryParse(parts[0], out var onlyW))
+            {
+                return $"max-width: {onlyW}px;";
+            }
+        }
+
+        if (parts.Length == 2)
+        {
+            string? wStr = parts[0];
+            string? hStr = parts[1];
+            var style = "";
+
+            if (!string.IsNullOrWhiteSpace(wStr) && int.TryParse(wStr, out var w))
+                style += $"max-width: {w}px;";
+
+            if (!string.IsNullOrWhiteSpace(hStr) && int.TryParse(hStr, out var h))
+                style += $"max-height: {h}px;";
+
+            return style;
+        }
+
+        return string.Empty;
     }
 
     public async void ToggleImage()

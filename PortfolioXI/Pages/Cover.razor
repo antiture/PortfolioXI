@@ -2,24 +2,46 @@
 
 <PageTitle>Cover</PageTitle>
 
+<div class="layout-cover">
+    <div class="cover-img-01">
+        <div class="cover-img-01-letter iconmax iconmax-P  cover-img-01-letter-P"></div>
+        <div class="cover-img-01-letter iconmax iconmax-O  cover-img-01-letter-O"></div>
+        <div class="cover-img-01-letter iconmax iconmax-R  cover-img-01-letter-R"></div>
+        <div class="cover-img-01-letter iconmax iconmax-T  cover-img-01-letter-T"></div>
+        <div class="cover-img-01-letter iconmax iconmax-F  cover-img-01-letter-F"></div>
+        <div class="cover-img-01-letter iconmax iconmax-O  cover-img-01-letter-O"></div>
+        <div class="cover-img-01-letter iconmax iconmax-L  cover-img-01-letter-L"></div>
+        <div class="cover-img-01-letter iconmax iconmax-I  cover-img-01-letter-I"></div>
+        <div class="cover-img-01-letter iconmax iconmax-O  cover-img-01-letter-O"></div>
+    </div>
+    <div class="cover-img-02 ">
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+        <div class="iconmax iconmax-dots  cover-img-dots"></div>
+    </div>
+    <div class="portfolio-banner">
+        <div class="left-block">
+            <div class="year">2025</div>
+            <div class="role">Product Owner AI</div>
+        </div>
+        <div class="diago-wrapper">
+            <svg class="diagonal-line" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="100%" x2="100%" y2="0" />
+            </svg>
+        </div>
+        <div class="right-block">
+            <div class="title-right-block"><strong>Zijian XI</strong></div>
+            <div class="content-card"> 
+                <p><strong>01 - Méthodologie & Positionnement</strong></p>
+                <p><strong>02 - UX :</strong> Erlay – Plateforme juridique collaborative (2019)</p>
+                <p><strong>03 - AI Model :</strong> Architecture interprétable du Décodeur GPT (NLP, AI)</p>
+                <p><strong>04 - Architecture :</strong> Assistant IA pour workflow distribué (.NET MAUI, C#, Blazor)</p>
+                <p><strong>05 - Gestion de projet :</strong> General Machine Learning Workflow (V.4.5)</p>
+            </div>
+        </div>
+    </div>
 
-<div class="center-flow">
-    <VisionerImage Image=Images[0]>
-    </VisionerImage>
 </div>
-
-@code {
-    private VisionerImage? imgRef;
-    private void ClickHandler()
-    {
-        Console.WriteLine("按钮被点击了");
-    }
-    private List<ImageItem> Images = new()
-    {
-        new ImageItem { Src = "images/0_Cover.png", Id = "imageCover" , Dir = ImageDirection.Verti},
-        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-1" , Dir = ImageDirection.Verti},
-        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "UX_Erlay-2" , Dir = ImageDirection.Ori},
-        new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
-        // ... 可继续添加更多
-    };
-}

@@ -66,6 +66,7 @@
 }
 
 .visioner-grab-area img {
+    margin: auto;
     cursor: grab;
     transition: width 0.2s ease, height 0.2s ease;
     user-select: none;

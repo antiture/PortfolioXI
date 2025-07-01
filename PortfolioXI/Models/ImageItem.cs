@@ -4,6 +4,7 @@ namespace PortfolioXI.Models;
 
 public class ImageItem
 {
+    public string? Size { get; set; }
     public string Src { get; set; } = string.Empty;
     public string Alt { get; set; } = string.Empty;
     public string Id { get; set; } = Guid.NewGuid().ToString(); 
