@@ -1,0 +1,36 @@
+@using Microsoft.JSInterop
+@inject IJSRuntime JS
+@implements IAsyncDisposable
+
+<div @ref="_ref">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public EventCallback<double> OnResize { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    private ElementReference _ref;
+    private DotNetObjectReference<ObserverSize>? _dotNetRef;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _dotNetRef = DotNetObjectReference.Create(this);
+            await JS.InvokeVoidAsync("responsiveResizeObserver.observe", _dotNetRef, _ref, "ObserverSizeComponent");
+        }
+    }
+
+    [JSInvokable]
+    public async Task OnResizeCallback(double width)
+    {
+        await OnResize.InvokeAsync(width);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await JS.InvokeVoidAsync("responsiveResizeObserver.unobserve", "ObserverSizeComponent");
+        _dotNetRef?.Dispose();
+    }
+}
