@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PortfolioXI",
   "resources": {
-    "hash": "sha256-QlGL6bKp2DGseTDdM1D0RcRz5McBFsM56Drw78AEzsA=",
+    "hash": "sha256-Th3jcgGB6mt8udG50uWTjPd48I430s12VIz2WRJaFjA=",
     "jsModuleNative": {
       "dotnet.native.8.0.17.qnqnu9is6n.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -35,7 +35,7 @@
       "Microsoft.JSInterop.wasm": "sha256-hFPgEVsOaQdA/BFhPi3DSLLRbJs66+LCJzH87t96F+I=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-Gr/L26Jyez1dM+fEGHQGxP8JHk43Q4A5VAiq6U2r4Kk=",
       "MudBlazor.wasm": "sha256-R/0wbL01hVgA+akWeXwK/0Ms1rBtvs29INtqdr2N8Lc=",
-      "PortfolioXI.wasm": "sha256-KfGeLNq/rIV7zY1b5D56utyoO8iO+dE7osqSm8EdILw=",
+      "PortfolioXI.wasm": "sha256-fY4wAnRc20DEtyzQV2dR2hUqbMf/8zzpHzn1uuAJg7A=",
       "System.Collections.Concurrent.wasm": "sha256-WaPc+0PZQMWX1vZCTvs3VLEKJU/cJQlTKyTL1j/5ZBA=",
       "System.Collections.Immutable.wasm": "sha256-6h1p4zRiXH1FhauU/xVcYwlR89Es4CzQYsth8ZhV1BE=",
       "System.Collections.wasm": "sha256-ABN2nG8niPTJz3voATiw3r2mTcH1Pm1TFa6pKBfovg8=",
