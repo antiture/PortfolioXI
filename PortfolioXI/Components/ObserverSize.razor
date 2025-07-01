@@ -1,17 +1,23 @@
-@using Microsoft.JSInterop
+﻿@using Microsoft.JSInterop
 @inject IJSRuntime JS
 @implements IAsyncDisposable
 
-<div @ref="_ref">
-    @ChildContent
-</div>
+<CascadingValue Value="IsMobile">
+    <div @ref="_ref">
+        @ChildContent
+    </div>
+</CascadingValue>
 
 @code {
-    [Parameter] public EventCallback<double> OnResize { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    // ✅ 可选回调参数
+    [Parameter] public EventCallback<double> OnResize { get; set; }
 
     private ElementReference _ref;
     private DotNetObjectReference<ObserverSize>? _dotNetRef;
+
+    public bool IsMobile { get; private set; }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -25,7 +31,18 @@
     [JSInvokable]
     public async Task OnResizeCallback(double width)
     {
-        await OnResize.InvokeAsync(width);
+        var newState = width < 768;
+
+        if (newState != IsMobile)
+        {
+            IsMobile = newState;
+            StateHasChanged(); // ✅ 触发 Cascading 更新
+        }
+
+        if (OnResize.HasDelegate)
+        {
+            await OnResize.InvokeAsync(width); // ✅ 可选回调
+        }
     }
 
     public async ValueTask DisposeAsync()
