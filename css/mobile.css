@@ -1,8 +1,14 @@
 @media (max-width: 767px) {
   /* mobile-specific styles */
-  .visioner-wrapper-tool { 
+  .visioner-wrapper-tool {
     top: auto !important;
     bottom: 20px !important;
- 
+  }
+  .btn-resize-image {
+    position: fixed;
+    z-index: 10001 !important;
+    width: 50px !important;
+    height: 50px !important;
+    right: 0px;
   }
 }
