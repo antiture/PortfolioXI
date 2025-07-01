@@ -4,9 +4,7 @@
     <img src="@Image.Src" alt="@Image.Alt" class="image-@Image.Dir" @onclick="ToggleImage" />
     @if (ChildContent is not null)
     {
-        <div class="explication-image">
-            @ChildContent
-        </div>
+        <div class="explication-image  mud-typography-body2"  >@ChildContent</div>
     }
 </div>
 
@@ -59,14 +57,16 @@
         isImageActive = true;
         isImageToggleEnabled = false;
         isGrabEnabled = true;
+        await JS.InvokeVoidAsync("document.body.style.setProperty", "overflow", "hidden");
 
         await InvokeAsync(StateHasChanged); // 等待视图刷新后启用 JS
     }
 
-    private void ToggleEnable()
+    private async void ToggleEnable()
     {
         isImageActive = false;
         isImageToggleEnabled = true;
+        await JS.InvokeVoidAsync("document.body.style.removeProperty", "overflow");
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

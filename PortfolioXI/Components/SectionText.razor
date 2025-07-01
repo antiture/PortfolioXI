@@ -1,48 +1,59 @@
 <!-- SectionDisplay.razor -->
-<div class="section-display">
+<div class="section-text">
     @if (!string.IsNullOrWhiteSpace(Title1))
     {
-        <div class="title-1">@Title1</div>
+        <MudText Class="title-1 " Typo="Typo.h1">@Title1</MudText>
     }
     @if (!string.IsNullOrWhiteSpace(Title1Sub))
     {
-        <div class="title-1-sub">@Title1Sub</div>
+        <MudText Class="title-1-sub" Typo="Typo.h2">@Title1Sub</MudText>
     }
     @if (!string.IsNullOrWhiteSpace(Title2))
     {
-        <div class="title-2">@Title2</div>
+        <MudText Class="title-2 " Typo="Typo.h2">@Title2</MudText>
     }
     @if (!string.IsNullOrWhiteSpace(Title3))
     {
-        <div class="title-3">@Title3</div>
+        <MudText Class="title-3 " Typo="Typo.h3">@Title3</MudText>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title3Sub))
+    {
+        <MudText Class="title-3-sub" Typo="Typo.h4">@Title3Sub</MudText>
     }
     @if (!string.IsNullOrWhiteSpace(Title4))
     {
-        <div class="title-4">@Title4</div>
+        <MudText Class="title-4 " Typo="Typo.h4">@Title4</MudText>
     }
-
-    @if (Paragraphs?.Any() == true)
+    @if (!string.IsNullOrWhiteSpace(Title5))
+    {
+        <MudText Class="title-5" Typo="Typo.h5">@Title5</MudText>
+    }
+    @if (!string.IsNullOrWhiteSpace(Title6))
+    {
+        <MudText Class="title-6 " Typo="Typo.h6">@Title6</MudText>
+    } 
+    @if (ChildContent is not null)
     {
         <div class="text">
-            @foreach (var para in Paragraphs)
-            {
-                <p class="paraph">@((MarkupString)para)</p>
-            }
+            
+                <MudText Typo="Typo.body1">@ChildContent</MudText>  
         </div>
     }
     @if (!string.IsNullOrWhiteSpace(Explication))
-    {
-        <div class="text-explication">@Explication</div>
-    }
-
+    { 
+        <MudText Typo="Typo.body2">@Explication</MudText>
+    } 
 </div>
 
 @code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
     [Parameter] public string? Title1 { get; set; }
     [Parameter] public string? Title1Sub { get; set; }
     [Parameter] public string? Title2 { get; set; }
     [Parameter] public string? Title3 { get; set; }
+    [Parameter] public string? Title3Sub { get; set; }
     [Parameter] public string? Title4 { get; set; }
-    [Parameter] public List<string>? Paragraphs { get; set; }
+    [Parameter] public string? Title5 { get; set; }
+    [Parameter] public string? Title6 { get; set; } 
     [Parameter] public string? Explication { get; set; }
 }

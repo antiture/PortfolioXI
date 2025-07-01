@@ -1,6 +1,7 @@
-.mud-nav-link{
-    padding: 4px 4px !important;
+.mud-nav-link {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
-.mud-main-content{
-    padding-top: 0px !important;
+.mud-main-content {
+  padding-top: 0px !important;
 }

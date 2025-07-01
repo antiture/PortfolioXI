@@ -23,14 +23,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 40px 20px;
 }
 
     .wrapper-image-flow .explication-image {
-        margin: 8px 0px 24px 0px;
+        margin: 8px 0px 8px 0px;
+        text-align: center;
     }
 
     .wrapper-image-flow img {
-        cursor: zoom-in !important;
+        cursor: zoom-in !important; 
     }
 
 
