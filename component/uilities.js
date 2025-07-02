@@ -20,3 +20,7 @@
         }
     }
 };
+window.detectMobile = function () {
+    const el = document.getElementById("mobile-check");
+    return window.getComputedStyle(el).display !== "none";
+};
