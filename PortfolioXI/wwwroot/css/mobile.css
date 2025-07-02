@@ -41,4 +41,11 @@
     .right-block {
         margin-bottom: -0px !important;
     }
+    .navmenu-endpage {
+        background-color: var(--mud-palette-drawer-background) ;
+        padding-bottom:80px;
+    }
+    .portfolio-banner  { 
+        margin-bottom: 50px !important;
+    }
 }
