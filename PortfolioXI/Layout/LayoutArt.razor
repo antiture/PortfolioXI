@@ -1,0 +1,96 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<MudLayout>
+    <ObserverSize OnResize="HandleResize">
+        <CascadingValue Value="IsTech">
+            @if (_renderReady)
+            {
+                @if (!_isMobile)
+                {
+                    <MudDrawer @bind-Open="@_open" Variant="@DrawerVariant.Responsive">
+                        <MudDrawerHeader Class="top-site-art">
+                            <MudText id="topSiteTitleArt" Typo="Typo.h6"></MudText>
+                        </MudDrawerHeader>
+                        <NavMenu />
+                        <MudNavMenu Style="margin-top: auto;">
+                            <MudSwitch @bind-Value="_isDarkMode" Class="theme-swith"
+                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                       ThumbIconColor="Color.Dark" />
+                        </MudNavMenu>
+                    </MudDrawer>
+                    <button id="logoStartArt" @onclick="OpenDrawer">
+                        <span class="iconmax iconmax-logo-art px60"></span>
+                    </button>
+                }
+                else
+                {
+                    @if (_openBottom)
+                    {
+                        <MudDrawer @bind-Open="_openBottom"
+                                   Width="100vw"
+                                   Height="auto"
+                                   Anchor="Anchor.Bottom"
+                                   Variant="DrawerVariant.Temporary"
+                                   Elevation="2">
+                            <div class="nav-header-bottom row">
+                                <span class="iconmax iconmax-logo px48"></span>
+                            </div>
+                            <NavMenu />
+                            <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
+                                <MudSwitch @bind-Value="_isDarkMode"
+                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                           ThumbIconColor="Color.Dark" />
+                            </MudNavMenu>
+                        </MudDrawer>
+                    }
+                    else
+                    {
+                        <button id="logoBottom" @onclick="OpenDrawerBottom">
+                            <span class="iconmax iconmax-logo-menu px45"></span>
+                        </button>
+                    }
+                }
+                <MudMainContent>
+                    @Body
+                    @if (_isMobile)
+                    {
+                        <NavMenu></NavMenu>
+                    }
+                </MudMainContent>
+            }
+        </CascadingValue>
+    </ObserverSize>
+</MudLayout>
+
+@code {
+    private MudTheme _theme = new();
+    private bool _isDarkMode = false;
+    private bool _openBottom = false;
+    private bool _open = true;
+    private bool _isMobile;
+    private bool _renderReady = false;
+    public bool IsTech { get; private set; } = false;
+    private void HandleResize(double width)
+    {
+        var newState = width < 768;
+        if (newState != _isMobile || !_renderReady)
+        {
+            _isMobile = newState;
+            _renderReady = true;
+            InvokeAsync(StateHasChanged);
+        }
+    }
+    private async Task OpenDrawerBottom()
+    {
+        _openBottom = !_openBottom;
+
+        string js = $"document.body.style.overflow = '{(_openBottom ? "hidden" : "")}';";
+        await JS.InvokeVoidAsync("eval", js);
+    }
+    private void OpenDrawer() => _open = !_open;
+}

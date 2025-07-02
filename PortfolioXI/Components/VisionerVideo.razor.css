@@ -1,0 +1,6 @@
+.visioner-video {
+    padding-left: calc( var(--indent) *0 + 1rem);
+    position: relative;
+    min-width: 100%;
+    aspect-ratio: 16 / 9;
+}

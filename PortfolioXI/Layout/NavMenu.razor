@@ -2,23 +2,35 @@
 <MudNavMenu>
     <MudNavLink Href="" Match="NavLinkMatch.All">Home</MudNavLink>
 </MudNavMenu>
-<MudNavMenu>
-    <MudNavLink Href="Methodology" Match="NavLinkMatch.All">Methodology</MudNavLink>
-</MudNavMenu>
-<MudNavMenu>
-    <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">UX</MudNavLink>
-</MudNavMenu>
-<MudNavMenu>
-    <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">Architecture</MudNavLink>
-</MudNavMenu>
+<MudNavGroup Title="Tech" Expanded="@IsTech">
+    <MudNavMenu>
+        <MudNavLink Href="Methodology" Match="NavLinkMatch.All">Methodology</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">UX</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">Architecture</MudNavLink>
+    </MudNavMenu>
 
-<MudNavMenu>
-    <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">AI Model</MudNavLink>
-</MudNavMenu>
-<MudNavMenu>
-    <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">Gestion de projet</MudNavLink>
-</MudNavMenu>
-
+    <MudNavMenu>
+        <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">AI Model</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">Gestion de projet</MudNavLink>
+    </MudNavMenu>
+</MudNavGroup>
+<MudNavGroup Title="Art" Expanded="@(IsTech == false)">
+    <MudNavMenu>
+        <MudNavLink Href="Painting" Match="NavLinkMatch.Prefix">Painting</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="Sketch" Match="NavLinkMatch.Prefix">Sketch</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="ImageVideo" Match="NavLinkMatch.Prefix">Image vidéo</MudNavLink>
+    </MudNavMenu> 
+</MudNavGroup>
 
 <MudNavGroup Title="Contact" Expanded="@IsMobile">
     <MudNavLink Href="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf" Target="_blank" Download="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf">
@@ -29,9 +41,10 @@
     </MudNavMenu>
     <MudNavMenu>
         <MudNavLink Href="https://www.linkedin.com/in/zijian-xi/">Linkedin</MudNavLink>
-    </MudNavMenu> 
+    </MudNavMenu>
 </MudNavGroup>
 
 @code {
     [CascadingParameter] public bool IsMobile { get; set; }
+    [CascadingParameter] public bool IsTech { get; set; }
 }

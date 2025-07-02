@@ -1,0 +1,75 @@
+﻿@page "/Painting"
+@layout LayoutArt
+@using PortfolioXI.Components
+<PageTitle>Painting</PageTitle>
+
+<div class="text-flow">
+     
+
+    <SectionText Title2="Yes! I was a painter...">
+        <Br12 />I received formal training in easel painting from 2006 to 2010. This is a work from that period.
+    </SectionText> 
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+     
+    <VisionerImage Image=Images[2]>
+    </VisionerImage> 
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage> 
+    <VisionerImage Image=Images[4]>
+    </VisionerImage> 
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage> 
+
+    <VisionerImage Image=Images[6]>
+    </VisionerImage> 
+
+    <VisionerImage Image=Images[7]>
+    </VisionerImage> 
+
+    <VisionerImage Image=Images[8]>
+     </VisionerImage>
+     
+    <VisionerImage Image=Images[9]>
+    </VisionerImage>
+     
+
+    <VisionerImage Image=Images[10]>
+    </VisionerImage>
+     
+
+    <VisionerImage Image=Images[11]>
+    </VisionerImage>
+     
+    <VisionerImage Image=Images[13]>
+    </VisionerImage> 
+    <Declaration></Declaration>
+
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/painting/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/04.png", Id = "04" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/05.png", Id = "05" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/06.png", Id = "06" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/07.png", Id = "07" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/08.png", Id = "08" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/09.png", Id = "09" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/10.png", Id = "10" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/11.png", Id = "11" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/12.png", Id = "12" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/13.png", Id = "13" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/14.png", Id = "14" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/painting/15.png", Id = "15" , Dir = ImageDirection.Ori }
+        // ... 可继续添加更多
+    };
+    
+}
