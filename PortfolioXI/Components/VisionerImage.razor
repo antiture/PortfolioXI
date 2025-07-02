@@ -1,8 +1,8 @@
 @inject IJSRuntime JS
 
 <div class="wrapper-image-flow">
-    <img src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="event.preventDefault();"
-        class="image-@Image.Dir" style="@GetInitialImageStyle()" @onclick="ToggleImage" />
+    <img src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="return true;"
+        ontouchend="return true;" class="image-@Image.Dir" style="@GetInitialImageStyle()" @onclick="ToggleImage" />
     @if (ChildContent is not null)
     {
         <div class="explication-image  mud-typography-body2">@ChildContent</div>
@@ -13,9 +13,8 @@
 {
     <div class="visioner-wrapper">
         <div id="scrollableDiv_@Image.Id" class="visioner visioner-@Image.Dir visioner-grab-area @ImageClass">
-            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;"
-                ontouchstart="event.preventDefault();" class="image-@Image.Dir" id="zoomimg_@Image.Id"
-                data-scale="@Scale" />
+            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="return true;"
+                ontouchend="return true;" class="image-@Image.Dir" id="zoomimg_@Image.Id" data-scale="@Scale" />
         </div>
     </div>
     <div class="visioner-wrapper-tool row">
