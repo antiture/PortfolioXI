@@ -1,14 +1,11 @@
 @inject IJSRuntime JS
 
 <div class="wrapper-image-flow">
-    <img src="@Image.Src"
-         alt="@Image.Alt"
-         class="image-@Image.Dir"
-         style="@GetInitialImageStyle()"
-         @onclick="ToggleImage" />
+    <img src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="event.preventDefault();"
+        class="image-@Image.Dir" style="@GetInitialImageStyle()" @onclick="ToggleImage" />
     @if (ChildContent is not null)
     {
-        <div class="explication-image  mud-typography-body2"  >@ChildContent</div>
+        <div class="explication-image  mud-typography-body2">@ChildContent</div>
     }
 </div>
 
@@ -16,20 +13,15 @@
 {
     <div class="visioner-wrapper">
         <div id="scrollableDiv_@Image.Id" class="visioner visioner-@Image.Dir visioner-grab-area @ImageClass">
-            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt"
-                 class="image-@Image.Dir"
-                 id="zoomimg_@Image.Id"
-                 data-scale="@Scale" />
+            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;"
+                ontouchstart="event.preventDefault();" class="image-@Image.Dir" id="zoomimg_@Image.Id"
+                data-scale="@Scale" />
         </div>
     </div>
     <div class="visioner-wrapper-tool row">
 
-        <MudSlider Min="0.5" Max="2" Step="0.005"
-                   Value="@Scale"
-                   ValueChanged="@((double val) => OnScaleChanged(val))"
-                   ValueChanged:Event="oninput"
-                   Size="Size.Large" 
-                   Class="slider-zoom-visioner" /> 
+        <MudSlider Min="0.5" Max="2" Step="0.005" Value="@Scale" ValueChanged="@((double val) => OnScaleChanged(val))"
+            ValueChanged:Event="oninput" Size="Size.Large" Class="slider-zoom-visioner" />
         <button class="btn btn-primary btn-resize-image @ImageClass mud-theme-primary" @onclick="ToggleEnable">
             <i class="bi bi-x-lg"></i>
         </button>
@@ -119,4 +111,3 @@
         }
     }
 }
-
