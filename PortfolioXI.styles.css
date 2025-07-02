@@ -150,7 +150,7 @@ main[b-h6f22h5sgn] {
   left: 0px;
   z-index: 10000;
   padding: 4px 20px 9px 16px;
-  color: var(--mud-palette-primary);
+  color: var(--mud-typography-body1-letterspacing);
 }
 
 #logoStartArt:hover[b-h6f22h5sgn] {
@@ -220,7 +220,7 @@ main[b-h6f22h5sgn] {
 
 #logoStartArt[b-h6f22h5sgn]{
     top: 30px;
-    left:30px;
+    left:76px;
     padding: 0px;
 }
 /* /Layout/MainLayout.razor.rz.scp.css */
