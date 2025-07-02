@@ -19,32 +19,31 @@
   }
 
   .year {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
 
   .role {
-    font-size: 1rem !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    bottom:calc(0.8rem + 8px) !important;
   }
 
-  .layout-cover {
+  /* .layout-cover {
     padding: 0.3rem !important;
     padding-bottom: 200px !important;
     height: 100vh !important;
-  }
+  } */
 
-  .content-card {
-    margin-bottom: -0px !important;
-  }
+   
   .right-block {
     margin-bottom: -0px !important;
+    max-width: calc(100% - 40px)!important;
   }
   .navmenu-endpage {
     background-color: var(--mud-palette-drawer-background);
     padding-bottom: 80px;
   }
-  .portfolio-banner {
-    margin-bottom: 50px !important;
-  }
+ 
 
   .title-4 {
     margin-left: calc(var(--indent) * 0);
