@@ -157,3 +157,10 @@ code {
 #bottomSiteTitle{
     margin-left: 60px;
 }
+.top-site-art{
+    min-height: 110px !important;
+}
+
+.theme-swith{
+  opacity: 0.7;
+}
