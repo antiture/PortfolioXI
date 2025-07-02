@@ -1,51 +1,62 @@
 @media (max-width: 767px) {
-    /* mobile-specific styles */
-    .visioner-wrapper-tool {
-        top: auto !important;
-        bottom: 20px !important;
-    }
+  /* mobile-specific styles */
+  .visioner-wrapper-tool {
+    top: auto !important;
+    bottom: 20px !important;
+  }
 
-    .btn-resize-image {
-        position: fixed;
-        z-index: 10001 !important;
-        width: 50px !important;
-        height: 50px !important;
-        right: 0px;
-    }
+  .btn-resize-image {
+    position: fixed;
+    z-index: 10001 !important;
+    width: 50px !important;
+    height: 50px !important;
+    right: 0px;
+  }
 
+  .mud-nav-link .mud-nav-link-text {
+    font-size: 1.5rem !important;
+    font-weight: 200 !important;
+  }
 
-    .mud-nav-link .mud-nav-link-text {
-        font-size: 1.5rem !important;
-        font-weight: 200 !important;
-    }
+  .year {
+    font-size: 2rem !important;
+  }
 
-    .year {
-        font-size: 2rem !important;
-    }
+  .role {
+    font-size: 1rem !important;
+  }
 
-    .role {
-        font-size: 1rem !important;
-    }
+  .layout-cover {
+    padding: 0.3rem !important;
+    padding-bottom: 200px !important;
+    height: 100vh !important;
+  }
 
-    .layout-cover {
-        padding: 0.3rem !important;
-        padding-bottom: 200px !important;
-        height:100vh !important;
-    }
+  .content-card {
+    margin-bottom: -0px !important;
+  }
+  .right-block {
+    margin-bottom: -0px !important;
+  }
+  .navmenu-endpage {
+    background-color: var(--mud-palette-drawer-background);
+    padding-bottom: 80px;
+  }
+  .portfolio-banner {
+    margin-bottom: 50px !important;
+  }
 
-    .cover-img-01{ 
-    }
-    .content-card{
-        margin-bottom: -0px !important;
-    }
-    .right-block {
-        margin-bottom: -0px !important;
-    }
-    .navmenu-endpage {
-        background-color: var(--mud-palette-drawer-background) ;
-        padding-bottom:80px;
-    }
-    .portfolio-banner  { 
-        margin-bottom: 50px !important;
-    }
+  .title-4 {
+    margin-left: calc(var(--indent) * 0);
+  }
+  .title-5 {
+    margin-left: calc(var(--indent) * 0);
+  }
+  .title-6 {
+    margin-left: calc(var(--indent) * 1);
+  }
+  .mud-typography-body1,
+  .mud-typography-body2 {
+    padding-left: calc(var(--indent) * 1 + 0px);
+  }
 }
