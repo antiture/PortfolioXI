@@ -62,7 +62,7 @@ main {
   left: 0px;
   z-index: 10000;
   padding: 4px 20px 9px 16px;
-  color: var(--mud-palette-primary);
+  color: var(--mud-typography-body1-letterspacing);
 }
 
 #logoStartArt:hover {
