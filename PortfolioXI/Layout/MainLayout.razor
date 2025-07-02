@@ -9,7 +9,8 @@
 <MudLayout>
     <ObserverSize OnResize="HandleResize">
         @if (_renderReady)
-        { 
+        {
+
             @if (!_isMobile)
             {
                 <MudDrawer @bind-Open="@_open" Variant="@DrawerVariant.Responsive">
@@ -19,8 +20,8 @@
                     <NavMenu />
                     <MudNavMenu Style="margin-top: auto;">
                         <MudSwitch @bind-Value="_isDarkMode"
-                                   ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                   ThumbIconColor="Color.Dark" />
+                        ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                        ThumbIconColor="Color.Dark" />
                     </MudNavMenu>
                 </MudDrawer>
                 <button id="logoStart" @onclick="OpenDrawer">
@@ -32,19 +33,19 @@
                 @if (_openBottom)
                 {
                     <MudDrawer @bind-Open="_openBottom"
-                               Width="100vw"
-                               Height="auto"
-                               Anchor="Anchor.Bottom"
-                               Variant="DrawerVariant.Temporary"
-                               Elevation="2">
+                    Width="100vw"
+                    Height="auto"
+                    Anchor="Anchor.Bottom"
+                    Variant="DrawerVariant.Temporary"
+                    Elevation="2">
                         <div class="nav-header-bottom row">
                             <span class="iconmax iconmax-logo px48"></span>
                         </div>
                         <NavMenu />
                         <MudNavMenu Style="margin-left: auto;">
                             <MudSwitch @bind-Value="_isDarkMode"
-                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                       ThumbIconColor="Color.Dark" />
+                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                            ThumbIconColor="Color.Dark" />
                         </MudNavMenu>
                     </MudDrawer>
                 }
@@ -55,23 +56,17 @@
                     </button>
                 }
             } 
+
             <MudMainContent>
-                @if (_responsiveReady)
-                {
-                    <CascadingValue Value="_isMobile">
-                        @Body
-                    </CascadingValue>
-                }
+                @Body
                 @if (_isMobile)
                 {
-                    <div class="navmenu-endpage">
-                        <NavMenu />
-                    </div>
+                    <NavMenu></NavMenu>
                 }
             </MudMainContent>
         }
     </ObserverSize>
-</MudLayout> 
+</MudLayout>
 
 @code {
     private MudTheme _theme = new();
@@ -79,7 +74,6 @@
     private bool _openBottom = false;
     private bool _open = true;
     private bool _isMobile;
-    private bool _responsiveReady;
     private bool _renderReady = false;
 
     private void HandleResize(double width)
@@ -92,15 +86,13 @@
             InvokeAsync(StateHasChanged);
         }
     }
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+    private async Task OpenDrawerBottom()
     {
-        if (firstRender)
-        {
-            _isMobile = await JS.InvokeAsync<bool>("detectMobile");
-            _responsiveReady = true;
-            StateHasChanged();
-        }
+        _openBottom = !_openBottom;
+
+        string js = $"document.body.style.overflow = '{(_openBottom ? "hidden" : "")}';";
+        await JS.InvokeVoidAsync("eval", js);
     }
-    private void OpenDrawerBottom() => _openBottom = !_openBottom;
     private void OpenDrawer() => _open = !_open;
 }
