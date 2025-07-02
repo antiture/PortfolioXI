@@ -4,19 +4,133 @@
 <PageTitle>ProjectManagement</PageTitle>
   
 
-<div class="center-flow">
-    
-    <VisionerImage Image=Images[0]>
+<div class="text-flow">
+    <SectionText Title3="General Machine Learning Training Workflow" Title3Sub="Self-Attention Models · Neural · Tree · Linear · Clustering  - Version: 4.5"
+                 Title4="Introduction">
+
+        <Br12 /><strong>Ce schéma présente un flux de travail général</strong> pour l’entraînement de modèles d’apprentissage automatique, applicable à une variété de structures, notamment les réseaux de neurones, arBres de décision, régressions linéaires, algorithmes de regroupement (clustering) et mécanismes d’auto-attention.
+
+        <Br12 />Cette conception couvre l’<strong>ensemble du cycle de vie</strong> de l’apprentissage automatique :
+        <Indent>
+            <Br8 />- collecte des données
+            <Br0 />- prétraitement
+            <Br0 />- ingénierie des caractéristiques
+            <Br0 />- sélection et entraînement des modèles
+            <Br0 />- ajustement des hyperparamètres
+            <Br0 />- documentation et livraison finale des résultats
+        </Indent>
+
+        <Br12 />Elle met l’accent sur :
+        <Indent>
+            <Br8 />- la <strong>réutilisabilité modulaire</strong>
+            <Br0 />- la <strong>visualisation claire des processus</strong>
+            <Br0 />- la capacité de <strong>déploiement en environnement de production</strong>
+        </Indent>
+
+        <Br12 />Ce workflow est utilisé pour la <strong>formation automatique multi-modèles</strong> en environnement complexe (v.4.5).
+    </SectionText>
+    <SectionText Title4="Décomposition des Modules Fonctionnels" Title5=" 1. Collection — Phase de Traitement des Données">
+        <Br12 /><strong>Étapes principales de prétraitement des données :</strong>
+        <Indent>
+            <Br8 />1 – <strong>PROCESS</strong> : nettoyage des données, détection des doublons, mise en forme ;
+            <Br0 />2 – <strong>PreCheck</strong> : traitement initial des valeurs manquantes et des anomalies ;
+            <Br0 />3 – <strong>Unions</strong> : fusion de plusieurs jeux de données et standardisation des étiquettes ;
+            <Br0 />4 – <strong>GlobalAdaptation</strong> : unification des échelles, normalisation ou standardisation ;
+            <Br0 />5 – <strong>EnvUnderstanding</strong> & 6 – <strong>Verification</strong> : analyse de l’environnement des données et vérification de leur qualité.
+        </Indent>
+    </SectionText>
+    <SectionText Title5="2. Training — Ingénierie des Caractéristiques & Construction des Modèles">
+        <Br12 /><strong>Prise en charge de l'entraînement parallèle de cinq types de structures de modèles :</strong>
+        <Indent>
+            <Br8 />- <strong>TreeBased</strong>
+            <Br0 />- <strong>LinearBased</strong>
+            <Br0 />- <strong>ClusterBased</strong>
+            <Br0 />- <strong>NeuralBased</strong>
+            <Br0 />- <strong>SelfAttentionBased</strong>
+        </Indent>
+
+        <Br12 />Chaque modèle suit les étapes suivantes :
+        <Indent>
+            <Br8 />1 – <strong>FeaturePreprocessing</strong> : prétraitement des variables ;
+            <Br0 />2 – <strong>FeatureAnalysis</strong> : analyse des caractéristiques ;
+            <Br0 />3 – <strong>ModelAssignment</strong> : configuration du modèle.
+        </Indent>
+
+    </SectionText>
+    <SectionText Title5=" 3. Adjustment — Validation & Ajustement">
+        <Br12 /><strong>Phase d’évaluation et de validation :</strong>
+        <Indent>
+            <Br8 />- Intègre : <strong>K-Fold</strong>, <strong>GridSearch</strong>, <strong>ValidationSchema</strong> ;
+            <Br0 />- Exécution automatique de la <strong>vérification des métriques</strong>, de <strong>l’évaluation des performances</strong> et des <strong>mécanismes de retour arrière</strong> ;
+            <Br0 />- Les <strong>modèles validés</strong> passent ensuite à la phase de <strong>documentation</strong> et de <strong>génération de rapports</strong>.
+        </Indent>
+
+    </SectionText>
+    <SectionText Title5=" 4. Implementation & Accessory — Documentation & Livraison">
+        <Br12 /><strong>Phase de génération et finalisation :</strong>
+        <Indent>
+            <Br8 />- <strong>Génération de rapports modèles</strong> : schémas de structure, courbes de performance ;
+            <Br0 />- <strong>Export</strong> : sauvegarde des modèles (par exemple en <code>.pkl</code> ou <code>.onnx</code>) ;
+            <Br0 />- <strong>Documentation</strong> : documentation de la structure, des hyperparamètres et du processus d'entraînement ;
+            <Br0 />- <strong>PostStructLevelDoc</strong> : support de documentation spécifique et approfondie ;
+            <Br0 />- <strong>Refactoring</strong>, <strong>UnitTest</strong>, <strong>Finalization</strong> : assurent la qualité technique et la maintenabilité du pipeline.
+        </Indent>
+
+    </SectionText>
+
+
+    <SectionText Title4="Application & Extensibilité">
+        <Br12 /><strong>Caractéristiques clés du workflow :</strong>
+        <Indent>
+            <Br8 />- <strong>Universalité</strong> : compatible avec la majorité des tâches courantes en apprentissage automatique ; les modèles de structure peuvent être réutilisés directement.
+            <Br0 />- <strong>Visualisation</strong> : flux de travail graphique facilitant la collaboration en équipe, l’enseignement, les présentations et les revues de projet.
+            <Br0 />- <strong>Modularité</strong> : chaque étape du processus est un module indépendant, remplaçable ou extensible selon les besoins.
+            <Br0 />- <strong>Orientation Ingénierie</strong> : indication claire de la nature des tâches de développement et de la durée estimée (par exemple : <code>dev 4.5 – 10</code>, signifiant une tâche de type "dev" estimée entre 4.5 et 10 journées-homme) ; utilisable comme plan directeur de R&D.
+        </Indent>
+
+    </SectionText>
+    <SectionText>
+        Ce projet a été conçu et développé de manière autonome, uniquement à des fins de démonstration de compétences.
+        Toute reproduction, diffusion ou réutilisation est soumise à l’autorisation préalable de l’auteur.
+    </SectionText>
+
+    <VisionerImage Image=Images[1]>
     </VisionerImage>
-</div>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+    <SectionText Title4="Mise en œuvre réelle du workflow ML">
+        <Br12 />Ce schéma met en correspondance les <strong>modules fonctionnels</strong> d’un projet d’entraînement IA (à gauche) avec des <strong>tâches réelles</strong> extraites d’un tableau de gestion de projet (à droite).
+
+        <Br12 />Les <strong>flèches bleues</strong> montrent clairement comment chaque module conceptuel :
+        <Indent>
+            <Br8 />- <strong>Training</strong>,
+            <Br0 />- <strong>Preprocessing</strong>,
+            <Br0 />- <strong>Evaluation</strong>
+        </Indent>
+        est effectivement mis en œuvre dans le <strong>suivi quotidien</strong>, en précisant :
+        <Indent>
+            <Br8 />- l’équipe concernée,
+            <Br0 />- l’état de la tâche,
+            <Br0 />- la nature et la ressource mobilisée.
+        </Indent>
+
+        <Br12 />Cette <strong>vue croisée</strong> illustre la capacité à <strong>traduire une architecture technique en actions concrètes</strong>, facilitant le <strong>pilotage opérationnel</strong> du projet.
+
+
+    </SectionText>
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+
+</div> 
 
 @code {
     private List<ImageItem> Images = new()
     {
-        new ImageItem { Src = "images/4_ProjectManagement_GeneralMachineLearningTrainingWorkflow.png", Id = "UX_Erlay-0" , Dir = ImageDirection.Ori},
-        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-1" , Dir = ImageDirection.Verti},
-        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "UX_Erlay-2" , Dir = ImageDirection.Ori},
-        new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
-        // ... 可继续添加更多
+        new ImageItem { Src = "images/projectmanagement/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/03.png", Id = "03" , Dir = ImageDirection.Ori }
     };
+
 }

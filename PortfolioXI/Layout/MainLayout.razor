@@ -31,7 +31,7 @@
                 {
                     @if (_openBottom)
                     {
-                        <MudDrawer @bind-Open="_openBottom"
+                        <MudDrawer @bind-Open="_openBottom"  
                         Width="100vw"
                         Height="auto"
                         Anchor="Anchor.Bottom"
@@ -60,6 +60,12 @@
                     @if (_isMobile)
                     {
                         <NavMenu></NavMenu>
+                        <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
+                            <MudSwitch @bind-Value="_isDarkMode"
+                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                       ThumbIconColor="Color.Dark" />
+                        </MudNavMenu>
+                        <Spacer></Spacer>
                     }
                 </MudMainContent>
             }
@@ -70,7 +76,19 @@
 @code {
     private MudTheme _theme = new();
     private bool _isDarkMode = true;
-    private bool _openBottom = false;
+    private bool _openBottomBacking;
+    private bool _openBottom
+    {
+        get => _openBottomBacking;
+        set
+        {
+            if (_openBottomBacking != value)
+            {
+                _openBottomBacking = value;
+                _ = OnDrawerBottomChanged(value); // fire-and-forget 异步触发
+            }
+        }
+    }
     private bool _open = true;
     private bool _isMobile;
     private bool _renderReady = false;
@@ -88,12 +106,15 @@
         }
     }
 
-    private async Task OpenDrawerBottom()
+    private void OpenDrawerBottom() => _openBottom = !_openBottom;
+    private async Task OnDrawerBottomChanged(bool isOpen)
     {
-        _openBottom = !_openBottom;
+        if (isOpen)
+            await JS.InvokeVoidAsync("document.body.style.setProperty", "overflow", "hidden");
+        else
+            await JS.InvokeVoidAsync("document.body.style.removeProperty", "overflow");
 
-        string js = $"document.body.style.overflow = '{(_openBottom ? "hidden" : "")}';";
-        await JS.InvokeVoidAsync("eval", js);
+        StateHasChanged(); // optional, 强制刷新
     }
     private void OpenDrawer() => _open = !_open;
 }

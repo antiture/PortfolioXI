@@ -1,21 +1,94 @@
 ﻿@page "/AIModel"
 
 <PageTitle>AIModel</PageTitle>
- 
 
-<div class="center-flow">
-     
-    <VisionerImage Image=Images[0]>
+
+<div class="text-flow">
+    <SectionText Title3="Architecture interprétable du Décoder GPT :" Title3Sub="Chemin de raisonnement autorégressif du décodeur"
+                 Title4="Introduction">
+
+        <Br12 />Ce schéma, intitulé <strong>« Architecture interprétable du Décoder GPT »</strong>, présente de manière systématique le <strong>processus de génération pas à pas</strong> d’un décodeur Transformer dans les tâches de génération de langage.
+
+        <Br12 />L’organisation suit une <strong>structure verticale claire</strong>, allant :
+        <Indent>
+            <Br8 />- de <strong>l’entrée des tokens</strong>
+            <Br0 />- jusqu’à la <strong>sortie du token prédit</strong>,
+            <Br0 />- en passant par l’<strong>encodage positionnel</strong>,
+            <Br0 />- les <strong>mécanismes d’attention multi-têtes</strong>,
+            <Br0 />- le <strong>réseau feed-forward</strong>,
+            <Br0 />- la <strong>projection linéaire</strong>,
+            <Br0 />- et le <strong>calcul du softmax</strong>.
+        </Indent>
+
+        <Br12 />Tous les modules représentés suivent une <strong>nomenclature unifiée</strong>.
+        Les variables utilisent des notations standard (<em>Q, K, V, Z</em>), les dimensions des vecteurs et matrices sont <strong>indiquées explicitement</strong>, et les conventions graphiques respectent les pratiques :
+        <Indent>
+            <Br8 />- en <strong>ingénierie logicielle</strong>,
+            <Br0 />- et en <strong>visualisation technique</strong>.
+        </Indent>
+        Cela <strong>facilite la compréhension interdisciplinaire</strong> et la <strong>réutilisation du schéma</strong>.
+
+        <Br12 />Ce schéma peut servir de support de référence pour :
+        <Indent>
+            <Br8 />- la <strong>compréhension des architectures</strong> de modèles,
+            <Br0 />- l’<strong>analyse des chaînes de raisonnement</strong>,
+            <Br0 />- et l’<strong>explication des mécanismes de génération</strong>.
+        </Indent>
+
+        <Br12 />Il est adapté à des contextes variés, tels que :
+        <Indent>
+            <Br8 />- la <strong>conception produit</strong>,
+            <Br0 />- le <strong>débogage de modèles</strong>,
+            <Br0 />- ou l’<strong>ingénierie de prompts</strong>.
+        </Indent>
+
+        <Br12 />Il s’agit enfin d’une <strong>adaptation rigoureuse</strong> du modèle standard de décodeur basé sur GPT.
+
+    </SectionText>
+    <VisionerImage Image=Images[1]>
     </VisionerImage>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+    <SectionText Title4="Références">
+        <Br12 /><strong>Vaswani et al., 2017</strong> — Attention is All You Need
+        <em>Advances in Neural Information Processing Systems (NeurIPS), 2017</em>
+        <a href="https://arxiv.org/abs/1706.03762" target="_blank">https://arxiv.org/abs/1706.03762</a>
+
+        <Br12 /><strong>Radford et al., 2019</strong> — Language Models are Unsupervised Multitask Learners
+        <em>OpenAI Technical Report, 2019</em>
+        <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">https://cdn.openai.com/.../language_models_...</a>
+
+        <Br12 /><strong>Geva et al., 2022</strong> — Transformer Feed-Forward Layers are Key-Value Memories
+        <em>International Conference on Learning Representations (ICLR), 2022</em>
+        <a href="https://arxiv.org/abs/2206.06841" target="_blank">https://arxiv.org/abs/2206.06841</a>
+
+        <Br12 /><strong>Rogers et al., 2020</strong> — A Primer in BERTology: What We Know About How BERT Works
+        <em>Transactions of the Association for Computational Linguistics (TACL), 2020</em>
+        <a href="https://arxiv.org/abs/2002.12327" target="_blank">https://arxiv.org/abs/2002.12327</a>
+
+        <Br12 /><strong>Elhage et al., 2021</strong> — A Mechanistic Interpretability Analysis of Grokking
+        <em>Anthropic Technical Report, 2021</em>
+        <a href="https://transformer-circuits.pub/2022/mech-interp-essay/index.html" target="_blank">https://transformer-circuits.pub/.../mech-interp-essay</a>
+
+        <Br12 /><strong>Elhage et al., 2022</strong> — Transformer Circuits: SoLU LayerNorm and Superposition
+        <em>Anthropic Research, 2022</em>
+        <a href="https://transformer-circuits.pub/2022/solu/index.html" target="_blank">https://transformer-circuits.pub/2022/solu/</a>
+
+        <Br12 /><strong>Bills et al., 2023</strong> — Language Models as Tools for Thought: A Perspective
+        <em>arXiv preprint, 2023</em>
+        <a href="https://arxiv.org/abs/2303.12712" target="_blank">https://arxiv.org/abs/2303.12712</a>
+
+        <Br12 /><strong>Meng et al., 2022</strong> — A Closer Look at Transformer Layers
+        <em>arXiv preprint, 2022</em>
+        <a href="https://arxiv.org/abs/2204.00598" target="_blank">https://arxiv.org/abs/2204.00598</a>
+    </SectionText>
 </div>
 
-@code { 
+@code {
     private List<ImageItem> Images = new()
     {
-        new ImageItem { Src = "images/3_AI_InterpretableGptDecoderArchitecture.png", Id = "aIModel", Dir = ImageDirection.Verti },
-        new ImageItem { Src = "images/1_UX_Erlay.png", Id = "UX_Erlay-1" , Dir = ImageDirection.Verti},
-        new ImageItem { Src = "images/2_Architecture_AssistantIA.png", Id = "UX_Erlay-2" , Dir = ImageDirection.Ori},
-        new ImageItem { Src = "images/1_UX_Erlay-3.png", Id = "UX_Erlay-3" }
-        // ... 可继续添加更多
+        new ImageItem { Src = "images/aimodel/00.png", Id = "00", Dir = ImageDirection.Verti },
+        new ImageItem { Src = "images/aimodel/01.png", Id = "01", Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/aimodel/02.png", Id = "02", Dir = ImageDirection.Verti },
     };
 }

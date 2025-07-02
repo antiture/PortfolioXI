@@ -1,8 +1,10 @@
 @inject IJSRuntime JS
 
 <div class="wrapper-image-flow">
-    <img src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="return true;"
-        ontouchend="return true;" class="image-@Image.Dir" style="@GetInitialImageStyle()" @onclick="ToggleImage" />
+    <img src="@Image.Src" alt="@Image.Alt"
+         oncontextmenu="return false;" ontouchstart="return true;" ontouchend="return true;"
+         class="image-@Image.Dir" style="@GetInitialImageStyle()"
+         @onclick="ToggleImage" />
     @if (ChildContent is not null)
     {
         <div class="explication-image  mud-typography-body2">@ChildContent</div>
@@ -13,8 +15,10 @@
 {
     <div class="visioner-wrapper">
         <div id="scrollableDiv_@Image.Id" class="visioner visioner-@Image.Dir visioner-grab-area @ImageClass">
-            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt" oncontextmenu="return false;" ontouchstart="return true;"
-                ontouchend="return true;" class="image-@Image.Dir" id="zoomimg_@Image.Id" data-scale="@Scale" />
+            <img @ref="ImgRef" src="@Image.Src" alt="@Image.Alt"
+                 oncontextmenu="return false;" ontouchstart="return true;" ontouchend="return true;"
+                 class="image-@Image.Dir" style="@GetVisionerImageStyle()"
+                 id="zoomimg_@Image.Id" data-scale="@Scale" />
         </div>
     </div>
     <div class="visioner-wrapper-tool row">
@@ -28,6 +32,8 @@
 }
 
 @code {
+    [Parameter] public string? SizeFlow { get; set; }
+    [Parameter] public string? SizeVis { get; set; }
     [Parameter] public ImageItem Image { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
 
@@ -45,42 +51,50 @@
         Scale = value;
         await JS.InvokeVoidAsync("updateImageSize", $"zoomimg_{Image.Id}", Scale);
     }
-    private string GetInitialImageStyle()
+    private string GetSizeStyle(string? sizeStr)
     {
-        if (string.IsNullOrWhiteSpace(Image.Size))
+        if (string.IsNullOrWhiteSpace(sizeStr))
             return string.Empty;
 
-        var parts = Image.Size.Split('*');
+        var parts = sizeStr.Split('*');
+        var style = "";
+
         if (parts.Length == 1)
         {
-            if (Image.Size.StartsWith("*") && int.TryParse(parts[0][1..], out var onlyH))
+            if (sizeStr.StartsWith("*") && int.TryParse(parts[0][1..], out var onlyH))
             {
-                return $"max-height: {onlyH}px;";
+                style += $"max-height: {onlyH}px;";
             }
-            if (int.TryParse(parts[0], out var onlyW))
+            else if (int.TryParse(parts[0], out var onlyW))
             {
-                return $"max-width: {onlyW}px;";
+                style += $"max-width: {onlyW}px;";
             }
         }
-
-        if (parts.Length == 2)
+        else if (parts.Length == 2)
         {
-            string? wStr = parts[0];
-            string? hStr = parts[1];
-            var style = "";
-
-            if (!string.IsNullOrWhiteSpace(wStr) && int.TryParse(wStr, out var w))
+            if (!string.IsNullOrWhiteSpace(parts[0]) && int.TryParse(parts[0], out var w))
                 style += $"max-width: {w}px;";
-
-            if (!string.IsNullOrWhiteSpace(hStr) && int.TryParse(hStr, out var h))
+            if (!string.IsNullOrWhiteSpace(parts[1]) && int.TryParse(parts[1], out var h))
                 style += $"max-height: {h}px;";
-
-            return style;
         }
 
-        return string.Empty;
+        return style;
     }
 
+
+    private string GetInitialImageStyle()
+    {
+        return !string.IsNullOrWhiteSpace(SizeFlow)
+            ? GetSizeStyle(SizeFlow)
+            : GetSizeStyle(Image?.Size);
+    }
+
+    private string GetVisionerImageStyle()
+    {
+        return !string.IsNullOrWhiteSpace(SizeVis)
+            ? GetSizeStyle(SizeVis)
+            : GetSizeStyle(Image?.Size);
+    }
     public async void ToggleImage()
     {
         if (!isImageToggleEnabled) return;
