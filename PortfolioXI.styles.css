@@ -32,6 +32,11 @@
 .section-text[b-jgy7914fs4]{ 
     margin-bottom: 12px;
 }
+/* /Components/Spacer.razor.rz.scp.css */
+.spacer[b-j7r8fllero] {
+    display:block;
+    margin-top: 180px;
+}
 /* /Components/VisionerImage.razor.rz.scp.css */
 .visioner-wrapper[b-8bd276tugj] {
     position: fixed;
