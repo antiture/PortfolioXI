@@ -1,0 +1,6 @@
+﻿.layout-art .mud-drawer-fixed {
+    box-shadow: none !important; 
+}
+.layout-art .mud-nav-link:focus:not(.mud-nav-link-disabled) {
+    background-color: transparent !important;
+}
