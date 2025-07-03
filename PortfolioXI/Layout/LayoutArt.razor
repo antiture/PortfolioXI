@@ -41,7 +41,7 @@
                                 <span class="iconmax iconmax-logo-art px48"></span>
                             </div>
                             <NavMenu />
-                            <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
+                            <MudNavMenu Style="margin: 40px 10px 100px auto" Class="theme-swith">
                                 <MudSwitch @bind-Value="_isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
@@ -60,7 +60,7 @@
                     @if (_isMobile)
                     {
                         <NavMenu></NavMenu>
-                        <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
+                        <MudNavMenu Style="margin: 40px 10px 100px auto" Class="theme-swith">
                             <MudSwitch @bind-Value="_isDarkMode"
                                        ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                        ThumbIconColor="Color.Dark" />
