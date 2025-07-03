@@ -438,7 +438,7 @@ main[b-2m1e82dg6e] {
 }
 
 .layout-cover[b-uceqn4fs5z] {
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 100px);
   width: 100%;
   padding: 4px;
   padding-bottom: calc(4rem + 4rem);
