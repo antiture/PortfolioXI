@@ -1,7 +1,7 @@
 @inject IJSRuntime JS
 
 <div class="wrapper-image-flow">
-    <img src="@Image.Src" alt="@Image.Alt"
+    <img src="@Image.Src" alt="@Image.Alt" loading="lazy"
          oncontextmenu="return false;" ontouchstart="return true;" ontouchend="return true;"
          class="image-@Image.Dir" style="@GetInitialImageStyle()"
          @onclick="ToggleImage" />
