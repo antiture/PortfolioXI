@@ -72,7 +72,7 @@ main {
 #logoBottom {
   position: fixed;
   bottom: 100px;
-  left: 10px;
+  right: 10px;
   z-index: 10000;
   padding: 6px;
   color: var(--mud-palette-primary);
