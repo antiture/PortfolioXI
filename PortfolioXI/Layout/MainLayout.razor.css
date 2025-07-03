@@ -46,7 +46,7 @@ main {
   height: 64px;
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 18px;
   z-index: 10000;
   padding: 4px 20px 9px 16px;
   color: var(--mud-palette-primary);
