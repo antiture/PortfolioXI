@@ -41,16 +41,20 @@
                                 <span class="iconmax iconmax-logo-art px48"></span>
                             </div>
                             <NavMenu />
-                            <MudNavMenu Style="margin: 40px 10px 100px auto" Class="theme-swith">
+                            <MudNavMenu Style="margin: 40px 10px 0px auto" Class="theme-swith">
                                 <MudSwitch @bind-Value="_isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
-                            </MudNavMenu>
+
+                            </MudNavMenu> 
+                            <button class="close-drawer-bottom" @onclick="SwithDrawerBottom">
+                                <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Large"/>
+                            </button>
                         </MudDrawer>
                     }
                     else
                     {
-                        <button id="logoBottom" @onclick="OpenDrawerBottom">
+                        <button id="logoBottom" @onclick="SwithDrawerBottom">
                             <span class="iconmax iconmax-logo-art px45"></span>
                         </button>
                     }
@@ -104,7 +108,7 @@
         }
     }
 
-    private void OpenDrawerBottom() => _openBottom = !_openBottom;
+    private void SwithDrawerBottom() => _openBottom = !_openBottom;
     private async Task OnDrawerBottomChanged(bool isOpen)
     {
         if (isOpen)
