@@ -31,7 +31,8 @@
                 {
                     @if (_openBottom)
                     {
-                        <MudDrawer @bind-Open="_openBottom"   
+                        <MudDrawer @bind-Open="_openBottom"
+                                   Class="drawer-bottom "
                                    Width="100vw"
                                    Height="auto"
                                    Anchor="Anchor.Bottom"
@@ -46,9 +47,9 @@
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
 
-                            </MudNavMenu> 
+                            </MudNavMenu>
                             <button class="close-drawer-bottom" @onclick="SwithDrawerBottom">
-                                <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Large"/>
+                                <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Large" />
                             </button>
                         </MudDrawer>
                     }
