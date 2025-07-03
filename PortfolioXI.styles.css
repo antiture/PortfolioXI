@@ -584,3 +584,6 @@ svg line[b-uceqn4fs5z] {
 .right-block-last-p[b-uceqn4fs5z] {
   margin: 0px;
 }
+.block-mobile[b-uceqn4fs5z]{
+  display: none;
+}
