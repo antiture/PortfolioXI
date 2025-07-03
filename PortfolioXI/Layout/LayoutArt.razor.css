@@ -71,8 +71,8 @@ main {
 
 #logoBottom {
   position: fixed;
-  bottom: 0px;
-  left: 0px;
+  bottom: 100px;
+  left: 10px;
   z-index: 10000;
   padding: 6px;
   color: var(--mud-palette-primary);
