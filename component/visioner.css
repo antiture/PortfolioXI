@@ -96,6 +96,7 @@
 }
 
 .btn-resize-image {
+  color: var(--mud-palette-drawer-background) !important;
   z-index: 10000;
   width: 24px;
   height: 24px;
@@ -103,6 +104,17 @@
   cursor: pointer !important;
   border-radius: 100px;
   padding: 0px !important;
+}
+.btn-resize-image:hover {
+   background-color: var( --mud-palette-secondary-darken) !important;
+}
+.btn-extant{
+    background-color: transparent;
+    width: 300%;
+    height: 300%;
+    position: absolute;
+    transform: translate(calc(-50% + 28px) , calc(-50% - 12px));
+
 }
 
 .visioner .visioner-grab-area {
