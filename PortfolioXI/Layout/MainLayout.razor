@@ -19,8 +19,8 @@
                         <NavMenu />
                         <MudNavMenu Style="margin-top: auto;" Class="theme-swith">
                             <MudSwitch @bind-Value="_isDarkMode"
-                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                            ThumbIconColor="Color.Dark" />
+                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                       ThumbIconColor="Color.Dark" />
                         </MudNavMenu>
                     </MudDrawer>
                     <button id="logoStart" @onclick="OpenDrawer">
@@ -31,20 +31,20 @@
                 {
                     @if (_openBottom)
                     {
-                        <MudDrawer @bind-Open="_openBottom"  
-                        Width="100vw"
-                        Height="auto"
-                        Anchor="Anchor.Bottom"
-                        Variant="DrawerVariant.Temporary"
-                        Elevation="2">
+                        <MudDrawer @bind-Open="_openBottom"
+                                   Width="100vw"
+                                   Height="auto"
+                                   Anchor="Anchor.Bottom"
+                                   Variant="DrawerVariant.Temporary"
+                                   Elevation="2">
                             <div class="nav-header-bottom row">
                                 <span class="iconmax iconmax-logo px48"></span>
                             </div>
                             <NavMenu />
                             <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
                                 <MudSwitch @bind-Value="_isDarkMode"
-                                ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                ThumbIconColor="Color.Dark" />
+                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                           ThumbIconColor="Color.Dark" />
                             </MudNavMenu>
                         </MudDrawer>
                     }
@@ -54,7 +54,7 @@
                             <span class="iconmax iconmax-logo-menu px45"></span>
                         </button>
                     }
-                } 
+                }
                 <MudMainContent>
                     @Body
                     @if (_isMobile)
@@ -66,14 +66,14 @@
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
                             </MudNavMenu>
-                            <Spacer></Spacer>
-                            <Declaration></Declaration>
+
                         </div>
-                        
                     }
+                    <Spacer></Spacer>
+                    <Declaration></Declaration>
                 </MudMainContent>
             }
-        </CascadingValue >
+        </CascadingValue>
     </ObserverSize>
 </MudLayout>
 
