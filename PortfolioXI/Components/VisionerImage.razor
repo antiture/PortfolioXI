@@ -24,9 +24,10 @@
     <div class="visioner-wrapper-tool row">
 
         <MudSlider Min="0.5" Max="2" Step="0.005" Value="@Scale" ValueChanged="@((double val) => OnScaleChanged(val))"
-            ValueChanged:Event="oninput" Size="Size.Large" Class="slider-zoom-visioner" />
-        <button class="btn btn-primary btn-resize-image @ImageClass mud-theme-primary" @onclick="ToggleEnable">
+                   ValueChanged:Event="oninput" Size="Size.Large" Class="slider-zoom-visioner" />
+        <button class="btn btn-primary btn-resize-image @ImageClass mud-theme-primary" @onclick="ToggleEnable"> 
             <i class="bi bi-x-lg"></i>
+            <div class="btn-extant"></div>
         </button>
     </div>
 }
