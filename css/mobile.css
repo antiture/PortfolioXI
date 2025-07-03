@@ -80,9 +80,8 @@
     flex-direction: column;
     justify-content: center;
   }
-  .cover-img-02 {
-    position: absolute !important;
-    opacity: 0.1 !important;
+  .cover-img-02 { 
+    opacity: 0.15 !important;
   }
   .content-card{
     text-align: left !important;
