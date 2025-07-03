@@ -3,6 +3,9 @@
   .visioner-wrapper-tool {
     top: auto !important;
     bottom: 100px !important;
+     box-shadow: none !important;
+     background-color: transparent !important;
+       width: calc(80vw - 0px) !important;
   }
 
   .btn-resize-image {
@@ -86,4 +89,5 @@
   .content-card{
     text-align: left !important;
   }
+
 }
