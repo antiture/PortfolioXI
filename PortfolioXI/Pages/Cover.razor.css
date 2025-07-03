@@ -11,7 +11,7 @@
 }
 
 .layout-cover {
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 + 100px);
   width: 100%;
   padding: 4px;
   padding-bottom: calc(4rem + 4rem);
