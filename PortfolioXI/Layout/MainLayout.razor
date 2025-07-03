@@ -59,13 +59,17 @@
                     @Body
                     @if (_isMobile)
                     {
-                        <NavMenu></NavMenu>
-                        <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
-                            <MudSwitch @bind-Value="_isDarkMode"
-                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                       ThumbIconColor="Color.Dark" />
-                        </MudNavMenu>
-                        <Spacer></Spacer>
+                        <div class="bottom-for-all">
+                            <NavMenu></NavMenu>
+                            <MudNavMenu Style="margin-left: auto;" Class="theme-swith">
+                                <MudSwitch @bind-Value="_isDarkMode"
+                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                           ThumbIconColor="Color.Dark" />
+                            </MudNavMenu>
+                            <Spacer></Spacer>
+                            <Declaration></Declaration>
+                        </div>
+                        
                     }
                 </MudMainContent>
             }

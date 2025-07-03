@@ -157,3 +157,6 @@ svg line {
 .right-block-last-p {
   margin: 0px;
 }
+.block-mobile{
+  display: none;
+}

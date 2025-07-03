@@ -1,69 +1,90 @@
 @media (max-width: 767px) {
-    /* mobile-specific styles */
-    .visioner-wrapper-tool {
-        top: auto !important;
-        bottom: 20px !important;
-    }
+  /* mobile-specific styles */
+  .visioner-wrapper-tool {
+    top: auto !important;
+    bottom: 20px !important;
+  }
 
-    .btn-resize-image {
-        position: fixed;
-        z-index: 10001 !important;
-        width: 50px !important;
-        height: 50px !important;
-        right: 0px;
-    }
+  .btn-resize-image {
+    position: fixed;
+    z-index: 10001 !important;
+    width: 50px !important;
+    height: 50px !important;
+    right: 0px;
+  }
 
-    .mud-nav-link .mud-nav-link-text {
-        font-size: 1.5rem !important;
-        font-weight: 200 !important;
-    }
+  .mud-nav-link .mud-nav-link-text {
+    font-size: 1.5rem !important;
+    font-weight: 200 !important;
+  }
 
-    .year {
-        font-size: 3rem !important;
-    }
+  .navmenu-endpage {
+    background-color: var(--mud-palette-drawer-background);
+    padding-bottom: 80px;
+  }
 
-    .role {
-        font-size: 0.8rem !important;
-        white-space: nowrap;
-        bottom: calc(0.8rem + 8px) !important;
-    }
+  .title-4 {
+    margin-left: calc(var(--indent) * 0);
+  }
 
-    /* .layout-cover {
-    padding: 0.3rem !important;
+  .title-5 {
+    margin-left: calc(var(--indent) * 0);
+  }
+
+  .title-6 {
+    margin-left: calc(var(--indent) * 1);
+  }
+
+  .mud-typography-body1,
+  .mud-typography-body2 {
+    padding-left: calc(var(--indent) * 1 + 0px);
+  }
+
+  .portfolio-banner {
+    display: none !important;
+  }
+  .portfolio-banner-mobile {
+    display: grid !important;
+    margin-bottom: 60px;
+  }
+
+  .title-right-block {
+    font-weight: 500 !important;
+    font-size: 4rem !important;
+    position: relative !important;
+    top: 0rem !important;
+    transform: translateY(0%) !important;
+  }
+  .right-block {
+    max-width: calc(80vw - 40px) !important;
+  }
+  .year {
+    font-size: 3rem !important;
+  }
+
+  .role {
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    bottom: calc(0.8rem + 8px) !important;
+  }
+
+  .layout-cover {
+    padding: 1rem !important;
     padding-bottom: 200px !important;
-    height: 100vh !important;
-  } */
+    height: auto !important;
+  }
 
-
-    .right-block {
-        margin-bottom: -0px !important;
-        max-width: calc(100% - 40px) !important;
-    }
-
-    .navmenu-endpage {
-        background-color: var(--mud-palette-drawer-background);
-        padding-bottom: 80px;
-    }
-
-
-    .title-4 {
-        margin-left: calc(var(--indent) * 0);
-    }
-
-    .title-5 {
-        margin-left: calc(var(--indent) * 0);
-    }
-
-    .title-6 {
-        margin-left: calc(var(--indent) * 1);
-    }
-
-    .mud-typography-body1,
-    .mud-typography-body2 {
-        padding-left: calc(var(--indent) * 1 + 0px);
-    }
-
-    .portfolio-banner {
-        display: none !important; 
-    }
+  .block-mobile {
+    margin-top: 100px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cover-img-02 {
+    position: absolute !important;
+    opacity: 0.1 !important;
+  }
+  .content-card{
+    text-align: left !important;
+  }
 }
