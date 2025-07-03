@@ -170,3 +170,7 @@ code {
     flex-direction: column;
 
 }
+
+.content-card p{
+  padding-left: 0px;
+}
