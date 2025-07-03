@@ -160,7 +160,7 @@ main[b-h6f22h5sgn] {
 #logoBottom[b-h6f22h5sgn] {
   position: fixed;
   bottom: 100px;
-  left: 10px;
+  right: 10px;
   z-index: 10000;
   padding: 6px;
   color: var(--mud-palette-primary);
@@ -285,7 +285,7 @@ main[b-2m1e82dg6e] {
 #logoBottom[b-2m1e82dg6e] {
   position: fixed;
   bottom: 100px;
-  left: 10px;
+  right: 10px;
   z-index: 10000;
   padding: 6px;
   color: var(--mud-palette-primary);
