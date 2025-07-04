@@ -120,4 +120,7 @@
   <data name="String1" xml:space="preserve">
     <value>Francais</value>
   </data>
+  <data name="Zijian_XI" xml:space="preserve">
+    <value>Zijian XI fr</value>
+  </data>
 </root>

@@ -166,6 +166,10 @@ code {
 .theme-swith{
   opacity: 0.7;
 }
+.theme-swith label.mud-switch{
+  margin-left: auto;
+  margin-right: 8px;
+}
 /* 》》》》》》》》:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 .bottom-for-all{
     display:flex;
@@ -183,4 +187,18 @@ code {
 }
 .drawer-bottom{
     max-height: calc(var(--vh, 1vh) * 100);
+}
+.language-selector-wrapper {
+    margin: 0px 12px 0px !important;
+}
+    .language-selector-wrapper .mud-input.mud-input-underline:before {
+        border-bottom: none !important;
+    }
+.margin-top-auto{
+    margin-top:auto;
+    width:100%;
+}
+.parameters{
+  padding: 4px 16px 24px 16px;
+
 }

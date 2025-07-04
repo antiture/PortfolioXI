@@ -1,7 +1,8 @@
 ﻿@page "/"
 @layout Layout.LayoutTech
+@inject LanguageService Loc
 
-<PageTitle>Cover</PageTitle>
+<PageTitle>Zijian XI</PageTitle>
 
 <div class="layout-cover">
     <div class="cover-img-01">
@@ -36,7 +37,7 @@
             </svg>
         </div>
         <div class="right-block">
-            <div class="title-right-block"><strong>Zijian XI</strong></div>
+            <div class="title-right-block"><strong>@Loc.Get("Zijian_XI")</strong></div>
             <div class="content-card">
                 <SectionText Title4="Présentation personnelle – Vision, formation et méthode">
                     <Br12 />Product Owner IA avec une double formation <strong>artistique</strong> et <strong>technique</strong>,
@@ -56,9 +57,7 @@
                         <Br0 />en alignant <strong>cognition métier</strong>, <strong>langage produit</strong> et <strong>expérience utilisateur</strong>.
                     </Indent>
                 </SectionText>
-
             </div>
-
         </div>
     </div>
     <div class="block-mobile">
@@ -78,8 +77,6 @@
                 <div class="title-right-block"><strong>Zijian XI</strong></div>
             </div>
         </div>
-
-
         <div class="content-card">
             <SectionText Title4="Présentation personnelle – Vision, formation et méthode">
                 <Br12 />Product Owner IA avec une double formation <strong>artistique</strong> et <strong>technique</strong>,

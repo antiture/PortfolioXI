@@ -8,21 +8,28 @@
 <MudSelect T="string"
            Value="_selectedCulture"
            ValueChanged="OnLanguageChanged"
-           Label="Language"
-           Margin="Margin.Dense"
+           DisableUnderline="true"
            Dense="true"
-           Style="width: 150px">
+           Style="width: 80px;">
     @foreach (var lang in Languages)
     {
-        <MudSelectItem Value="@lang.Code">@lang.Name</MudSelectItem>
+        <MudSelectItem Value="@lang.Code">@GetFlagEmoji(lang.Code)</MudSelectItem>
     }
 </MudSelect>
 
-<p style="margin-top: 20px;">@Loc.Get("String1")</p>
-<p>当前文化：@CultureInfo.CurrentUICulture.Name</p>
+<style>
+    .lang-select .mud-input-root {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .lang-select .mud-input {
+        padding-bottom: 0px !important;
+    }
+</style>
 
 @code {
-    private string _selectedCulture = CultureInfo.CurrentUICulture.Name; 
+    private string _selectedCulture = CultureInfo.CurrentUICulture.Name;
 
     private async Task OnLanguageChanged(string newCulture)
     {
@@ -31,8 +38,6 @@
         if (!string.IsNullOrEmpty(newCulture))
         {
             await JS.InvokeVoidAsync("blazorCulture.set", newCulture);
-
-            // 强制刷新页面，让程序重新加载本地化资源
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
         }
     }
@@ -46,5 +51,14 @@
 
     private record LanguageItem(string Code, string Name);
 
-    
+    private string GetFlagEmoji(string code)
+    {
+        return code switch
+        {
+            "en-US" => "🇺🇸", // 真实 emoji 字符
+            "zh-CN" => "🇨🇳",
+            "fr-FR" => "🇫🇷",
+            _ => "🌐"
+        };
+    }
 }
