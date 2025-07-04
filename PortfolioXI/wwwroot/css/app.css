@@ -3,7 +3,9 @@ body {
   font-family: "Inter", Helvetica, Arial, sans-serif; 
   background-color: var(--mud-palette-background) !important;
 }
-
+*  {
+  box-sizing:border-box;
+}
 h1:focus {
   outline: none;
 }
