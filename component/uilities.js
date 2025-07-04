@@ -32,10 +32,7 @@ window.themeHelper = {
 	},
 	saveThemeTech: function (value) {
 		localStorage.setItem("isDarkModeTech", value);
-	}
-};
-
-window.themeHelper = {
+	},	
 	applyMetaThemeTech: function (isDark) {
 		const themeColor = document.querySelector("meta[name='theme-color']");
 		const statusBar = document.querySelector("meta[name='apple-mobile-web-app-status-bar-style']");
