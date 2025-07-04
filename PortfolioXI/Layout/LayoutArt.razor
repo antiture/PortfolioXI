@@ -1,7 +1,6 @@
-﻿@inherits LayoutComponentBase
-@inject IJSRuntime JS
+﻿@inherits LayoutResponsiveBase
 
-<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+<MudThemeProvider @bind-IsDarkMode="_isDarkMode" Theme="_theme" />
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -12,7 +11,7 @@
             {
                 @if (!_isMobile)
                 {
-                    <MudDrawer @bind-Open="@_open" Variant="@DrawerVariant.Responsive">
+                    <MudDrawer @bind-Open="_open" Variant="@DrawerVariant.Responsive">
                         <MudDrawerHeader Class="top-site-art">
                             <MudText id="topSiteTitleArt" Typo="Typo.h6"></MudText>
                         </MudDrawerHeader>
@@ -32,7 +31,7 @@
                     @if (_openBottom)
                     {
                         <MudDrawer @bind-Open="_openBottom"
-                                   Class="drawer-bottom "
+                                   Class="drawer-bottom"
                                    Width="100vw"
                                    Height="auto"
                                    Anchor="Anchor.Bottom"
@@ -46,7 +45,6 @@
                                 <MudSwitch @bind-Value="_isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
-
                             </MudNavMenu>
                             <button class="close-drawer-bottom" @onclick="SwithDrawerBottom">
                                 <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Large" />
@@ -60,6 +58,7 @@
                         </button>
                     }
                 }
+
                 <MudMainContent>
                     @Body
                     @if (_isMobile)
@@ -81,43 +80,5 @@
 @code {
     private MudTheme _theme = new();
     private bool _isDarkMode = false;
-    private bool _openBottomBacking;
-    private bool _openBottom
-    {
-        get => _openBottomBacking;
-        set
-        {
-            if (_openBottomBacking != value)
-            {
-                _openBottomBacking = value;
-                _ = OnDrawerBottomChanged(value); // fire-and-forget 异步触发
-            }
-        }
-    }
-    private bool _open = true;
-    private bool _isMobile;
-    private bool _renderReady = false;
     public bool IsTech { get; private set; } = false;
-    private void HandleResize(double width)
-    {
-        var newState = width < 768;
-        if (newState != _isMobile || !_renderReady)
-        {
-            _isMobile = newState;
-            _renderReady = true;
-            InvokeAsync(StateHasChanged);
-        }
-    }
-
-    private void SwithDrawerBottom() => _openBottom = !_openBottom;
-    private async Task OnDrawerBottomChanged(bool isOpen)
-    {
-        if (isOpen)
-            await JS.InvokeVoidAsync("document.body.style.setProperty", "overflow", "hidden");
-        else
-            await JS.InvokeVoidAsync("document.body.style.removeProperty", "overflow");
-
-        StateHasChanged(); // optional, 强制刷新
-    }
-    private void OpenDrawer() => _open = !_open;
 }
