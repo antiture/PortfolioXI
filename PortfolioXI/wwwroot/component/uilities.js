@@ -59,5 +59,17 @@ window.themeHelper = {
 		}
 	}
 };
+window.blazorCulture = {
+	get: () => {
+		let culture = localStorage.getItem('blazorCulture');
+		if (!culture) {
+			culture = navigator.language || 'en-US';
+			localStorage.setItem('blazorCulture', culture);
+		}
+		return culture;
+	},
+	set: (value) => localStorage.setItem('blazorCulture', value)
+};
+
 
 

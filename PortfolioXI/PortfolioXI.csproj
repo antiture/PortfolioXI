@@ -1,20 +1,35 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		
+	</PropertyGroup>
+	<PropertyGroup>
+		<BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
+		<SatelliteResourceLanguages>fr-FR;zh-CN</SatelliteResourceLanguages>
+	</PropertyGroup> 
+	<ItemGroup>
+		<Compile Remove="Layout\LayoutComponentBase.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BlazorComponentUtilities" Version="1.8.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.13" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.13" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.6" />
+		<PackageReference Include="MudBlazor" Version="8.8.0" />
+	</ItemGroup>
+	<Target Name="CopySatelliteAssemblies" AfterTargets="Build">
+		<ItemGroup>
+			<FrResources Include="$(OutputPath)fr-FR\*.resources.dll" />
+			<ZhResources Include="$(OutputPath)zh-CN\*.resources.dll" />
+		</ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="Layout\LayoutComponentBase.cs" />
-  </ItemGroup>
+		<Copy SourceFiles="@(FrResources)" DestinationFolder="$(ProjectDir)wwwroot\_framework\fr-FR" />
+		<Copy SourceFiles="@(ZhResources)" DestinationFolder="$(ProjectDir)wwwroot\_framework\zh-CN" />
+	</Target>
 
-  <ItemGroup>
-    <PackageReference Include="BlazorComponentUtilities" Version="1.8.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.13" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.13" PrivateAssets="all" />
-    <PackageReference Include="MudBlazor" Version="8.8.0" />
-  </ItemGroup>
 
 </Project>
