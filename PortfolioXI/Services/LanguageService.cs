@@ -1,44 +1,44 @@
-﻿
-
+﻿using System.Globalization;
 using System.Reflection;
-using global::PortfolioXI.Resources;
 using Microsoft.Extensions.Localization;
-
+using PortfolioXI.Resources;
 
 namespace PortfolioXI.Services;
+
 public class LanguageService
 {
-    private readonly IStringLocalizer _localizer;
+    private readonly IStringLocalizerFactory _factory;
+
+    private CultureInfo _currentCulture;
+    public event Action? OnLanguageChanged;
 
     public LanguageService(IStringLocalizerFactory factory)
     {
-        var type = typeof(SharedResources); // ← 确保你的 resx 是叫 SharedResources.resx
+        _factory = factory;
+        _currentCulture = CultureInfo.CurrentUICulture;
+    }
+
+    // 当前文化
+    public CultureInfo CurrentCulture => _currentCulture;
+
+    // 获取当前 culture 下的本地化器
+    public IStringLocalizer GetLocalizer()
+    {
+        var type = typeof(SharedResources);
         var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
-        _localizer = factory.Create(nameof(SharedResources), assemblyName.Name);
+        return _factory.Create(nameof(SharedResources), assemblyName.Name);
     }
 
-    public string Get(string key)
-    {
-        return _localizer[key];
-    }
+    public string Get(string key) => GetLocalizer()[key];
 
-    public LocalizedString GetLocalized(string key)
+    public void ChangeCulture(string cultureCode)
     {
-        return _localizer[key];
-    }
+        var newCulture = new CultureInfo(cultureCode);
+        _currentCulture = newCulture;
 
-    public bool TryGet(string key, out string? value)
-    {
-        var result = _localizer[key];
-        if (result.ResourceNotFound)
-        {
-            value = null;
-            return false;
-        }
+        CultureInfo.DefaultThreadCurrentCulture = newCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = newCulture;
 
-        value = result.Value;
-        return true;
+        OnLanguageChanged?.Invoke(); // 通知组件刷新
     }
 }
-
-

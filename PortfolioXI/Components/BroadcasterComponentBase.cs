@@ -1,3 +1,4 @@
+﻿
 using Microsoft.AspNetCore.Components;
 
 namespace PortfolioXI.Components;
@@ -23,4 +24,3 @@ public abstract class BroadcasterComponentBase : ComponentBase, IDisposable
         Broadcaster.OnEvent -= HandleEvent;
     }
 }
-<div class="br0"></div>

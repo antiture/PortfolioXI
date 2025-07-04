@@ -4,6 +4,7 @@
 @using System.Globalization
 @using PortfolioXI.Resources
 @inject LanguageService Loc
+@inject Broadcaster Broadcaster
 
 <MudSelect T="string"
            Value="_selectedCulture"
@@ -16,6 +17,7 @@
         <MudSelectItem Value="@lang.Code">@GetFlagEmoji(lang.Code)</MudSelectItem>
     }
 </MudSelect>
+@Loc.Get("Zijian_XI")
 
 <style>
     .lang-select .mud-input-root {
@@ -38,10 +40,12 @@
         if (!string.IsNullOrEmpty(newCulture))
         {
             await JS.InvokeVoidAsync("blazorCulture.set", newCulture);
-            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+
+            Loc.ChangeCulture(newCulture);                // ✅ 更新当前语言
+            Broadcaster.Broadcast("LanguageChanged");     // ✅ 广播通知其他组件更新
         }
     }
-
+  
     private List<LanguageItem> Languages = new()
     {
         new LanguageItem("en-US", "English"),

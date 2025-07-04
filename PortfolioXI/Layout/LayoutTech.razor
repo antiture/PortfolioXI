@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
 @inherits LayoutResponsiveBase
 @inject LanguageService Loc
+@implements IDisposable
 
 
 <MudThemeProvider @bind-IsDarkMode="_isDarkMode" Theme="_theme" />
@@ -73,6 +74,7 @@
                     }
                 }
                 <MudMainContent>
+                    @Loc.Get("Zijian_XI")
                     @Body
                     @if (_isMobile)
                     {
@@ -104,6 +106,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        Loc.OnLanguageChanged += StateHasChanged;
         try
         {
             _isDarkMode = await JS.InvokeAsync<bool>("themeHelper.getThemeTech");
@@ -121,5 +124,9 @@
         await JS.InvokeVoidAsync("themeHelper.saveThemeTech", value);
         await JS.InvokeVoidAsync("themeHelper.applyMetaThemeTech", value);
         StateHasChanged();
+    }
+    public void Dispose()
+    {
+        Loc.OnLanguageChanged -= StateHasChanged;
     }
 }

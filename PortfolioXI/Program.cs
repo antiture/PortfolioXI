@@ -13,7 +13,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 // 加入 MudBlazor
 builder.Services.AddMudServices();
-
+builder.Services.AddSingleton<Broadcaster>();
 // 加入本地化服务，指定资源文件路径
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 // 添加 HTTP 服务
