@@ -17,7 +17,7 @@
                         </MudDrawerHeader>
                         <NavMenu />
                         <MudNavMenu Style="margin-top: auto;" Class="theme-swith">
-                            <MudSwitch @bind-Value="_isDarkMode"
+                            <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
                                        ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                        ThumbIconColor="Color.Dark" />
                         </MudNavMenu>
@@ -42,7 +42,7 @@
                             </div>
                             <NavMenu />
                             <MudNavMenu Style="margin: 40px 10px 0px auto" Class="theme-swith">
-                                <MudSwitch @bind-Value="_isDarkMode"
+                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
                             </MudNavMenu>
@@ -66,7 +66,7 @@
                         <div class="bottom-for-all">
                             <NavMenu></NavMenu>
                             <MudNavMenu Style="margin: 40px 10px 100px auto;" Class="theme-swith">
-                                <MudSwitch @bind-Value="_isDarkMode"
+                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
                             </MudNavMenu>
@@ -81,7 +81,27 @@
 </MudLayout>
 
 @code {
-    private MudTheme _theme = new();
-    private bool _isDarkMode = true;
+    private MudTheme _theme = new(); 
     public bool IsTech { get; private set; } = true;
+  
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _isDarkMode = await JS.InvokeAsync<bool>("themeHelper.getThemeTech");
+            await JS.InvokeVoidAsync("themeHelper.applyMetaThemeTech", _isDarkMode);
+        }
+        catch
+        {
+            _isDarkMode = true; // 默认值
+            await JS.InvokeVoidAsync("themeHelper.applyMetaThemeTech", _isDarkMode);
+        }
+    }
+    protected async Task SaveThemeTech(bool value)
+    {
+        _isDarkMode = value;
+        await JS.InvokeVoidAsync("themeHelper.saveThemeTech", value);
+        await JS.InvokeVoidAsync("themeHelper.applyMetaThemeTech", value);
+        StateHasChanged();
+    }
 }

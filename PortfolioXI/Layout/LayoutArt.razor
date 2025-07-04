@@ -1,4 +1,5 @@
 ﻿@inherits LayoutResponsiveBase
+@inject IJSRuntime JS
 
 <MudThemeProvider @bind-IsDarkMode="_isDarkMode" Theme="_theme" />
 <MudPopoverProvider />
@@ -17,9 +18,10 @@
                         </MudDrawerHeader>
                         <NavMenu />
                         <MudNavMenu Style="margin-top: auto;">
-                            <MudSwitch @bind-Value="_isDarkMode" Class="theme-swith"
+                            <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeArt" ValueExpression="() => _isDarkMode"
                                        ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                        ThumbIconColor="Color.Dark" />
+
                         </MudNavMenu>
                     </MudDrawer>
                     <button id="logoStartArt" @onclick="OpenDrawer">
@@ -30,19 +32,14 @@
                 {
                     @if (_openBottom)
                     {
-                        <MudDrawer @bind-Open="_openBottom"
-                                   Class="drawer-bottom"
-                                   Width="100vw"
-                                   Height="auto"
-                                   Anchor="Anchor.Bottom"
-                                   Variant="DrawerVariant.Temporary"
-                                   Elevation="2">
+                        <MudDrawer @bind-Open="_openBottom" Class="drawer-bottom" Width="100vw" Height="auto" Anchor="Anchor.Bottom"
+                                   Variant="DrawerVariant.Temporary" Elevation="2">
                             <div class="nav-header-bottom row">
                                 <span class="iconmax iconmax-logo-art px48"></span>
                             </div>
                             <NavMenu />
                             <MudNavMenu Style="margin: 40px 10px 0px auto" Class="theme-swith">
-                                <MudSwitch @bind-Value="_isDarkMode"
+                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeArt" ValueExpression="() => _isDarkMode"
                                            ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                            ThumbIconColor="Color.Dark" />
                             </MudNavMenu>
@@ -65,7 +62,8 @@
                     {
                         <NavMenu></NavMenu>
                         <MudNavMenu Style="margin: 40px 10px 100px auto" Class="theme-swith">
-                            <MudSwitch @bind-Value="_isDarkMode"
+
+                            <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeArt" ValueExpression="() => _isDarkMode"
                                        ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
                                        ThumbIconColor="Color.Dark" />
                         </MudNavMenu>
@@ -79,6 +77,31 @@
 
 @code {
     private MudTheme _theme = new();
-    private bool _isDarkMode = false;
     public bool IsTech { get; private set; } = false;
+    protected override void OnInitialized()
+    { 
+
+        base.OnInitialized();  
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _isDarkMode = await JS.InvokeAsync<bool>("themeHelper.getThemeArt");
+            await JS.InvokeVoidAsync("themeHelper.applyMetaThemeArt", _isDarkMode);
+        }
+        catch
+        {
+            _isDarkMode = false; // 默认值
+            await JS.InvokeVoidAsync("themeHelper.applyMetaThemeArt", _isDarkMode);
+        }
+    }
+    protected async Task SaveThemeArt(bool value)
+    {
+        _isDarkMode = value;
+        await JS.InvokeVoidAsync("themeHelper.saveThemeArt", value);
+        await JS.InvokeVoidAsync("themeHelper.applyMetaThemeArt", value);
+        StateHasChanged();
+    }
+
 }

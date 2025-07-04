@@ -7,7 +7,14 @@ public abstract class LayoutResponsiveBase : LayoutComponentBase
     protected bool _open = true;
     protected bool _openBottom;
     protected bool _isMobile;
-    protected bool _renderReady;
+    protected bool _renderReady; 
+
+    protected bool _isDarkMode;
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+    }
 
     protected void HandleResize(double width)
     {
@@ -19,6 +26,7 @@ public abstract class LayoutResponsiveBase : LayoutComponentBase
             InvokeAsync(StateHasChanged);
         }
     }
+ 
 
     protected void SwithDrawerBottom() => _openBottom = !_openBottom;
     protected void OpenDrawer() => _open = !_open;
