@@ -39,13 +39,13 @@
 
         if (!string.IsNullOrEmpty(newCulture))
         {
-            await JS.InvokeVoidAsync("blazorCulture.set", newCulture);
+            await JS.InvokeVoidAsync("blazorCulture.set", newCulture); // 存储语言到 localStorage
 
-            Loc.ChangeCulture(newCulture);                // ✅ 更新当前语言
-            Broadcaster.Broadcast("LanguageChanged");     // ✅ 广播通知其他组件更新
+            // ✅ 强制刷新整个页面，确保语言正确生效
+            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
         }
     }
-  
+
     private List<LanguageItem> Languages = new()
     {
         new LanguageItem("en-US", "English"),

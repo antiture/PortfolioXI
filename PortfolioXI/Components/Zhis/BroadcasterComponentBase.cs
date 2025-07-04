@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Components;
 
-namespace PortfolioXI.Components;
+namespace PortfolioXI.Components.Zhis;
 
 public abstract class BroadcasterComponentBase : ComponentBase, IDisposable
 {
