@@ -1,0 +1,67 @@
+﻿@inject IJSRuntime JS
+@inject NavigationManager Navigation
+@inject IStringLocalizerFactory Factory
+@using System.Globalization
+@using PortfolioXI.Resources
+@inject LanguageService Loc
+@inject Broadcaster Broadcaster
+
+<MudSelect T="string"
+           Value="_selectedCulture"
+           ValueChanged="OnLanguageChanged"
+           DisableUnderline="true"
+           Dense="true"
+           Style="width: 80px;">
+    @foreach (var lang in Languages)
+    {
+        <MudSelectItem Value="@lang.Code">@GetFlagEmoji(lang.Code)</MudSelectItem>
+    }
+</MudSelect> 
+
+<style>
+    .lang-select .mud-input-root {
+        border-bottom: none !important;
+        box-shadow: none !important;
+    }
+
+    .lang-select .mud-input {
+        padding-bottom: 0px !important;
+    }
+</style>
+
+@code {
+    private string _selectedCulture = CultureInfo.CurrentUICulture.Name;
+
+    private async Task OnLanguageChanged(string newCulture)
+    {
+        _selectedCulture = newCulture;
+
+        if (!string.IsNullOrEmpty(newCulture))
+        {
+            await JS.InvokeVoidAsync("blazorCulture.set", newCulture); // 存储语言到 localStorage
+
+            // ✅ 强制刷新整个页面，确保语言正确生效
+            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+        }
+    }
+
+    private List<LanguageItem> Languages = new()
+    {
+        new LanguageItem("en-US", "English"),
+        new LanguageItem("zh-CN", "中文"),
+        new LanguageItem("fr-FR", "Français")
+    };
+
+    private record LanguageItem(string Code, string Name);
+
+    private string GetFlagEmoji(string code)
+    {
+        return code switch
+        {
+            "en-US" => "🇺🇸", // 真实 emoji 字符
+            "zh-CN" => "🇨🇳",
+            "fr-FR" => "🇫🇷",
+            _ => "🌐"
+        };
+    }
+}

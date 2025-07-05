@@ -1,0 +1,132 @@
+﻿ 
+@layout Layout.LayoutTech
+
+<PageTitle>Architecture</PageTitle>
+
+
+<div class="text-flow">
+    <SectionText Title3="Tracence：分布式工作流的 AI 助理" Title3Sub="基于 .NET MAUI、C#、Blazor 与 AI 自动化的跨平台应用"
+                 Title4="介绍">
+        <Br12 />本项目是一套面向<strong>工作流程自动化</strong>的<strong>智能助理解决方案</strong>，旨在优化业务处理过程，<strong>减少人为干预</strong>，提高整体效率。
+
+        <Br12 />该应用提供两个主要界面：
+        <Indent>
+            <Br8 />- 一个基于 .NET MAUI 的<strong>移动端应用</strong>，
+            <Br0 />- 一个使用 Blazor WebAssembly 构建的<strong>网页版</strong>，
+        </Indent>
+        <Br0 />两者共享同一套<strong>统一服务架构</strong>。
+
+        <Br12 />当前项目仍处于<strong>开发阶段</strong>，采用一种融合：
+        <Indent>
+            <Br8 />- <strong>应用型 AI 技术</strong>、
+            <Br0 />- <strong>.NET MAUI 模块化架构</strong>、
+            <Br0 />- 以及<strong>分布式流程优化</strong>
+        </Indent>
+        的<strong>探索性技术路径</strong>。
+    </SectionText>
+
+    <SectionText Title4="功能概览" Title5="工作流自动执行">
+        <Br12 />集成<strong>AI 引擎</strong>，实现从<strong>数据接收</strong>、<strong>预处理</strong>、<strong>文档生成</strong>到调用<strong>外部服务</strong>的全过程自动化。
+    </SectionText>
+
+    <SectionText Title5="分层模块化架构">
+        <Br12 />系统采用分层设计（<strong>平台层</strong>、<strong>服务层</strong>、<strong>数据库层</strong>），遵循<strong>依赖反转</strong>与<strong>面向接口编程</strong>原则。
+    </SectionText>
+
+    <SectionText Title5="跨平台支持">
+        <Br12 />通过 <strong>.NET MAUI</strong> 实现 iOS/Android 客户端支持，<strong>Blazor</strong> 提供 Web 前端，最大化<strong>代码复用率</strong>。
+    </SectionText>
+
+    <SectionText Title5="服务抽象与自适应部署">
+        <Br12 />通过<strong>标准化接口</strong>，根据部署环境灵活支持<strong>本地</strong>、<strong>中心化</strong>或<strong>服务端</strong>架构。
+    </SectionText>
+
+    <SectionText Title5="标准化的 HTTP 通信与用户上下文管理">
+        <Br12 />借助 <code>HttpClientFactory</code> 与 <code>IHttpContextAccessor</code>，实现<strong>上下文感知</strong>且<strong>安全一致</strong>的服务调用。
+    </SectionText>
+
+    <SectionText Title4="技术栈">
+        <Br12 /><strong>核心技术栈如下：</strong>
+        <Indent>
+            <Br8 /><strong>前端</strong>：.NET MAUI（移动应用）、Blazor（Web）、C#
+            <Br0 /><strong>后端</strong>：ASP.NET Core 服务（Platform / API / DML 层）
+            <Br0 /><strong>AI 集成</strong>：OpenAI 接口、<strong>向量搜索</strong>与<strong>自动生成模块</strong>（支持扩展）
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[1] SizeFlow="400*" SizeVis="600*">
+    </VisionerImage>
+
+    <SectionText Title4="系统总览 – AI 工作流架构图">
+        <Br12 />下图展示了应用的<strong>整体架构视图</strong>，涵盖：
+        <Indent>
+            <Br8 />- <strong>前端平台</strong>（Blazor / MAUI），
+            <Br0 />- <strong>核心服务层</strong>，
+            <Br0 />- <strong>后端数据处理</strong>（基于存储过程与向量数据库），
+            <Br0 />- 以及通过 OpenAPI 与 LLM 的<strong>外部 AI 接入</strong>。
+        </Indent>
+        <Br12 />体现了一个<strong>协调统一的分布式服务架构设计</strong>。
+    </SectionText>
+
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="领域模型与语义服务架构">
+        <Br12 />下图呈现了系统内部的<strong>领域逻辑设计</strong>，包含：
+        <Indent>
+            <Br8 />- <strong>权限策略</strong>、
+            <Br0 />- <strong>用户实体建模</strong>、
+            <Br0 />- <strong>主题定制机制</strong>、
+            <Br0 />- 以及抽象化的<strong>服务调用模式</strong>。
+        </Indent>
+
+        <Br12 />系统采用<strong>工厂模式</strong>与<strong>适配器模式</strong>管理复杂度，
+        <Br8 />体现出<strong>语义清晰、结构灵活</strong>的模块化设计理念。
+    </SectionText>
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+    <SectionText Title4="数据库连接与 HTTP 服务适配">
+        <Br12 />该模块通过统一接口，封装<strong>本地</strong>、<strong>集中</strong>与<strong>服务器端</strong>的数据库服务。
+
+        <Br12 />同时借助 <code>HttpClientFactory</code> 注入服务与上下文访问机制，
+        <Br8 />实现<strong>高可扩展</strong>与<strong>低耦合</strong>的数据交互。
+    </SectionText>
+
+    <VisionerImage Image=Images[4]>
+    </VisionerImage>
+
+    <SectionText Title4="用户目录上下文与访问控制">
+        <Br12 />下图描述了如下控制逻辑：
+        <Indent>
+            <Br8 />- <strong>用户信息更新事件</strong>、
+            <Br0 />- <strong>目录同步机制</strong>、
+            <Br0 />- <strong>访问权限基础类</strong>、
+            <Br0 />- 与<strong>认证委托处理器</strong>的实现。
+        </Indent>
+
+        <Br12 />重点突出系统对以下方面的保障：
+        <Indent>
+            <Br8 />- <strong>状态一致性</strong>、
+            <Br0 />- 与<strong>用户身份安全管理</strong>。
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage>
+</div>
+
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/architecture/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/04.png", Id = "04" , Dir = ImageDirection.Verti },
+        new ImageItem { Src = "images/architecture/05.png", Id = "05" , Dir = ImageDirection.Verti } 
+    };
+
+}

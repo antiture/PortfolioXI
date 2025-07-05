@@ -1,4 +1,8 @@
-﻿@inherits LayoutResponsiveBase
+﻿@using System.Globalization
+@inherits LayoutResponsiveBase
+@inject LanguageService Loc
+@implements IDisposable
+
 
 <MudThemeProvider @bind-IsDarkMode="_isDarkMode" Theme="_theme" />
 <MudPopoverProvider />
@@ -16,11 +20,17 @@
                             <MudText id="topSiteTitle" Typo="Typo.h6"></MudText>
                         </MudDrawerHeader>
                         <NavMenu />
-                        <MudNavMenu Style="margin-top: auto;" Class="theme-swith">
-                            <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
-                                       ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                       ThumbIconColor="Color.Dark" />
-                        </MudNavMenu>
+                        <div class="margin-top-auto parameters">
+                            <div class="language-selector-wrapper">
+                                <LanguageSelector></LanguageSelector>
+                            </div>
+                            <MudNavMenu Class="theme-swith">
+                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
+                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                           ThumbIconColor="Color.Dark" />
+                            </MudNavMenu>
+                        </div>
+                         
                     </MudDrawer>
                     <button id="logoStart" @onclick="OpenDrawer">
                         <span class="iconmax iconmax-logo px24"></span>
@@ -41,11 +51,16 @@
                                 <span class="iconmax iconmax-logo px48"></span>
                             </div>
                             <NavMenu />
-                            <MudNavMenu Style="margin: 40px 10px 0px auto" Class="theme-swith">
-                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
-                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                           ThumbIconColor="Color.Dark" />
-                            </MudNavMenu>
+                            <div class="margin-top-auto parameters">
+                                <div class="language-selector-wrapper">
+                                    <LanguageSelector></LanguageSelector>
+                                </div>
+                                <MudNavMenu Class="theme-swith">
+                                    <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
+                                               ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                               ThumbIconColor="Color.Dark" />
+                                </MudNavMenu>
+                            </div>
                             <button class="close-drawer-bottom" @onclick="SwithDrawerBottom">
                                 <MudIcon Icon="@Icons.Material.Filled.Close" Size="Size.Large" />
                             </button>
@@ -58,18 +73,22 @@
                         </button>
                     }
                 }
-
-                <MudMainContent>
+                <MudMainContent> 
                     @Body
                     @if (_isMobile)
                     {
                         <div class="bottom-for-all">
                             <NavMenu></NavMenu>
-                            <MudNavMenu Style="margin: 40px 10px 100px auto;" Class="theme-swith">
-                                <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
-                                           ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
-                                           ThumbIconColor="Color.Dark" />
-                            </MudNavMenu>
+                            <div class="margin-top-auto parameters">
+                                <div class="language-selector-wrapper">
+                                    <LanguageSelector></LanguageSelector>
+                                </div>
+                                <MudNavMenu Class="theme-swith">
+                                    <MudSwitch T="bool" Value="_isDarkMode" ValueChanged="SaveThemeTech" ValueExpression="() => _isDarkMode"
+                                               ThumbIcon="@(_isDarkMode ? Icons.Material.Filled.DarkMode : Icons.Material.Filled.LightMode)"
+                                               ThumbIconColor="Color.Dark" />
+                                </MudNavMenu>
+                            </div>
                         </div>
                     }
                     <Spacer></Spacer>
@@ -81,11 +100,12 @@
 </MudLayout>
 
 @code {
-    private MudTheme _theme = new(); 
+    private MudTheme _theme = new();
     public bool IsTech { get; private set; } = true;
-  
+
     protected override async Task OnInitializedAsync()
     {
+        Loc.OnLanguageChanged += StateHasChanged;
         try
         {
             _isDarkMode = await JS.InvokeAsync<bool>("themeHelper.getThemeTech");
@@ -103,5 +123,9 @@
         await JS.InvokeVoidAsync("themeHelper.saveThemeTech", value);
         await JS.InvokeVoidAsync("themeHelper.applyMetaThemeTech", value);
         StateHasChanged();
+    }
+    public void Dispose()
+    {
+        Loc.OnLanguageChanged -= StateHasChanged;
     }
 }

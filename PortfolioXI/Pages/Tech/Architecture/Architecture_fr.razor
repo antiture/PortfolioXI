@@ -1,0 +1,131 @@
+﻿
+@layout Layout.LayoutTech
+
+<PageTitle>Architecture</PageTitle>
+
+
+<div class="text-flow">
+    <SectionText Title3="Tracence : Assistant IA pour les flux de travail distribués" Title3Sub="Application multiplateforme basée sur .NET MAUI, C#, Blazor et l’automatisation par IA"
+                 Title4="Introduction">
+        <Br12 />Ce projet est une <strong>solution intelligente</strong> conçue pour assister les <strong>flux de travail</strong> en <strong>automatisant certaines tâches métiers</strong> spécifiques et en <strong>réduisant les interventions manuelles</strong>.
+
+        <Br12 />L’application propose deux interfaces principales :
+        <Indent>
+            <Br8 />- une <strong>application mobile</strong> basée sur .NET MAUI,
+            <Br0 />- une <strong>interface web</strong> développée avec Blazor WebAssembly,
+        </Indent>
+        <Br0 />reposant sur une <strong>architecture de services unifiée</strong>.
+
+        <Br12 />Le projet est actuellement <strong>en cours de développement</strong> et s’inscrit dans une <strong>démarche exploratoire</strong> combinant :
+        <Indent>
+            <Br8 />- de l’<strong>intelligence artificielle appliquée</strong>,
+            <Br0 />- une <strong>architecture modulaire</strong> en .NET MAUI,
+            <Br0 />- et une <strong>optimisation des workflows distribués</strong>.
+        </Indent>
+    </SectionText>
+
+    <SectionText Title4="Présentation des fonctionnalités" Title5="Exécution automatisée des flux de travail">
+        <Br12 />Intégration d’un <strong>moteur d’IA</strong> permettant d’automatiser la <strong>réception de données</strong>, le <strong>prétraitement</strong>, la <strong>génération de documents</strong> et les <strong>appels à des services externes</strong>.
+    </SectionText>
+
+    <SectionText Title5="Architecture modulaire hiérarchisée">
+        <Br12 />Architecture en couches (<strong>plateforme</strong>, <strong>services</strong>, <strong>base de données</strong>) respectant l’<strong>inversion des dépendances</strong> et la <strong>programmation orientée interface</strong>.
+    </SectionText>
+
+    <SectionText Title5="Support multiplateforme">
+        <Br12 />Utilisation de <strong>.NET MAUI</strong> pour les clients iOS / Android, et de <strong>Blazor</strong> pour le web, avec un <strong>fort taux de réutilisation du code</strong>.
+    </SectionText>
+
+    <SectionText Title5="Abstraction des services et déploiement adaptatif">
+        <Br12 />Des interfaces <strong>standardisées</strong> permettent de gérer des services <strong>locaux</strong>, <strong>centraux</strong> ou <strong>serveur</strong>, selon les contextes de déploiement.
+    </SectionText>
+
+    <SectionText Title5="Gestion standardisée des appels HTTP et du contexte utilisateur">
+        <Br12 />Utilisation de <code>HttpClientFactory</code> et <code>IHttpContextAccessor</code> pour un <strong>traitement contextuel</strong> sécurisé et cohérent.
+    </SectionText>
+
+    <SectionText Title4="Stack technique">
+        <Br12 /><strong>Technologies principales :</strong>
+        <Indent>
+            <Br8 /><strong>Frontend</strong> : .NET MAUI (application mobile), Blazor (web), C#
+            <Br0 /><strong>Backend</strong> : Services ASP.NET Core (couches Platform / API / DML)
+            <Br0 /><strong>IA intégrée</strong> : API OpenAI, <strong>recherche vectorielle</strong>, <strong>modules de génération automatique</strong> (extensibles)
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[1] SizeFlow="400*" SizeVis="600*">
+    </VisionerImage>
+
+    <SectionText Title4="Vue d’ensemble du système – Architecture de l’assistant IA pour les workflows">
+        <Br12 />Ce schéma présente la <strong>structure globale</strong> de l’application, couvrant :
+        <Indent>
+            <Br8 />- les <strong>plateformes frontend</strong> (Blazor / MAUI),
+            <Br0 />- les <strong>couches de services</strong> principales,
+            <Br0 />- la <strong>gestion des données backend</strong> (procédures stockées et bases vectorielles),
+            <Br0 />- et l’<strong>intégration d’IA externe</strong> via OpenAPI et LLM.
+        </Indent>
+        <Br12 />Elle reflète une <strong>architecture distribuée bien orchestrée</strong>.
+    </SectionText>
+
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="Modèle de domaine et architecture des services sémantiques">
+        <Br12 />Ce schéma détaille la <strong>logique de domaine interne</strong>, incluant des stratégies pour :
+        <Indent>
+            <Br8 />- les <strong>droits d’accès</strong>,
+            <Br0 />- les <strong>entités utilisateur</strong>,
+            <Br0 />- les <strong>thèmes</strong>,
+            <Br0 />- et les <strong>modèles de service abstraits</strong>.
+        </Indent>
+
+        <Br12 />Il utilise les <strong>patrons de fabrique</strong> et les <strong>adaptateurs</strong> pour gérer la complexité métier,
+        <Br8 />illustrant une approche <strong>modulaire et sémantique solide</strong>.
+    </SectionText>
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+    <SectionText Title4="Connexion aux bases de données et adaptateur HTTP">
+        <Br12 />Ce module encapsule les services de base de données <strong>locaux</strong>, <strong>centraux</strong> et <strong>serveur</strong>
+        <Br8 />via une <strong>interface partagée</strong>.
+
+        <Br12 />Il gère également l’<strong>injection de services HTTP</strong> grâce à <code>HttpClientFactory</code> et à l’accès au contexte utilisateur,
+        <Br8 />assurant des <strong>échanges de données évolutifs</strong> et <strong>faiblement couplés</strong>.
+    </SectionText>
+
+    <VisionerImage Image=Images[4]>
+    </VisionerImage>
+
+    <SectionText Title4="Contexte de l’annuaire utilisateur et gestion des accès">
+        <Br12 />Ce schéma illustre la logique concernant :
+        <Indent>
+            <Br8 />- les <strong>événements de mise à jour utilisateur</strong>,
+            <Br0 />- la <strong>synchronisation d’annuaire</strong>,
+            <Br0 />- les <strong>classes de base pour le contrôle d’accès</strong>,
+            <Br0 />- et les <strong>handlers d’authentification délégués</strong>.
+        </Indent>
+
+        <Br12 />Il met en avant l’attention portée à :
+        <Indent>
+            <Br8 />- la <strong>cohérence des états</strong>,
+            <Br0 />- et à la <strong>gestion sécurisée de l’identité utilisateur</strong>.
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage>
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/architecture/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/04.png", Id = "04" , Dir = ImageDirection.Verti },
+        new ImageItem { Src = "images/architecture/05.png", Id = "05" , Dir = ImageDirection.Verti } 
+    };
+
+}

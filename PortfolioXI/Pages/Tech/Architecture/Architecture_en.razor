@@ -1,0 +1,130 @@
+﻿ 
+@layout Layout.LayoutTech
+
+<PageTitle>Architecture</PageTitle>
+<div class="text-flow">
+    <SectionText Title3="Tracence: AI Assistant for Distributed Workflows" Title3Sub="Cross-platform application powered by .NET MAUI, C#, Blazor, and AI-driven automation"
+                 Title4="Introduction">
+        <Br12 />This project offers an <strong>intelligent assistant solution</strong> for managing <strong>workflow processes</strong>, designed to <strong>automate business operations</strong> and <strong>minimize manual effort</strong>.
+
+        <Br12 />The application features two main interfaces:
+        <Indent>
+            <Br8 />- a <strong>mobile application</strong> built with .NET MAUI,
+            <Br0 />- a <strong>web version</strong> developed using Blazor WebAssembly,
+        </Indent>
+        <Br0 />both supported by a <strong>unified service architecture</strong>.
+
+        <Br12 />Currently <strong>under development</strong>, the project takes an <strong>exploratory approach</strong> that integrates:
+        <Indent>
+            <Br8 />- <strong>applied AI</strong> techniques,
+            <Br0 />- <strong>modular design principles</strong> in .NET MAUI,
+            <Br0 />- and <strong>optimization of distributed workflows</strong>.
+        </Indent>
+    </SectionText>
+
+    <SectionText Title4="Feature Overview" Title5="Automated Workflow Execution">
+        <Br12 />An integrated <strong>AI engine</strong> automates key tasks such as <strong>data intake</strong>, <strong>preprocessing</strong>, <strong>document generation</strong>, and calling <strong>external services</strong>.
+    </SectionText>
+
+    <SectionText Title5="Hierarchical Modular Architecture">
+        <Br12 />The solution adopts a layered architecture (<strong>platform</strong>, <strong>services</strong>, <strong>database</strong>), following principles of <strong>dependency inversion</strong> and <strong>interface-oriented programming</strong>.
+    </SectionText>
+
+    <SectionText Title5="Cross-Platform Support">
+        <Br12 />Leveraging <strong>.NET MAUI</strong> for mobile clients (iOS/Android) and <strong>Blazor</strong> for web, the solution ensures a <strong>high level of code reuse</strong>.
+    </SectionText>
+
+    <SectionText Title5="Service Abstraction and Adaptive Distribution">
+        <Br12 /><strong>Standardized interfaces</strong> manage <strong>local</strong>, <strong>centralized</strong>, or <strong>server-hosted</strong> services depending on deployment scenarios.
+    </SectionText>
+
+    <SectionText Title5="Standardized HTTP Communication and User Context Management">
+        <Br12 />Utilizes <code>HttpClientFactory</code> and <code>IHttpContextAccessor</code> for <strong>secure</strong> and <strong>context-aware request handling</strong>.
+    </SectionText>
+
+    <SectionText Title4="Tech Stack">
+        <Br12 /><strong>Primary technologies used:</strong>
+        <Indent>
+            <Br8 /><strong>Frontend</strong>: .NET MAUI (mobile app), Blazor (web), C#
+            <Br0 /><strong>Backend</strong>: ASP.NET Core services (Platform / API / DML layers)
+            <Br0 /><strong>AI Integration</strong>: OpenAI APIs, <strong>vector search</strong>, and <strong>auto-generation modules</strong>
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[1] SizeFlow="400*" SizeVis="600*">
+    </VisionerImage>
+
+    <SectionText Title4="System Overview – AI Workflow Assistant Architecture">
+        <Br12 />This diagram illustrates the <strong>overall architecture</strong> of the application, including:
+        <Indent>
+            <Br8 />- <strong>frontend platforms</strong> (Blazor / MAUI),
+            <Br0 />- <strong>core service layers</strong>,
+            <Br0 />- <strong>backend data processing</strong> (via stored procedures and vector databases),
+            <Br0 />- and <strong>external AI integration</strong> using OpenAPI and LLMs.
+        </Indent>
+        <Br12 />It reflects a <strong>cohesive, distributed service design</strong> strategy.
+    </SectionText>
+
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="Domain Model and Semantic Service Architecture">
+        <Br12 />This diagram outlines the <strong>domain-level logic</strong>, including strategies for:
+        <Indent>
+            <Br8 />- <strong>permission control</strong>,
+            <Br0 />- <strong>user entity management</strong>,
+            <Br0 />- <strong>theme customization</strong>,
+            <Br0 />- and abstract <strong>service patterns</strong>.
+        </Indent>
+
+        <Br12 />It applies <strong>factory</strong> and <strong>adapter patterns</strong> to handle domain complexity,
+        <Br8 />illustrating a <strong>robust semantic and modular design approach</strong>.
+    </SectionText>
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+    <SectionText Title4="Database Connectivity and HTTP Service Adapter">
+        <Br12 />This module abstracts <strong>local</strong>, <strong>central</strong>, and <strong>server-side</strong> database access
+        <Br8 />through a <strong>unified interface</strong>.
+
+        <Br12 />It also handles <strong>HTTP service injection</strong> using <code>HttpClientFactory</code> and contextual user data,
+        <Br8 />enabling <strong>scalable</strong> and <strong>loosely coupled</strong> data interactions.
+    </SectionText>
+
+    <VisionerImage Image=Images[4]>
+    </VisionerImage>
+
+    <SectionText Title4="User Directory Context and Access Management">
+        <Br12 />This diagram describes the logic behind:
+        <Indent>
+            <Br8 />- <strong>user update events</strong>,
+            <Br0 />- <strong>directory synchronization</strong>,
+            <Br0 />- <strong>access control base classes</strong>,
+            <Br0 />- and <strong>authentication delegating handlers</strong>.
+        </Indent>
+
+        <Br12 />It emphasizes the system’s focus on:
+        <Indent>
+            <Br8 />- <strong>state consistency</strong>,
+            <Br0 />- and <strong>secure identity management</strong>.
+        </Indent>
+    </SectionText>
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage>
+</div>
+
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/architecture/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/architecture/04.png", Id = "04" , Dir = ImageDirection.Verti },
+        new ImageItem { Src = "images/architecture/05.png", Id = "05" , Dir = ImageDirection.Verti } 
+    };
+
+}

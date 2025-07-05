@@ -1,0 +1,41 @@
+﻿@using System.Globalization
+@inject LanguageService Loc
+@using System.Reflection
+
+@if (_componentType is not null)
+{
+    <DynamicComponent Type="_componentType" />
+}
+else
+{
+    <p>Language not supported: @Loc.CurrentCulture.Name</p>
+}
+@code {
+    private Type? _componentType;
+    [Parameter] public string PageKey { get; set; } = default!;
+    [Parameter] public string Category { get; set; } = default!;
+
+    private readonly Dictionary<string, string> LangMap = new()
+    {
+        { "en-US", "en" },
+        { "zh-CN", "cn" },
+        { "fr-FR", "fr" }
+    };
+
+    protected override void OnInitialized()
+    {
+        LoadComponent();
+    }
+
+    private void LoadComponent()
+    {
+        var shortLang = LangMap.TryGetValue(Loc.CurrentCulture.Name, out var lang) ? lang : "en";
+        var fullTypeName = $"PortfolioXI.Pages.{Category}.{PageKey}.{PageKey}_{shortLang}";
+
+        _componentType = Assembly
+            .GetExecutingAssembly()
+            .GetTypes()
+            .FirstOrDefault(t => t.FullName == fullTypeName);
+    }
+
+}

@@ -1,46 +1,50 @@
-﻿
+﻿@inject LanguageService Loc
+
 <MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavLink Href="" Match="NavLinkMatch.All">@Loc.Get("Home")</MudNavLink>
 </MudNavMenu>
-<MudNavGroup Title="Tech" Expanded="@IsTech">
-    <MudNavMenu>
-        <MudNavLink Href="Methodology" Match="NavLinkMatch.All">Methodology</MudNavLink>
-    </MudNavMenu>
-    <MudNavMenu>
-        <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">UX</MudNavLink>
-    </MudNavMenu>
-    <MudNavMenu>
-        <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">Architecture</MudNavLink>
-    </MudNavMenu>
 
+<MudNavGroup Title="@Loc.Get("Digital_Product")" Expanded="@IsTech">
     <MudNavMenu>
-        <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">AI Model</MudNavLink>
+        <MudNavLink Href="Methodology" Match="NavLinkMatch.All">@Loc.Get("Methodology")</MudNavLink>
     </MudNavMenu>
     <MudNavMenu>
-        <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">Gestion de projet</MudNavLink>
+        <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">@Loc.Get("UX")</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">@Loc.Get("Architecture")</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">@Loc.Get("AI_Model")</MudNavLink>
+    </MudNavMenu>
+    <MudNavMenu>
+        <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">@Loc.Get("Project_Management")</MudNavLink>
     </MudNavMenu>
 </MudNavGroup>
-<MudNavGroup Title="Art" Expanded="@(IsTech == false)">
+
+<MudNavGroup Title="@Loc.Get("Art")" Expanded="@(IsTech == false)">
     <MudNavMenu>
-        <MudNavLink Href="Painting" Match="NavLinkMatch.Prefix">Painting</MudNavLink>
+        <MudNavLink Href="Painting" Match="NavLinkMatch.Prefix">@Loc.Get("Painting")</MudNavLink>
     </MudNavMenu>
     <MudNavMenu>
-        <MudNavLink Href="Sketch" Match="NavLinkMatch.Prefix">Sketch</MudNavLink>
+        <MudNavLink Href="Sketch" Match="NavLinkMatch.Prefix">@Loc.Get("Sketch")</MudNavLink>
     </MudNavMenu>
     <MudNavMenu>
-        <MudNavLink Href="ImageVideo" Match="NavLinkMatch.Prefix">Image vidéo</MudNavLink>
-    </MudNavMenu> 
+        <MudNavLink Href="ImageVideo" Match="NavLinkMatch.Prefix">@Loc.Get("Image_Video")</MudNavLink>
+    </MudNavMenu>
 </MudNavGroup>
 
-<MudNavGroup Title="Contact" Expanded="false">
-    <MudNavLink Href="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf" Target="_blank" Download="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf">
-        Télécharger le CV
+<MudNavGroup Title="@Loc.Get("Contact")" Expanded="false">
+    <MudNavLink Href="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf"
+                Target="_blank"
+                Download="files/Zijian_XI_ProductOwnerIA_UX&Tech-Oriented.pdf">
+        @Loc.Get("Download_CV")
     </MudNavLink>
     <MudNavMenu>
-        <MudNavLink Href="mailto:antiture@gmail.com?subject=Contact&body=Hello">Email</MudNavLink>
+        <MudNavLink Href="mailto:antiture@gmail.com?subject=Contact&body=Hello">@Loc.Get("Email")</MudNavLink>
     </MudNavMenu>
     <MudNavMenu>
-        <MudNavLink Href="https://www.linkedin.com/in/zijian-xi/">Linkedin</MudNavLink>
+        <MudNavLink Href="https://www.linkedin.com/in/zijian-xi/">@Loc.Get("Linkedin")</MudNavLink>
     </MudNavMenu>
 </MudNavGroup>
 

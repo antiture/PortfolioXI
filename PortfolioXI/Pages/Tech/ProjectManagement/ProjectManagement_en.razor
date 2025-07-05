@@ -1,0 +1,137 @@
+﻿ 
+@layout Layout.LayoutTech
+ 
+  
+<PageTitle>ProjectManagement</PageTitle>
+  
+<div class="text-flow">
+
+    <SectionText Title3="General Machine Learning Training Workflow" Title3Sub="Self-Attention Models · Neural · Tree · Linear · Clustering – Version: 4.5"
+                 Title4="Introduction">
+
+        <Br12 /><strong>This diagram illustrates a standard workflow</strong> for training machine learning models. It applies to a wide range of architectures, including neural networks, decision trees, linear models, clustering algorithms, and self-attention mechanisms.
+
+        <Br12 />The workflow covers the <strong>entire lifecycle</strong> of a machine learning pipeline:
+        <Indent>
+            <Br8 />- data collection
+            <Br0 />- preprocessing
+            <Br0 />- feature engineering
+            <Br0 />- model selection and training
+            <Br0 />- hyperparameter tuning
+            <Br0 />- documentation and final delivery
+        </Indent>
+
+        <Br12 />Key priorities include:
+        <Indent>
+            <Br8 />- <strong>modular reusability</strong>
+            <Br0 />- <strong>clear process visualization</strong>
+            <Br0 />- <strong>production-readiness</strong>
+        </Indent>
+
+        <Br12 />This workflow supports <strong>multi-model automated training</strong> in complex environments (v4.5).
+    </SectionText>
+
+    <SectionText Title4="Functional Module Breakdown" Title5="1. Data Collection & Processing">
+        <Br12 /><strong>Core preprocessing stages include:</strong>
+        <Indent>
+            <Br8 />1 – <strong>PROCESS</strong>: data cleaning, deduplication, formatting
+            <Br0 />2 – <strong>PreCheck</strong>: handling missing values and anomalies
+            <Br0 />3 – <strong>Unions</strong>: merging datasets and standardizing labels
+            <Br0 />4 – <strong>GlobalAdaptation</strong>: scale unification, normalization or standardization
+            <Br0 />5 – <strong>EnvUnderstanding</strong> & 6 – <strong>Verification</strong>: assessing data context and quality
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="2. Training – Feature Engineering & Model Building">
+        <Br12 /><strong>Supports parallel training of five model types:</strong>
+        <Indent>
+            <Br8 />- <strong>TreeBased</strong>
+            <Br0 />- <strong>LinearBased</strong>
+            <Br0 />- <strong>ClusterBased</strong>
+            <Br0 />- <strong>NeuralBased</strong>
+            <Br0 />- <strong>SelfAttentionBased</strong>
+        </Indent>
+
+        <Br12 />Each model follows a common structure:
+        <Indent>
+            <Br8 />1 – <strong>FeaturePreprocessing</strong>: preparing features
+            <Br0 />2 – <strong>FeatureAnalysis</strong>: understanding feature behavior
+            <Br0 />3 – <strong>ModelAssignment</strong>: assigning model configurations
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="3. Adjustment – Validation & Optimization">
+        <Br12 /><strong>This stage handles model evaluation and refinement:</strong>
+        <Indent>
+            <Br8 />- Utilizes techniques like <strong>K-Fold</strong>, <strong>GridSearch</strong>, and <strong>ValidationSchema</strong>
+            <Br0 />- Automates <strong>metric checks</strong>, <strong>performance validation</strong>, and <strong>rollback mechanisms</strong>
+            <Br0 />- Once validated, models proceed to <strong>documentation</strong> and <strong>report generation</strong>
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="4. Implementation & Delivery">
+        <Br12 /><strong>Final packaging and documentation:</strong>
+        <Indent>
+            <Br8 />- <strong>Model reports</strong>: including architecture diagrams and performance charts
+            <Br0 />- <strong>Export</strong>: saves trained models in formats like <code>.pkl</code> or <code>.onnx</code>
+            <Br0 />- <strong>Documentation</strong>: covering structure, parameters, and training process
+            <Br0 />- <strong>PostStructLevelDoc</strong>: deep-dive technical documentation
+            <Br0 />- <strong>Refactoring</strong>, <strong>UnitTesting</strong>, and <strong>Finalization</strong>: ensuring code quality and maintainability
+        </Indent>
+    </SectionText>
+
+    <SectionText Title4="Application & Extensibility">
+        <Br12 /><strong>Key features of the workflow:</strong>
+        <Indent>
+            <Br8 />- <strong>Universality</strong>: compatible with most ML tasks; model structures are reusable
+            <Br0 />- <strong>Visualization</strong>: clear graphical flows ideal for collaboration, teaching, and reviews
+            <Br0 />- <strong>Modularity</strong>: each stage is an interchangeable module
+            <Br0 />- <strong>Engineering-oriented</strong>: task labels (e.g., <code>dev 4.5 – 10</code>) indicate estimated effort in person-days, useful for R&D planning
+        </Indent>
+    </SectionText>
+
+    <SectionText>
+        This project was independently designed and developed for demonstration purposes.
+        Any reproduction, distribution, or reuse requires prior consent from the author.
+    </SectionText>
+
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="Real-World ML Workflow Execution">
+        <Br12 />This diagram aligns <strong>functional workflow modules</strong> (left) with <strong>real project tasks</strong> from a project management board (right).
+
+        <Br12 /><strong>Blue arrows</strong> show how each conceptual stage:
+        <Indent>
+            <Br8 />- <strong>Training</strong>
+            <Br0 />- <strong>Preprocessing</strong>
+            <Br0 />- <strong>Evaluation</strong>
+        </Indent>
+
+        translates into <strong>day-to-day execution</strong>, identifying:
+        <Indent>
+            <Br8 />- the team involved
+            <Br0 />- task status
+            <Br0 />- type of work and required resources
+        </Indent>
+
+        <Br12 />This <strong>cross-referenced view</strong> highlights the ability to <strong>translate architecture into actionable steps</strong>, supporting efficient <strong>project management</strong> and coordination.
+    </SectionText>
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/projectmanagement/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/03.png", Id = "03" , Dir = ImageDirection.Ori }
+    };
+
+}

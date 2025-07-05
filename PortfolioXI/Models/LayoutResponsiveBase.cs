@@ -11,10 +11,7 @@ public abstract class LayoutResponsiveBase : LayoutComponentBase
 
     protected bool _isDarkMode;
 
-    protected override async Task OnInitializedAsync()
-    {
-        
-    }
+     
 
     protected void HandleResize(double width)
     {
