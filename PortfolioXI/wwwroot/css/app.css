@@ -189,7 +189,7 @@ code {
     max-height: calc(var(--vh, 1vh) * 100);
 }
 .language-selector-wrapper {
-    margin: 0px 0px 20px 12px !important;
+    margin: 0px 0px 0px 12px ;
 }
     .language-selector-wrapper .mud-input.mud-input-underline:before {
         border-bottom: none !important;
