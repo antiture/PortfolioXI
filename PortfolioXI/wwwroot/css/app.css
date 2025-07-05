@@ -168,7 +168,7 @@ code {
 }
 .theme-swith label.mud-switch{
   margin-left: auto;
-  margin-right: 8px;
+  margin-right: 0px;
 }
 /* 》》》》》》》》:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 .bottom-for-all{
@@ -189,7 +189,7 @@ code {
     max-height: calc(var(--vh, 1vh) * 100);
 }
 .language-selector-wrapper {
-    margin: 0px 12px 0px !important;
+    margin: 0px 0px 20px 12px !important;
 }
     .language-selector-wrapper .mud-input.mud-input-underline:before {
         border-bottom: none !important;
