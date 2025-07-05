@@ -13,7 +13,7 @@
 .layout-cover {
   
     width: 100%;
-    padding: 4px;
+    padding: 40px;
     padding-bottom: calc(4rem + 4rem);
     display: flex;
     flex-direction: column;
