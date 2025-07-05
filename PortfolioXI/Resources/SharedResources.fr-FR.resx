@@ -117,10 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="String1" xml:space="preserve">
-    <value>Francais</value>
+  <data name="AI_Model" xml:space="preserve">
+    <value>Modèle IA</value>
+  </data>
+  <data name="Architecture" xml:space="preserve">
+    <value>Architecture</value>
+  </data>
+  <data name="Art" xml:space="preserve">
+    <value>Création artistique</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Digital_Product" xml:space="preserve">
+    <value>Produit Numérique</value>
+  </data>
+  <data name="Download_CV" xml:space="preserve">
+    <value>Télécharger le CV</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="Image_Video" xml:space="preserve">
+    <value>Image vidéo</value>
+  </data>
+  <data name="Linkedin" xml:space="preserve">
+    <value>Linkedin</value>
+  </data>
+  <data name="Methodology" xml:space="preserve">
+    <value>Méthodologie</value>
+  </data>
+  <data name="Painting" xml:space="preserve">
+    <value>Peinture</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Project_Management" xml:space="preserve">
+    <value>Gestion de projet</value>
+  </data>
+  <data name="Sketch" xml:space="preserve">
+    <value>Croquis</value>
+  </data>
+  <data name="Tech" xml:space="preserve">
+    <value>Tech</value>
+  </data>
+  <data name="UX" xml:space="preserve">
+    <value>UX</value>
   </data>
   <data name="Zijian_XI" xml:space="preserve">
-    <value>Zijian XI fr</value>
+    <value>Zijian XI</value>
   </data>
 </root>

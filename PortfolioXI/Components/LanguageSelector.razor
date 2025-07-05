@@ -16,8 +16,7 @@
     {
         <MudSelectItem Value="@lang.Code">@GetFlagEmoji(lang.Code)</MudSelectItem>
     }
-</MudSelect>
-@Loc.Get("Zijian_XI")
+</MudSelect> 
 
 <style>
     .lang-select .mud-input-root {
@@ -59,7 +58,7 @@
     {
         return code switch
         {
-            "en-US" => "🇺🇸", // 真实 emoji 字符
+            "en-US" => "EN", // 真实 emoji 字符
             "zh-CN" => "🇨🇳",
             "fr-FR" => "🇫🇷",
             _ => "🌐"

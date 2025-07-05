@@ -1,0 +1,138 @@
+﻿ 
+@layout Layout.LayoutTech
+ 
+  
+<PageTitle>ProjectManagement</PageTitle>
+  
+<div class="text-flow">
+
+    <SectionText Title3="通用机器学习训练流程" Title3Sub="自注意力模型 · 神经网络 · 决策树 · 线性模型 · 聚类算法 - 版本：4.5"
+                 Title4="简介">
+
+        <Br12 /><strong>本图概述了一个通用的机器学习训练流程</strong>，适用于多种模型结构，包括神经网络、决策树、线性回归、聚类算法以及自注意力机制模型。
+
+        <Br12 />该流程涵盖机器学习的<strong>全生命周期</strong>：
+        <Indent>
+            <Br8 />- 数据采集
+            <Br0 />- 数据预处理
+            <Br0 />- 特征工程
+            <Br0 />- 模型选择与训练
+            <Br0 />- 超参数调优
+            <Br0 />- 结果记录与交付
+        </Indent>
+
+        <Br12 />设计重点在于：
+        <Indent>
+            <Br8 />- <strong>模块化复用</strong>
+            <Br0 />- <strong>流程可视化</strong>
+            <Br0 />- <strong>可部署性与生产集成</strong>
+        </Indent>
+
+        <Br12 />该训练流程已用于多模型的自动化训练任务（版本 4.5），适用于复杂环境。
+    </SectionText>
+
+    <SectionText Title4="功能模块拆解" Title5="1. 数据采集与处理">
+        <Br12 /><strong>数据预处理主要包括以下步骤：</strong>
+        <Indent>
+            <Br8 />1 – <strong>PROCESS</strong>：数据清洗、重复值识别、格式标准化；
+            <Br0 />2 – <strong>PreCheck</strong>：处理缺失值与异常值；
+            <Br0 />3 – <strong>Unions</strong>：数据集整合与标签统一；
+            <Br0 />4 – <strong>GlobalAdaptation</strong>：统一量纲，执行标准化或归一化；
+            <Br0 />5 – <strong>EnvUnderstanding</strong> 与 6 – <strong>Verification</strong>：数据环境分析与质量校验。
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="2. 模型训练 — 特征工程与构建">
+        <Br12 /><strong>支持五种模型结构的并行训练：</strong>
+        <Indent>
+            <Br8 />- <strong>TreeBased</strong>（树模型）
+            <Br0 />- <strong>LinearBased</strong>（线性模型）
+            <Br0 />- <strong>ClusterBased</strong>（聚类模型）
+            <Br0 />- <strong>NeuralBased</strong>（神经网络）
+            <Br0 />- <strong>SelfAttentionBased</strong>（自注意力模型）
+        </Indent>
+
+        <Br12 />每类模型的训练遵循以下流程：
+        <Indent>
+            <Br8 />1 – <strong>FeaturePreprocessing</strong>：特征预处理；
+            <Br0 />2 – <strong>FeatureAnalysis</strong>：特征分析；
+            <Br0 />3 – <strong>ModelAssignment</strong>：模型配置与初始化。
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="3. 验证与调优">
+        <Br12 /><strong>模型评估阶段包括：</strong>
+        <Indent>
+            <Br8 />- 应用 <strong>K-Fold</strong>、<strong>GridSearch</strong>、<strong>验证架构</strong>；
+            <Br0 />- 自动化执行 <strong>指标评估</strong>、<strong>性能验证</strong> 与 <strong>回退机制</strong>；
+            <Br0 />- 验证通过的模型将进入 <strong>文档生成</strong> 与 <strong>报告整理</strong> 阶段。
+        </Indent>
+    </SectionText>
+
+    <SectionText Title5="4. 实施与交付">
+        <Br12 /><strong>最终交付阶段包含：</strong>
+        <Indent>
+            <Br8 />- <strong>模型报告生成</strong>：结构图、性能图等；
+            <Br0 />- <strong>模型导出</strong>：保存为 <code>.pkl</code> 或 <code>.onnx</code> 格式；
+            <Br0 />- <strong>文档撰写</strong>：记录结构、参数与训练过程；
+            <Br0 />- <strong>PostStructLevelDoc</strong>：高级结构文档支持；
+            <Br0 />- <strong>代码重构</strong>、<strong>单元测试</strong>、<strong>最终整理</strong>：保障项目质量与后续维护。
+        </Indent>
+    </SectionText>
+
+    <SectionText Title4="应用与扩展性">
+        <Br12 /><strong>此训练流程具备以下关键特性：</strong>
+        <Indent>
+            <Br8 />- <strong>通用性</strong>：适用于主流机器学习任务，模型结构可直接复用；
+            <Br0 />- <strong>可视化支持</strong>：图形化流程便于团队协作、教学演示与项目评审；
+            <Br0 />- <strong>模块化设计</strong>：流程各部分独立可替换、可扩展；
+            <Br0 />- <strong>工程导向</strong>：每项任务标明类型与预计工时（如 <code>dev 4.5 – 10</code> 表示预估耗时 4.5 至 10 个工作日），可作为研发项目的蓝图。
+        </Indent>
+    </SectionText>
+
+    <SectionText>
+        本项目由本人独立设计与开发，仅用于展示相关能力与经验。
+        禁止未经许可的复制、传播与使用。
+    </SectionText>
+
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="ML 流程在实际项目中的落地">
+        <Br12 />本图展示了<strong>机器学习训练流程模块</strong>（左侧）与<strong>实际任务管理面板</strong>（右侧）之间的映射关系。
+
+        <Br12 /><strong>蓝色箭头</strong>明确指出以下模块：
+        <Indent>
+            <Br8 />- <strong>Training</strong>（训练）
+            <Br0 />- <strong>Preprocessing</strong>（预处理）
+            <Br0 />- <strong>Evaluation</strong>（评估）
+        </Indent>
+
+        在实际项目跟踪中如何被具体实施，包括：
+        <Indent>
+            <Br8 />- 相关执行团队
+            <Br0 />- 当前任务状态
+            <Br0 />- 动态资源与任务类型
+        </Indent>
+
+        <Br12 />这一<strong>结构化视图</strong>体现了将技术架构有效转化为<strong>实际执行路径</strong>的能力，有助于提升项目的<strong>运营透明度与管理效率</strong>。
+    </SectionText>
+
+    <VisionerImage Image=Images[3]>
+    </VisionerImage>
+
+</div>
+
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/projectmanagement/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/projectmanagement/03.png", Id = "03" , Dir = ImageDirection.Ori }
+    };
+
+}

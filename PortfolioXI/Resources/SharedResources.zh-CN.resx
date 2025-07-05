@@ -117,8 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="String1" xml:space="preserve">
-    <value>zh---------</value>
+  <data name="AI_Model" xml:space="preserve">
+    <value>AI模型</value>
+  </data>
+  <data name="Architecture" xml:space="preserve">
+    <value>架构</value>
+  </data>
+  <data name="Art" xml:space="preserve">
+    <value>艺术创作</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>联系方式</value>
+  </data>
+  <data name="Digital_Product" xml:space="preserve">
+    <value>数字化产品</value>
+  </data>
+  <data name="Download_CV" xml:space="preserve">
+    <value>下载简历</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>邮箱</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="Image_Video" xml:space="preserve">
+    <value>影像</value>
+  </data>
+  <data name="Linkedin" xml:space="preserve">
+    <value>领英</value>
+  </data>
+  <data name="Methodology" xml:space="preserve">
+    <value>方法论</value>
+  </data>
+  <data name="Painting" xml:space="preserve">
+    <value>绘画</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>产品</value>
+  </data>
+  <data name="Project_Management" xml:space="preserve">
+    <value>项目管理</value>
+  </data>
+  <data name="Sketch" xml:space="preserve">
+    <value>速写</value>
+  </data>
+  <data name="Tech" xml:space="preserve">
+    <value>技术</value>
+  </data>
+  <data name="UX" xml:space="preserve">
+    <value>用户体验</value>
   </data>
   <data name="Zijian_XI" xml:space="preserve">
     <value>席子舰</value>

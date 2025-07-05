@@ -1,0 +1,97 @@
+﻿ 
+@layout Layout.LayoutTech
+<PageTitle>AIModel</PageTitle>
+
+
+<div class="text-flow">
+    <SectionText Title3="Architecture interprétable du Décoder GPT :" Title3Sub="Chemin de raisonnement autorégressif du décodeur"
+                 Title4="Introduction">
+
+        <Br12 />本图示题为 <strong>「可解释的 GPT 解码器架构」</strong>，系统性地展示了 Transformer 解码器在语言生成任务中的<strong>逐步生成过程</strong>。
+
+        <Br12 />整体结构采用<strong>清晰的垂直排列</strong>，依次涵盖：
+        <Indent>
+            <Br8 />- <strong>token 输入</strong>，
+            <Br0 />- <strong>预测 token 的输出</strong>，
+            <Br0 />- <strong>位置编码</strong>，
+            <Br0 />- <strong>多头注意力机制</strong>，
+            <Br0 />- <strong>前馈神经网络</strong>，
+            <Br0 />- <strong>线性投影</strong>，
+            <Br0 />- 以及 <strong>softmax 计算</strong>。
+        </Indent>
+
+        <Br12 />图示中的所有模块均遵循<strong>统一命名规范</strong>。
+        所有变量使用标准记号（<em>Q, K, V, Z</em>），向量与矩阵的维度也已<strong>明确标注</strong>，图形设计遵循：
+        <Indent>
+            <Br8 />- <strong>软件工程</strong>，
+            <Br0 />- 与 <strong>技术可视化</strong> 的通用规范。
+        </Indent>
+        这有助于实现<strong>跨学科的理解</strong>与<strong>图示的再利用</strong>。
+
+        <Br12 />本图可作为以下方面的参考资料：
+        <Indent>
+            <Br8 />- <strong>模型架构理解</strong>，
+            <Br0 />- <strong>推理链分析</strong>，
+            <Br0 />- <strong>生成机制讲解</strong>。
+        </Indent>
+
+        <Br12 />适用于多种使用场景，例如：
+        <Indent>
+            <Br8 />- <strong>产品设计</strong>，
+            <Br0 />- <strong>模型调试</strong>，
+            <Br0 />- <strong>Prompt 工程</strong>。
+        </Indent>
+
+        <Br12 />这是一份对 GPT 解码器标准架构的<strong>严谨重构与适配</strong>。
+    </SectionText>
+
+
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage>
+
+    <SectionText Title4="引用">
+        <Br12 /><strong>Vaswani et al., 2017</strong> — Attention is All You Need
+        <em>Advances in Neural Information Processing Systems (NeurIPS), 2017</em>
+        <a href="https://arxiv.org/abs/1706.03762" target="_blank">https://arxiv.org/abs/1706.03762</a>
+
+        <Br12 /><strong>Radford et al., 2019</strong> — Language Models are Unsupervised Multitask Learners
+        <em>OpenAI Technical Report, 2019</em>
+        <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">https://cdn.openai.com/.../language_models_...</a>
+
+        <Br12 /><strong>Geva et al., 2022</strong> — Transformer Feed-Forward Layers are Key-Value Memories
+        <em>International Conference on Learning Representations (ICLR), 2022</em>
+        <a href="https://arxiv.org/abs/2206.06841" target="_blank">https://arxiv.org/abs/2206.06841</a>
+
+        <Br12 /><strong>Rogers et al., 2020</strong> — A Primer in BERTology: What We Know About How BERT Works
+        <em>Transactions of the Association for Computational Linguistics (TACL), 2020</em>
+        <a href="https://arxiv.org/abs/2002.12327" target="_blank">https://arxiv.org/abs/2002.12327</a>
+
+        <Br12 /><strong>Elhage et al., 2021</strong> — A Mechanistic Interpretability Analysis of Grokking
+        <em>Anthropic Technical Report, 2021</em>
+        <a href="https://transformer-circuits.pub/2022/mech-interp-essay/index.html" target="_blank">https://transformer-circuits.pub/.../mech-interp-essay</a>
+
+        <Br12 /><strong>Elhage et al., 2022</strong> — Transformer Circuits: SoLU LayerNorm and Superposition
+        <em>Anthropic Research, 2022</em>
+        <a href="https://transformer-circuits.pub/2022/solu/index.html" target="_blank">https://transformer-circuits.pub/2022/solu/</a>
+
+        <Br12 /><strong>Bills et al., 2023</strong> — Language Models as Tools for Thought: A Perspective
+        <em>arXiv preprint, 2023</em>
+        <a href="https://arxiv.org/abs/2303.12712" target="_blank">https://arxiv.org/abs/2303.12712</a>
+
+        <Br12 /><strong>Meng et al., 2022</strong> — A Closer Look at Transformer Layers
+        <em>arXiv preprint, 2022</em>
+        <a href="https://arxiv.org/abs/2204.00598" target="_blank">https://arxiv.org/abs/2204.00598</a>
+    </SectionText>
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/aimodel/00.png", Id = "00", Dir = ImageDirection.Verti },
+        new ImageItem { Src = "images/aimodel/01.png", Id = "01", Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/aimodel/02.png", Id = "02", Dir = ImageDirection.Verti },
+    };
+}

@@ -1,0 +1,45 @@
+﻿ 
+@layout LayoutArt
+@using PortfolioXI.Components
+<PageTitle>Painting</PageTitle>
+
+<div class="text-flow">
+
+
+    <SectionText Title2="Eh~  J’étais dessinateur...">
+        <Br12 />J’ai reçu une formation académique en peinture de chevalet entre 2006 et 2010. Cette œuvre date de cette période.
+    </SectionText>
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[3]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[4]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+     
+
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/sketch/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/04.png", Id = "04" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/05.png", Id = "05" , Dir = ImageDirection.Ori }  
+    };
+    
+}

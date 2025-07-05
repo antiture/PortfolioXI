@@ -1,0 +1,45 @@
+﻿ 
+@layout LayoutArt
+@using PortfolioXI.Components
+<PageTitle>Painting</PageTitle>
+
+<div class="text-flow">
+     
+
+    <SectionText Title2="对的！我曾是位素描者...">
+        <Br12 />我在 2006 年至 2010 年期间接受了正规的架上绘画训练。这是那个时期的作品。
+    </SectionText>
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[1]>
+    </VisionerImage>
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[2]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[3]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+    <VisionerImage Image=Images[4]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+
+    <VisionerImage Image=Images[5]>
+    </VisionerImage> 
+    <Spacer></Spacer>
+     
+
+
+</div>
+
+@code {
+    private List<ImageItem> Images = new()
+    {
+        new ImageItem { Src = "images/sketch/00.png", Id = "00" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/01.png", Id = "01" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/02.png", Id = "02" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/03.png", Id = "03" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/04.png", Id = "04" , Dir = ImageDirection.Ori },
+        new ImageItem { Src = "images/sketch/05.png", Id = "05" , Dir = ImageDirection.Ori }  
+    };
+    
+}
