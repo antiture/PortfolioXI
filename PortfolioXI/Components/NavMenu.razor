@@ -5,21 +5,21 @@
 </MudNavMenu>
 
 <MudNavGroup Title="@Loc.Get("Digital_Product")" Expanded="@IsTech">
-    <MudNavMenu>
+@*     <MudNavMenu>
         <MudNavLink Href="Methodology" Match="NavLinkMatch.All">@Loc.Get("Methodology")</MudNavLink>
-    </MudNavMenu>
+    </MudNavMenu> *@
     <MudNavMenu>
         <MudNavLink Href="UX" Match="NavLinkMatch.Prefix">@Loc.Get("UX")</MudNavLink>
     </MudNavMenu>
-    <MudNavMenu>
+@*     <MudNavMenu>
         <MudNavLink Href="Architecture" Match="NavLinkMatch.Prefix">@Loc.Get("Architecture")</MudNavLink>
-    </MudNavMenu>
+    </MudNavMenu> *@
     <MudNavMenu>
         <MudNavLink Href="AIModel" Match="NavLinkMatch.Prefix">@Loc.Get("AI_Model")</MudNavLink>
     </MudNavMenu>
-    <MudNavMenu>
+@*     <MudNavMenu>
         <MudNavLink Href="ProjectManagement" Match="NavLinkMatch.Prefix">@Loc.Get("Project_Management")</MudNavLink>
-    </MudNavMenu>
+    </MudNavMenu> *@
 </MudNavGroup>
 
 <MudNavGroup Title="@Loc.Get("Art")" Expanded="@(IsTech == false)">
